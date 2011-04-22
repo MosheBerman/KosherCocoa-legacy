@@ -1,0 +1,20 @@
+**What it is:**
+
+Welcome to the KosherCocoa project! 
+
+KosherCocoa stems from the KosherJava project, which was released and is maintained by Eliyahu Hershfeld, under (L)GPL license.
+KosherCocoa offers a class for sunrise and sunset, while KosherJava has several. (The KosherJava "SuntimesCalculator" class has been implemented as "SunriseAndSunset".) It is my hope that KosherCocoa will implement the zmanim classes as well in the near future.
+In addition to "suntimes", KosherCocoa also offers code to determine the parsha (Weekly Torah Portion) and the current day in the omer count. (If it's during the omer season.)
+
+
+**How to use it:**
+
+Coming soon.
+
+**License:**
+
+This is a little complicated, but here goes:
+
+KosherJava was released under the GPL and later under the LGPL license. Therefore, the code in the KosherCocoa directory is released under the same license. However, if you reuse this code, attribution and/or an email letting me know would be great. Thanks!
+
+The images and the Xcode dummy project and generated classes are released for personal use only. You may **not** sell, redistribute or derive from the Xcode project or the dummy icon. The target image is allowed to be redistributed. 
