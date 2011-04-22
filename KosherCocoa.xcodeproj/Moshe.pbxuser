@@ -1,0 +1,227 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* ZmanimAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {544, 627}}";
+			sepNavSelRange = "{471, 0}";
+			sepNavVisRange = "{0, 471}";
+		};
+	};
+	1D3623250D0F684500981E51 /* ZmanimAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 1040}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1711}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* Zmanim */ = {
+		activeExec = 0;
+		executables = (
+			460450A5132991DF002132C1 /* Zmanim */,
+		);
+	};
+	28D7ACF60DDB3853001CB0EB /* ZmanimViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {445, 627}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 233}";
+		};
+	};
+	28D7ACF70DDB3853001CB0EB /* ZmanimViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {712, 819}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1153}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 460450A5132991DF002132C1 /* Zmanim */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* Zmanim */;
+		codeSenseManager = 460450B5132991E2002132C1 /* Code sense */;
+		executables = (
+			460450A5132991DF002132C1 /* Zmanim */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					267,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 321568891;
+			PBXWorkspaceStateSaveDate = 321568891;
+		};
+		perUserProjectItems = {
+			460450B81329966B002132C1 /* PBXTextBookmark */ = 460450B81329966B002132C1 /* PBXTextBookmark */;
+			46658FC9132AC089009A78B0 /* PBXTextBookmark */ = 46658FC9132AC089009A78B0 /* PBXTextBookmark */;
+			46658FCA132AC089009A78B0 /* PBXTextBookmark */ = 46658FCA132AC089009A78B0 /* PBXTextBookmark */;
+			46658FCB132AC089009A78B0 /* PBXTextBookmark */ = 46658FCB132AC089009A78B0 /* PBXTextBookmark */;
+			46658FCC132AC089009A78B0 /* PBXTextBookmark */ = 46658FCC132AC089009A78B0 /* PBXTextBookmark */;
+			46658FCD132AC089009A78B0 /* PBXTextBookmark */ = 46658FCD132AC089009A78B0 /* PBXTextBookmark */;
+			46658FCE132AC089009A78B0 /* PBXTextBookmark */ = 46658FCE132AC089009A78B0 /* PBXTextBookmark */;
+			46658FD3132AC0E5009A78B0 /* PBXTextBookmark */ = 46658FD3132AC0E5009A78B0 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 460450B4132991E2002132C1 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {460, 627}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 358}";
+		};
+	};
+	32CA4F630368D1EE00C91783 /* Zmanim_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {600, 627}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 181}";
+		};
+	};
+	460450A5132991DF002132C1 /* Zmanim */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Zmanim;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	460450B4132991E2002132C1 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	460450B5132991E2002132C1 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	460450B81329966B002132C1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 460450B91329966B002132C1 /* ComplexZmanimCalendar.java */;
+		name = "ComplexZmanimCalendar.java: 5";
+		rLen = 1;
+		rLoc = 111;
+		rType = 0;
+		vrLen = 1255;
+		vrLoc = 0;
+	};
+	460450B91329966B002132C1 /* ComplexZmanimCalendar.java */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.java;
+		name = ComplexZmanimCalendar.java;
+		path = "/Users/Moshe/Development/iOS/Libraries/zmanim/zmanim-src/ComplexZmanimCalendar.java";
+		sourceTree = "<absolute>";
+	};
+	46658FC9132AC089009A78B0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* ZmanimAppDelegate.h */;
+		name = "ZmanimAppDelegate.h: 23";
+		rLen = 0;
+		rLoc = 471;
+		rType = 0;
+		vrLen = 471;
+		vrLoc = 0;
+	};
+	46658FCA132AC089009A78B0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* ZmanimViewController.h */;
+		name = "ZmanimViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 233;
+		vrLoc = 0;
+	};
+	46658FCB132AC089009A78B0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* ZmanimViewController.m */;
+		name = "ZmanimViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1153;
+		vrLoc = 0;
+	};
+	46658FCC132AC089009A78B0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 358;
+		vrLoc = 0;
+	};
+	46658FCD132AC089009A78B0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32CA4F630368D1EE00C91783 /* Zmanim_Prefix.pch */;
+		name = "Zmanim_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 181;
+		vrLoc = 0;
+	};
+	46658FCE132AC089009A78B0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* ZmanimAppDelegate.m */;
+		name = "ZmanimAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1711;
+		vrLoc = 0;
+	};
+	46658FD3132AC0E5009A78B0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* ZmanimAppDelegate.m */;
+		name = "ZmanimAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1711;
+		vrLoc = 0;
+	};
+}
