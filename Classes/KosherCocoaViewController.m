@@ -8,10 +8,12 @@
 
 #import "KosherCocoaViewController.h"
 #import "EarthViewer.h"
+#import "WeeklyParsha.h"
 
 @implementation KosherCocoaViewController
 
-@synthesize sunriset, geoLocation, datePicker, latBox, lonBox, cl;
+@synthesize sunriset, geoLocation, datePicker, latBox, lonBox, cl, scroller, pageControl;
+@synthesize parashaLabel, nextParashaLabel ,yearInfoLabel, parashaView, suntimesView;
 
 - (void)viewDidLoad{
     
@@ -37,6 +39,21 @@
 - (void)viewDidUnload{
     
     [self.cl stopUpdatingLocation];
+}
+
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    scroller.pagingEnabled = YES;
+    scroller.showsHorizontalScrollIndicator = NO;
+    scroller.contentSize = CGSizeMake(scroller.frame.size.width*2, scroller.frame.size.height);
+
+    [suntimesView setFrame:CGRectMake(0, 0, scroller.frame.size.width, scroller.frame.size.height)];
+    [parashaView setFrame:CGRectMake(scroller.frame.size.width, 0, scroller.frame.size.width, scroller.frame.size.height)];
+    [scroller addSubview:suntimesView];
+    [scroller addSubview:parashaView];
+    [pageControl setNumberOfPages:2];
+    scroller.delegate = self;
 }
 
 
@@ -100,7 +117,7 @@
     //
     
     EarthViewer *human = [[EarthViewer alloc] initWithLatitude:[self.latBox.text doubleValue] andLongitude:[self.lonBox.text doubleValue] andElevation:0.0];
-    
+
     //
     //  Calculate the sunrise and sunset
     //
@@ -109,6 +126,8 @@
 
     double sunrise = [human sunriseAsDoubleOnDate:[datePicker date] inTimeZone:[NSTimeZone systemTimeZone] withElevationAdjustment:NO];
     
+	NSLog(@"Sunrise: %f Sunset: %f", sunrise, sunset);
+	
     //
     //  
     //
@@ -120,22 +139,59 @@
 
 }
 
+#pragma mark - Parasha Code
+
+- (IBAction)refreshParasha:(id)sender {
+    
+    WeeklyParsha *parsha = [[WeeklyParsha alloc] init];
+    WeeklyParsha *nextWeekParsha = [[WeeklyParsha alloc] init];
+    
+    
+    if ([inDiasporaSelector selectedSegmentIndex] == 0) {
+        
+        parashaLabel.text = [parsha thisWeeksParshaForDate:[self.datePicker date] inDiaspora:NO];
+        nextParashaLabel.text = [nextWeekParsha nextWeeksParshaForDate:[datePicker date] inDiaspora:NO];
+        
+    }else if([inDiasporaSelector selectedSegmentIndex] == 1){
+        
+        parashaLabel.text = [parsha thisWeeksParshaForDate:[datePicker date] inDiaspora:YES];
+        nextParashaLabel.text = [parsha nextWeeksParshaForDate:[datePicker date] inDiaspora:YES];       
+    }
+    
+    yearInfoLabel.text = [parsha yearTypeStringForDate:[datePicker date]];
+    
+    [nextWeekParsha release];
+    [parsha release];
+    
+    [inDiasporaSelector addTarget:self action:@selector(locationModeChanged:) forControlEvents:UIControlEventValueChanged];
+}
+
+#pragma mark - ScrollView Delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+
+    pageControl.currentPage = scrollView.contentSize.width/scrollView.contentOffset.x;
+}
+
 #pragma mark - Wheel controls
 
 - (IBAction)goAheadOneDay:(id)sender {
     
     [self.datePicker setDate:[NSDate dateWithTimeInterval:86400 sinceDate:[self.datePicker date]] animated:YES];
-    [self recalcSunTimes:nil];    
+    [self recalcSunTimes:nil]; 
+    [self refreshParasha:nil];
 }
 
 - (IBAction)goToToday:(id)sender {
     [self.datePicker setDate:[NSDate date] animated:YES];
     [self recalcSunTimes:nil];
+    [self refreshParasha:nil];
 }
 
 - (IBAction)goBackADay:(id)sender {
         [self.datePicker setDate:[NSDate dateWithTimeInterval:-86400 sinceDate:[self.datePicker date]] animated:YES];
-    [self recalcSunTimes:nil];    
+    [self recalcSunTimes:nil];
+    [self refreshParasha:nil];
 }
 
 
@@ -151,6 +207,13 @@
 
 
 - (void)dealloc {
+
+    [yearInfoLabel release];
+    [parashaLabel release];
+    [nextParashaLabel release];
+    [parashaView release];
+    [suntimesView release];
+    [scroller release];
     [cl release];
     [latBox release];
     [lonBox release];

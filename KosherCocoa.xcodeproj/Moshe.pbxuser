@@ -1,43 +1,47 @@
 // !$*UTF8*$!
 {
-	1D3623240D0F684500981E51 /* ZmanimAppDelegate.h */ = {
+	1D3623240D0F684500981E51 /* KosherCocoaAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {544, 627}}";
+			sepNavIntBoundsRect = "{{0, 0}, {941, 628}}";
 			sepNavSelRange = "{471, 0}";
-			sepNavVisRange = "{0, 471}";
+			sepNavVisRange = "{0, 491}";
 		};
 	};
-	1D3623250D0F684500981E51 /* ZmanimAppDelegate.m */ = {
+	1D3623250D0F684500981E51 /* KosherCocoaAppDelegate.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1965, 1040}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1711}";
+			sepNavVisRange = "{81, 1652}";
 		};
 	};
-	1D6058900D05DD3D006BFB54 /* Zmanim */ = {
+	1D6058900D05DD3D006BFB54 /* KosherCocoa */ = {
 		activeExec = 0;
 		executables = (
 			460450A5132991DF002132C1 /* Zmanim */,
 		);
 	};
-	28D7ACF60DDB3853001CB0EB /* ZmanimViewController.h */ = {
+	28D7ACF60DDB3853001CB0EB /* KosherCocoaViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {445, 627}}";
+			sepNavIntBoundsRect = "{{0, 0}, {941, 767}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 233}";
+			sepNavVisRange = "{207, 1617}";
+			sepNavWindowFrame = "{{15, 215}, {750, 558}}";
 		};
 	};
-	28D7ACF70DDB3853001CB0EB /* ZmanimViewController.m */ = {
+	28D7ACF70DDB3853001CB0EB /* KosherCocoaViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {712, 819}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1153}";
+			sepNavIntBoundsRect = "{{0, 0}, {1104, 2860}}";
+			sepNavSelRange = "{3263, 0}";
+			sepNavVisRange = "{3031, 1326}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 460450A5132991DF002132C1 /* Zmanim */;
-		activeTarget = 1D6058900D05DD3D006BFB54 /* Zmanim */;
+		activeSDKPreference = iphoneos4.3;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* KosherCocoa */;
+		breakpoints = (
+		);
 		codeSenseManager = 460450B5132991E2002132C1 /* Code sense */;
 		executables = (
 			460450A5132991DF002132C1 /* Zmanim */,
@@ -48,7 +52,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					267,
+					763,
 					20,
 					48,
 					43,
@@ -65,18 +69,24 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 321568891;
-			PBXWorkspaceStateSaveDate = 321568891;
+			PBXPerProjectTemplateStateSaveDate = 325715457;
+			PBXWorkspaceStateSaveDate = 325715457;
 		};
 		perUserProjectItems = {
 			460450B81329966B002132C1 /* PBXTextBookmark */ = 460450B81329966B002132C1 /* PBXTextBookmark */;
-			46658FC9132AC089009A78B0 /* PBXTextBookmark */ = 46658FC9132AC089009A78B0 /* PBXTextBookmark */;
-			46658FCA132AC089009A78B0 /* PBXTextBookmark */ = 46658FCA132AC089009A78B0 /* PBXTextBookmark */;
-			46658FCB132AC089009A78B0 /* PBXTextBookmark */ = 46658FCB132AC089009A78B0 /* PBXTextBookmark */;
 			46658FCC132AC089009A78B0 /* PBXTextBookmark */ = 46658FCC132AC089009A78B0 /* PBXTextBookmark */;
 			46658FCD132AC089009A78B0 /* PBXTextBookmark */ = 46658FCD132AC089009A78B0 /* PBXTextBookmark */;
-			46658FCE132AC089009A78B0 /* PBXTextBookmark */ = 46658FCE132AC089009A78B0 /* PBXTextBookmark */;
-			46658FD3132AC0E5009A78B0 /* PBXTextBookmark */ = 46658FD3132AC0E5009A78B0 /* PBXTextBookmark */;
+			466B8076136A09B0001A33F1 /* PBXTextBookmark */ = 466B8076136A09B0001A33F1 /* PBXTextBookmark */;
+			466B80B4136A1420001A33F1 /* PBXTextBookmark */ = 466B80B4136A1420001A33F1 /* PBXTextBookmark */;
+			466B80B5136A1420001A33F1 /* PBXTextBookmark */ = 466B80B5136A1420001A33F1 /* PBXTextBookmark */;
+			466B80B6136A1420001A33F1 /* PBXTextBookmark */ = 466B80B6136A1420001A33F1 /* PBXTextBookmark */;
+			466B80B7136A1420001A33F1 /* PBXTextBookmark */ = 466B80B7136A1420001A33F1 /* PBXTextBookmark */;
+			466B80B8136A1420001A33F1 /* PBXTextBookmark */ = 466B80B8136A1420001A33F1 /* PBXTextBookmark */;
+			46B047671369CAB600160589 /* PBXTextBookmark */ = 46B047671369CAB600160589 /* PBXTextBookmark */;
+			46F499DF13693F1300A946AB /* PBXBookmark */ = 46F499DF13693F1300A946AB /* PBXBookmark */;
+			46F499E113693F1300A946AB /* PBXTextBookmark */ = 46F499E113693F1300A946AB /* PBXTextBookmark */;
+			46F499E213693F1300A946AB /* PBXTextBookmark */ = 46F499E213693F1300A946AB /* PBXTextBookmark */;
+			46F499E313693F1300A946AB /* PBXTextBookmark */ = 46F499E313693F1300A946AB /* PBXTextBookmark */;
 		};
 		sourceControlManager = 460450B4132991E2002132C1 /* Source Control */;
 		userBuildSettings = {
@@ -89,7 +99,7 @@
 			sepNavVisRange = "{0, 358}";
 		};
 	};
-	32CA4F630368D1EE00C91783 /* Zmanim_Prefix.pch */ = {
+	32CA4F630368D1EE00C91783 /* KosherCocoa_Prefix.pch */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {600, 627}}";
 			sepNavSelRange = "{0, 0}";
@@ -112,6 +122,7 @@
 		dataTipSortType = 0;
 		debuggerPlugin = GDBDebugging;
 		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
 		enableDebugStr = 1;
 		environmentEntries = (
 		);
@@ -119,6 +130,8 @@
 		executableUserSymbolLevel = 0;
 		libgmallocEnabled = 0;
 		name = Zmanim;
+		savedGlobals = {
+		};
 		showTypeColumn = 0;
 		sourceDirectories = (
 		);
@@ -154,35 +167,41 @@
 		path = "/Users/Moshe/Development/iOS/Libraries/zmanim/zmanim-src/ComplexZmanimCalendar.java";
 		sourceTree = "<absolute>";
 	};
-	46658FC9132AC089009A78B0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* ZmanimAppDelegate.h */;
-		name = "ZmanimAppDelegate.h: 23";
-		rLen = 0;
-		rLoc = 471;
-		rType = 0;
-		vrLen = 471;
-		vrLoc = 0;
+	460CEA931362118400737E03 /* EarthViewer.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1314, 2431}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{4740, 1250}";
+		};
 	};
-	46658FCA132AC089009A78B0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF60DDB3853001CB0EB /* ZmanimViewController.h */;
-		name = "ZmanimViewController.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 233;
-		vrLoc = 0;
+	460CEA941362118400737E03 /* EarthViewer.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {866, 7527}}";
+			sepNavSelRange = "{7248, 121}";
+			sepNavVisRange = "{7062, 410}";
+			sepNavWindowFrame = "{{15, 215}, {750, 558}}";
+		};
 	};
-	46658FCB132AC089009A78B0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* ZmanimViewController.m */;
-		name = "ZmanimViewController.m: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 1153;
-		vrLoc = 0;
+	460CEA951362118400737E03 /* GeoLocation.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1174, 624}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1015}";
+		};
+	};
+	460CEA971362118400737E03 /* SunriseAndSunset.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1293, 2873}}";
+			sepNavSelRange = "{287, 0}";
+			sepNavVisRange = "{2995, 1659}";
+		};
+	};
+	460CEA981362118400737E03 /* SunriseAndSunset.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1804, 6097}}";
+			sepNavSelRange = "{3676, 0}";
+			sepNavVisRange = "{2935, 1966}";
+		};
 	};
 	46658FCC132AC089009A78B0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -196,7 +215,7 @@
 	};
 	46658FCD132AC089009A78B0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 32CA4F630368D1EE00C91783 /* Zmanim_Prefix.pch */;
+		fRef = 32CA4F630368D1EE00C91783 /* KosherCocoa_Prefix.pch */;
 		name = "Zmanim_Prefix.pch: 1";
 		rLen = 0;
 		rLoc = 0;
@@ -204,24 +223,108 @@
 		vrLen = 181;
 		vrLoc = 0;
 	};
-	46658FCE132AC089009A78B0 /* PBXTextBookmark */ = {
+	466B8076136A09B0001A33F1 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* ZmanimAppDelegate.m */;
-		name = "ZmanimAppDelegate.m: 1";
+		fRef = 460CEA931362118400737E03 /* EarthViewer.h */;
+		name = "EarthViewer.h: 1";
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 1711;
+		vrLen = 1250;
+		vrLoc = 4740;
+	};
+	466B80B4136A1420001A33F1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 460CEA941362118400737E03 /* EarthViewer.m */;
+		name = "EarthViewer.m: 343";
+		rLen = 0;
+		rLoc = 10694;
+		rType = 0;
+		vrLen = 939;
+		vrLoc = 10038;
+	};
+	466B80B5136A1420001A33F1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* KosherCocoaViewController.h */;
+		name = "KosherCocoaViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1617;
+		vrLoc = 207;
+	};
+	466B80B6136A1420001A33F1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* KosherCocoaViewController.m */;
+		name = "KosherCocoaViewController.m: 119";
+		rLen = 0;
+		rLoc = 3263;
+		rType = 0;
+		vrLen = 1326;
+		vrLoc = 3031;
+	};
+	466B80B7136A1420001A33F1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 460CEA981362118400737E03 /* SunriseAndSunset.m */;
+		name = "SunriseAndSunset.m: 118";
+		rLen = 0;
+		rLoc = 3567;
+		rType = 0;
+		vrLen = 2031;
+		vrLoc = 3008;
+	};
+	466B80B8136A1420001A33F1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 460CEA981362118400737E03 /* SunriseAndSunset.m */;
+		name = "SunriseAndSunset.m: 123";
+		rLen = 0;
+		rLoc = 3676;
+		rType = 0;
+		vrLen = 1966;
+		vrLoc = 2935;
+	};
+	46B047671369CAB600160589 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 460CEA971362118400737E03 /* SunriseAndSunset.h */;
+		name = "SunriseAndSunset.h: 16";
+		rLen = 0;
+		rLoc = 287;
+		rType = 0;
+		vrLen = 1659;
+		vrLoc = 2995;
+	};
+	46F499DF13693F1300A946AB /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 46652F3B13452F2C00CAF9B0 /* Icon@2x.png */;
+	};
+	46F499E113693F1300A946AB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* KosherCocoaAppDelegate.h */;
+		name = "KosherCocoaAppDelegate.h: 19";
+		rLen = 0;
+		rLoc = 471;
+		rType = 0;
+		vrLen = 491;
 		vrLoc = 0;
 	};
-	46658FD3132AC0E5009A78B0 /* PBXTextBookmark */ = {
+	46F499E213693F1300A946AB /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* ZmanimAppDelegate.m */;
-		name = "ZmanimAppDelegate.m: 1";
+		fRef = 1D3623250D0F684500981E51 /* KosherCocoaAppDelegate.m */;
+		name = "KosherCocoaAppDelegate.m: 1";
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 1711;
+		vrLen = 1652;
+		vrLoc = 81;
+	};
+	46F499E313693F1300A946AB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 460CEA951362118400737E03 /* GeoLocation.h */;
+		name = "GeoLocation.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1015;
 		vrLoc = 0;
 	};
 }

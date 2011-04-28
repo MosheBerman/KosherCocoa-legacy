@@ -1,0 +1,890 @@
+TKosherCocoa
+v7
+r0
+t325717805.650206
+cCheck dependencies
+cCpResource build/Debug-iphoneos/KosherCocoa.app/ResourceRules.plist /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/ResourceRules.plist
+cProcessInfoPlistFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Info.plist KosherCocoa-Info.plist
+cCompileXIB /Users/Moshe/Development/iOS/Academic/Zmanim/MainWindow.xib
+cCompileXIB /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoaViewController.xib
+cCopyPNGFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Icon@2x.png Images/Icon@2x.png
+cCopyPNGFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/iTunesArtwork.png Images/iTunesArtwork.png
+cCopyPNGFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/iTunesArtwork.png Images/iTunesArtwork.png
+cCopyPNGFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Target.png Images/misc/Target.png
+cCopyPNGFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Target@2x.png Images/misc/Target@2x.png
+cCopyPNGFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Icon.png Images/Icon.png
+cProcessPCH /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-dpfynbvjxjxxpoepkthfsqjpgsti/KosherCocoa_Prefix.pch.gch KosherCocoa_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-gwnwiqradaowaneffxsfhbexxxxi/KosherCocoa_Prefix.pch.gch KosherCocoa_Prefix.pch normal armv6 c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-aonmdbtaakpywcgubgydqzqczend/KosherCocoa_Prefix.pch.gch KosherCocoa_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-caxwhxmfzprnrwbnzohuiqltytiz/KosherCocoa_Prefix.pch.gch KosherCocoa_Prefix.pch normal armv7 c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/main.o /Users/Moshe/Development/iOS/Academic/Zmanim/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoaAppDelegate.o /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoaViewController.o /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/SefiraDay.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/SefiraDay.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/WeeklyParsha.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/WeeklyParsha.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/MathAdditions.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/MathAdditions.c normal armv6 c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/EarthViewer.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/GeoLocation.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/GeoLocation.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/SunriseAndSunset.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/SunriseAndSunset.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/main.o /Users/Moshe/Development/iOS/Academic/Zmanim/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoaAppDelegate.o /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoaViewController.o /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/SefiraDay.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/SefiraDay.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/WeeklyParsha.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/WeeklyParsha.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/MathAdditions.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/MathAdditions.c normal armv7 c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/EarthViewer.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/GeoLocation.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/GeoLocation.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/SunriseAndSunset.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/SunriseAndSunset.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoa normal armv7
+cLd /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoa normal armv6
+cCreateUniversalBinary /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/KosherCocoa normal "armv6 armv7"
+cGenerateDSYMFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app.dSYM /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/KosherCocoa
+cProcessProductPackaging "/Users/Moshe/Library/MobileDevice/Provisioning Profiles/0A00E17C-9ACE-4C0B-91B9-C98403FC0A99.mobileprovision" /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/embedded.mobileprovision
+cTouch /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app
+cProcessProductPackaging /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/Entitlements.plist /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa.xcent
+cCodeSign /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaAppDelegate.h
+c000000004DB1DD6200000000000001EB
+t1303502178
+s491
+i<UIKit/UIKit.h>
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaAppDelegate.m
+c000000004DB1DCC70000000000000A9D
+t1303502023
+s2717
+i"KosherCocoaAppDelegate.h"
+i"KosherCocoaViewController.h"
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaViewController.h
+c000000004DB7A22D0000000000000775
+t1303880237
+s1909
+i<UIKit/UIKit.h>
+i<CoreLocation/CoreLocation.h>
+i"SunriseAndSunset.h"
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaViewController.m
+c000000004DB9DC6D000000000000198D
+t1304026221
+s6541
+i"KosherCocoaViewController.h"
+i"EarthViewer.h"
+i"WeeklyParsha.h"
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/Images/Icon.png
+c000000004D9505CA00000000000015C9
+t1301611978
+s5577
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/Images/Icon@2x.png
+c000000004D95055D0000000000001BB5
+t1301611869
+s7093
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/Images/iTunesArtwork.png
+c000000004D9504F30000000000007E44
+t1301611763
+s32324
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/Images/misc/Target.png
+c000000004D95078B00000000000011AC
+t1301612427
+s4524
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/Images/misc/Target@2x.png
+c000000004D9507A30000000000001A69
+t1301612451
+s6761
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/SefiraDay.h
+c000000004DB1B922000000000000031C
+t1303492898
+s796
+i<Foundation/Foundation.h>
+i"EarthViewer.h"
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/SefiraDay.m
+c000000004DB1B9620000000000001840
+t1303492962
+s6208
+i"SefiraDay.h"
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/WeeklyParsha.h
+c000000004DB1C4F500000000000006F0
+t1303495925
+s1776
+i<Foundation/Foundation.h>
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/WeeklyParsha.m
+c000000004DB86C630000000000009F68
+t1303932003
+s40808
+i"WeeklyParsha.h"
+i"KosherCocoaConstants.h"
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/KosherCocoaConstants.h
+c000000004DB1DAD400000000000008F9
+t1303501524
+s2297
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/MathAdditions.c
+c000000004D94162B00000000000003F7
+t1301550635
+s1015
+i"MathAdditions.h"
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/MathAdditions.h
+c000000004D9540BC00000000000002C3
+t1301627068
+s707
+i<Math.h>
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.h
+c000000004DB1C5B00000000000001766
+t1303496112
+s5990
+i<Foundation/Foundation.h>
+i"SunriseAndSunset.h"
+i"KosherCocoaConstants.h"
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m
+c000000004DB9D77D0000000000004048
+t1304024957
+s16456
+i"EarthViewer.h"
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/GeoLocation.h
+c000000004D93AC4700000000000003FD
+t1301523527
+s1021
+i<Foundation/Foundation.h>
+i<math.h>
+i"KosherCocoaConstants.h"
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/GeoLocation.m
+c000000004D939CF50000000000002993
+t1301519605
+s10643
+i"GeoLocation.h"
+i"MathAdditions.h"
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/SunriseAndSunset.h
+c000000004DB1C2280000000000001B03
+t1303495208
+s6915
+i<Foundation/Foundation.h>
+i"MathAdditions.h"
+i"GeoLocation.h"
+i"KosherCocoaConstants.h"
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/SunriseAndSunset.m
+c000000004DB9DC7B0000000000003D18
+t1304026235
+s15640
+i"SunriseAndSunset.h"
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoaViewController.xib
+c000000004DB7A1EB0000000000061395
+t1303880171
+s398229
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa_Prefix.pch
+c000000004D892C8D00000000000000B5
+t1300835469
+s181
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/MainWindow.xib
+c000000004DB1E81E00000000000039CE
+t1303504926
+s14798
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app
+t1304025005
+s544
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app.dSYM
+t1304025005
+s102
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Icon.png
+t1303967869
+s6267
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Icon@2x.png
+t1303967869
+s8350
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Info.plist
+t1303967867
+s1115
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/KosherCocoa
+t1304025005
+s211168
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/KosherCocoaViewController.nib
+t1303967868
+s7614
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/MainWindow.nib
+t1303967868
+s1689
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/PkgInfo
+t1303967867
+s8
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/ResourceRules.plist
+t1303967867
+s485
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Target.png
+t1303967869
+s4597
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Target@2x.png
+t1303967869
+s7130
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/embedded.mobileprovision
+t1303967872
+s9398
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/iTunesArtwork.png
+t1303967869
+s37147
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa.xcent
+t1303967872
+s444
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/EarthViewer.o
+t1304024958
+s24972
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/GeoLocation.o
+t1303967871
+s31588
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoa
+t1304025005
+s98980
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoa.LinkFileList
+c000000004DB8F87B00000000000004E9
+t1303967867
+s1257
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoaAppDelegate.o
+t1303967871
+s53936
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoaViewController.o
+t1304025005
+s81928
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/MathAdditions.o
+t1303967871
+s4760
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/SefiraDay.o
+t1303967871
+s20332
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/SunriseAndSunset.o
+t1304007356
+s28724
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/WeeklyParsha.o
+t1303967871
+s50736
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/main.o
+t1303967871
+s6504
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/EarthViewer.o
+t1304024958
+s23320
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/GeoLocation.o
+t1303967872
+s26932
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoa
+t1304025005
+s94268
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoa.LinkFileList
+c000000004DB8F87B00000000000004E9
+t1303967867
+s1257
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoaAppDelegate.o
+t1303967871
+s53856
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoaViewController.o
+t1304025005
+s80816
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/MathAdditions.o
+t1303967872
+s4232
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/SefiraDay.o
+t1303967872
+s19716
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/SunriseAndSunset.o
+t1304007357
+s26256
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/WeeklyParsha.o
+t1303967872
+s47908
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/main.o
+t1303967871
+s6488
+
+N/Users/Moshe/Development/iOS/Academic/Zmanim/main.m
+c000000004D795A5F0000000000000166
+t1299798623
+s358
+i<UIKit/UIKit.h>
+
+N/Users/Moshe/Library/MobileDevice/Provisioning Profiles/0A00E17C-9ACE-4C0B-91B9-C98403FC0A99.mobileprovision
+c000000004D65E03100000000000024B6
+t1298522161
+s9398
+
+N/Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk
+c000000004D7401890000000000000110
+t1299448201
+s272
+
+N/Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/Entitlements.plist
+c000000004D4F6A4700000000000001A7
+t1297050183
+s423
+
+N/Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/ResourceRules.plist
+c000000004D4F6A4700000000000001E5
+t1297050183
+s485
+
+N/Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004D54D18C00000000003532A0
+t1297404300
+s3486368
+
+N/Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
+c000000004D5DE7AF00000000000FD4D0
+t1297999791
+s1037520
+
+N/Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.h
+c000000004D5DE7A400000000000001D0
+t1297999780
+s464
+
+N/Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004D54D1F500000000003E22F0
+t1297404405
+s4072176
+
+N/Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004D54D1DD0000000000001466
+t1297404381
+s5222
+
+N/Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004D5A28AB0000000000000AA1
+t1297754283
+s2721
+
+N/Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004D5A292A0000000000CA2AE0
+t1297754410
+s13249248
+
+N/Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/include/math.h
+c000000004D4F6E4300000000000004F1
+t1297051203
+s1265
+
+N/var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-aonmdbtaakpywcgubgydqzqczend/KosherCocoa_Prefix.pch.gch
+t1303967870
+s10663836
+
+N/var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-caxwhxmfzprnrwbnzohuiqltytiz/KosherCocoa_Prefix.pch.gch
+t1303967870
+s1716452
+
+N/var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-dpfynbvjxjxxpoepkthfsqjpgsti/KosherCocoa_Prefix.pch.gch
+t1303967870
+s10200988
+
+N/var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-gwnwiqradaowaneffxsfhbexxxxi/KosherCocoa_Prefix.pch.gch
+t1303967869
+s1261796
+
+NKosherCocoa-Info.plist
+c000000004DB1DD2600000000000004FE
+t1303502118
+s1278
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies325717805#325717805#0(0"0(0#1#0"8639703072#0"0#
+
+CCodeSign /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app
+s325717805.431190
+e325717805.650167
+r1
+xCodeSign
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app
+lSLF07#2@45"CodeSign build/Debug-iphoneos/KosherCocoa.app325717805#325717805#0(0"0(0#0#81"/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app8635450560#683"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Moshe Berman (JFYZ2Q7278)" --resource-rules=/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/ResourceRules.plist --entitlements /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa.xcent /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/EarthViewer.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s325717758.580545
+e325717758.808814
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/EarthViewer.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m: In function '-[EarthViewer sunsetAsDoubleForLatitude:andLongitude:onDate:atElevation:withElevationAdjustment:]':
+o/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m:236: warning: unused variable 'sunrise'
+lSLF07#2@84"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m325717758#325717758#0(308"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m: In function '-[EarthViewer sunsetAsDoubleForLatitude:andLongitude:onDate:atElevation:withElevationAdjustment:]':/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m:236: warning: unused variable 'sunrise'1(22@25"Unused variable 'sunrise'325717758#191#117#0(6@76"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m325717757#236#0#236#0#19"unused variable '*'0(0#0#76"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m8640024480#1890"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv6 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-dpfynbvjxjxxpoepkthfsqjpgsti/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/EarthViewer.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/GeoLocation.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/GeoLocation.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s325660671.494606
+e325660671.621032
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/GeoLocation.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/GeoLocation.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@84"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/GeoLocation.m325660671#325660671#0(0"0(0#0#76"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/GeoLocation.m8636653760#1890"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv6 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-dpfynbvjxjxxpoepkthfsqjpgsti/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/GeoLocation.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/GeoLocation.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoaAppDelegate.o /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s325660671.004067
+e325660671.224242
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoaAppDelegate.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaAppDelegate.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@85"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaAppDelegate.m325660671#325660671#0(0"0(0#0#77"/Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaAppDelegate.m8637702464#1902"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv6 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-dpfynbvjxjxxpoepkthfsqjpgsti/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaAppDelegate.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoaAppDelegate.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoaViewController.o /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s325717805.117518
+e325717805.352966
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoaViewController.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@88"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaViewController.m325717805#325717805#0(0"0(0#0#80"/Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaViewController.m8636893984#1908"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv6 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-dpfynbvjxjxxpoepkthfsqjpgsti/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaViewController.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoaViewController.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/MathAdditions.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/MathAdditions.c normal armv6 c com.apple.compilers.gcc.4_2
+s325660671.316752
+e325660671.401513
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/MathAdditions.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/MathAdditions.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@89"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/MathAdditions.c325660671#325660671#0(0"0(0#0#81"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/MathAdditions.c8635897696#1887"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv6 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-gwnwiqradaowaneffxsfhbexxxxi/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/MathAdditions.c -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/MathAdditions.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/SefiraDay.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/SefiraDay.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s325660671.224348
+e325660671.316648
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/SefiraDay.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/SefiraDay.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@85"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/SefiraDay.m325660671#325660671#0(0"0(0#0#77"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/SefiraDay.m8638273536#1889"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv6 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-dpfynbvjxjxxpoepkthfsqjpgsti/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/SefiraDay.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/SefiraDay.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/SunriseAndSunset.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/SunriseAndSunset.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s325700156.607939
+e325700156.739781
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/SunriseAndSunset.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/SunriseAndSunset.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@89"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/SunriseAndSunset.m325700156#325700156#0(0"0(0#0#81"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/SunriseAndSunset.m8614429888#1900"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv6 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-dpfynbvjxjxxpoepkthfsqjpgsti/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/SunriseAndSunset.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/SunriseAndSunset.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/WeeklyParsha.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/WeeklyParsha.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s325660671.311577
+e325660671.574734
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/WeeklyParsha.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/WeeklyParsha.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@88"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/WeeklyParsha.m325660671#325660671#0(0"0(0#0#80"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/WeeklyParsha.m8636305792#1895"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv6 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-dpfynbvjxjxxpoepkthfsqjpgsti/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/WeeklyParsha.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/WeeklyParsha.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/main.o /Users/Moshe/Development/iOS/Academic/Zmanim/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s325660671.002638
+e325660671.121125
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/main.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/main.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@59"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/main.m325660671#325660671#0(0"0(0#0#51"/Users/Moshe/Development/iOS/Academic/Zmanim/main.m8638494528#1858"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv6 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-dpfynbvjxjxxpoepkthfsqjpgsti/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/main.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/main.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/EarthViewer.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s325717758.673048
+e325717758.804678
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/EarthViewer.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m: In function '-[EarthViewer sunsetAsDoubleForLatitude:andLongitude:onDate:atElevation:withElevationAdjustment:]':
+o/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m:236: warning: unused variable 'sunrise'
+lSLF07#2@84"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m325717758#325717758#0(308"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m: In function '-[EarthViewer sunsetAsDoubleForLatitude:andLongitude:onDate:atElevation:withElevationAdjustment:]':/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m:236: warning: unused variable 'sunrise'1(22@25"Unused variable 'sunrise'325717758#191#117#0(6@76"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m325717757#236#0#236#0#19"unused variable '*'0(0#0#76"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m8638531968#1890"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv7 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-aonmdbtaakpywcgubgydqzqczend/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/EarthViewer.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/EarthViewer.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/GeoLocation.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/GeoLocation.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s325660672.296475
+e325660672.437653
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/GeoLocation.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/GeoLocation.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@84"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/GeoLocation.m325660672#325660672#0(0"0(0#0#76"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/GeoLocation.m8634635072#1890"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv7 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-aonmdbtaakpywcgubgydqzqczend/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/GeoLocation.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/GeoLocation.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoaAppDelegate.o /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s325660671.725055
+e325660671.806547
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoaAppDelegate.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaAppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@85"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaAppDelegate.m325660671#325660671#0(0"0(0#0#77"/Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaAppDelegate.m8637059968#1902"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv7 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-aonmdbtaakpywcgubgydqzqczend/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaAppDelegate.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoaAppDelegate.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoaViewController.o /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s325717805.165751
+e325717805.324449
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoaViewController.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@88"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaViewController.m325717805#325717805#0(0"0(0#0#80"/Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaViewController.m8640590656#1908"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv7 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-aonmdbtaakpywcgubgydqzqczend/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/Classes/KosherCocoaViewController.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoaViewController.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/MathAdditions.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/MathAdditions.c normal armv7 c com.apple.compilers.gcc.4_2
+s325660672.118429
+e325660672.171992
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/MathAdditions.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/MathAdditions.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@89"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/MathAdditions.c325660672#325660672#0(0"0(0#0#81"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/MathAdditions.c8628708352#1887"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv7 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-caxwhxmfzprnrwbnzohuiqltytiz/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Required/MathAdditions.c -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/MathAdditions.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/SefiraDay.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/SefiraDay.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s325660671.958035
+e325660672.049158
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/SefiraDay.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/SefiraDay.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@85"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/SefiraDay.m325660671#325660672#0(0"0(0#0#77"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/SefiraDay.m8631762976#1889"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv7 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-aonmdbtaakpywcgubgydqzqczend/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/SefiraDay.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/SefiraDay.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/SunriseAndSunset.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/SunriseAndSunset.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s325700156.887291
+e325700157.091009
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/SunriseAndSunset.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/SunriseAndSunset.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@89"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/SunriseAndSunset.m325700156#325700157#0(0"0(0#0#81"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/SunriseAndSunset.m8624385952#1900"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv7 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-aonmdbtaakpywcgubgydqzqczend/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Times/SunriseAndSunset.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/SunriseAndSunset.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/WeeklyParsha.o /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/WeeklyParsha.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s325660672.049254
+e325660672.307298
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/WeeklyParsha.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/WeeklyParsha.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@88"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/WeeklyParsha.m325660672#325660672#0(0"0(0#0#80"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/WeeklyParsha.m8630481408#1895"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv7 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-aonmdbtaakpywcgubgydqzqczend/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa/Calendar/WeeklyParsha.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/WeeklyParsha.o0#
+
+CCompileC build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/main.o /Users/Moshe/Development/iOS/Academic/Zmanim/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s325660671.621135
+e325660671.724951
+r1
+xCompileC
+xbuild/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/main.o
+x/Users/Moshe/Development/iOS/Academic/Zmanim/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@59"Compile /Users/Moshe/Development/iOS/Academic/Zmanim/main.m325660671#325660671#0(0"0(0#0#51"/Users/Moshe/Development/iOS/Academic/Zmanim/main.m8634037440#1858"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv7 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -include /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-aonmdbtaakpywcgubgydqzqczend/KosherCocoa_Prefix.pch -c /Users/Moshe/Development/iOS/Academic/Zmanim/main.m -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/main.o0#
+
+CCompileXIB /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoaViewController.xib
+s325660667.899761
+e325660669.057385
+r1
+xCompileXIB
+x/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoaViewController.xib
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+lSLF07#2@40"CompileXIB KosherCocoaViewController.xib325660667#325660669#0(252"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)Couldn't open shared capabilities memory GSCapabilities (No such file or directory)Couldn't open shared capabilities memory GSCapabilities (No such file or directory)0(0#0#74"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoaViewController.xib8630364704#582"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.0    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/KosherCocoaViewController.nib /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoaViewController.xib --sdk /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk0#
+
+CCompileXIB /Users/Moshe/Development/iOS/Academic/Zmanim/MainWindow.xib
+s325660667.898419
+e325660668.391657
+r1
+xCompileXIB
+x/Users/Moshe/Development/iOS/Academic/Zmanim/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib325660667#325660668#0(0"0(0#0#59"/Users/Moshe/Development/iOS/Academic/Zmanim/MainWindow.xib8630765120#552"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.0    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/MainWindow.nib /Users/Moshe/Development/iOS/Academic/Zmanim/MainWindow.xib --sdk /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk0#
+
+CCopyPNGFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Icon.png Images/Icon.png
+s325660669.655984
+e325660669.744091
+r1
+xCopyPNGFile
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Icon.png
+xImages/Icon.png
+lSLF07#2@73"CopyPNGFile build/Debug-iphoneos/KosherCocoa.app/Icon.png Images/Icon.png325660669#325660669#0(0"0(0#0#60"/Users/Moshe/Development/iOS/Academic/Zmanim/Images/Icon.png8638428640#476"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Xcode3/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/Moshe/Development/iOS/Academic/Zmanim/Images/Icon.png /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Icon.png0#
+
+CCopyPNGFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Icon@2x.png Images/Icon@2x.png
+s325660668.391772
+e325660669.409788
+r1
+xCopyPNGFile
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Icon@2x.png
+xImages/Icon@2x.png
+lSLF07#2@79"CopyPNGFile build/Debug-iphoneos/KosherCocoa.app/Icon@2x.png Images/Icon@2x.png325660668#325660669#0(0"0(0#0#63"/Users/Moshe/Development/iOS/Academic/Zmanim/Images/Icon@2x.png8638690880#482"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Xcode3/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/Moshe/Development/iOS/Academic/Zmanim/Images/Icon@2x.png /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Icon@2x.png0#
+
+CCopyPNGFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Target.png Images/misc/Target.png
+s325660669.548974
+e325660669.655860
+r1
+xCopyPNGFile
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Target.png
+xImages/misc/Target.png
+lSLF07#2@82"CopyPNGFile build/Debug-iphoneos/KosherCocoa.app/Target.png Images/misc/Target.png325660669#325660669#0(0"0(0#0#67"/Users/Moshe/Development/iOS/Academic/Zmanim/Images/misc/Target.png8638932224#485"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Xcode3/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/Moshe/Development/iOS/Academic/Zmanim/Images/misc/Target.png /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Target.png0#
+
+CCopyPNGFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Target@2x.png Images/misc/Target@2x.png
+s325660669.621864
+e325660669.749876
+r1
+xCopyPNGFile
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Target@2x.png
+xImages/misc/Target@2x.png
+lSLF07#2@88"CopyPNGFile build/Debug-iphoneos/KosherCocoa.app/Target@2x.png Images/misc/Target@2x.png325660669#325660669#0(0"0(0#0#70"/Users/Moshe/Development/iOS/Academic/Zmanim/Images/misc/Target@2x.png8638661696#491"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Xcode3/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/Moshe/Development/iOS/Academic/Zmanim/Images/misc/Target@2x.png /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Target@2x.png0#
+
+CCopyPNGFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/iTunesArtwork.png Images/iTunesArtwork.png
+s325660669.409945
+e325660669.621731
+r1
+xCopyPNGFile
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/iTunesArtwork.png
+xImages/iTunesArtwork.png
+lSLF07#2@91"CopyPNGFile build/Debug-iphoneos/KosherCocoa.app/iTunesArtwork.png Images/iTunesArtwork.png325660669#325660669#0(0"0(0#0#69"/Users/Moshe/Development/iOS/Academic/Zmanim/Images/iTunesArtwork.png8606766848#494"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Xcode3/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/Moshe/Development/iOS/Academic/Zmanim/Images/iTunesArtwork.png /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/iTunesArtwork.png0#
+
+CCpResource build/Debug-iphoneos/KosherCocoa.app/ResourceRules.plist /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/ResourceRules.plist
+s325660667.793282
+e325660667.898293
+r1
+xCpResource
+xbuild/Debug-iphoneos/KosherCocoa.app/ResourceRules.plist
+x/Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/ResourceRules.plist
+lSLF07#2@91"Copy /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/ResourceRules.plist325660667#325660667#0(0"0(0#0#86"/Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/ResourceRules.plist8631719776#498"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/ResourceRules.plist /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app0#
+
+CCreateUniversalBinary /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/KosherCocoa normal "armv6 armv7"
+s325717805.391604
+e325717805.395198
+r1
+xCreateUniversalBinary
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/KosherCocoa
+xnormal
+xarmv6 armv7
+lSLF07#2@91"CreateUniversalBinary build/Debug-iphoneos/KosherCocoa.app/KosherCocoa normal "armv6 armv7"325717805#325717805#0(0"0(0#0#56"/Users/Moshe/Development/iOS/Academic/Zmanim/armv6 armv78636536256#568"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/lipo -create /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoa /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoa -output /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/KosherCocoa0#
+
+CGenerateDSYMFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app.dSYM /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/KosherCocoa
+s325717805.395293
+e325717805.428127
+r1
+xGenerateDSYMFile
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app.dSYM
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/KosherCocoa
+lSLF07#2@107"GenerateDSYMFile build/Debug-iphoneos/KosherCocoa.app.dSYM build/Debug-iphoneos/KosherCocoa.app/KosherCocoa325717805#325717805#0(0"0(0#0#93"/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/KosherCocoa8636328160#383"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/usr/bin/dsymutil /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/KosherCocoa -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app.dSYM0#
+
+CLd /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoa normal armv6
+s325717805.353058
+e325717805.391493
+r1
+xLd
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoa
+xnormal
+xarmv6
+lSLF07#2@139"Link /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoa325717805#325717805#0(0"0(0#0#0"8639397920#925"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv IPHONEOS_DEPLOYMENT_TARGET 3.0    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -L/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -filelist /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoa.LinkFileList -dead_strip -miphoneos-version-min=3.0 -framework CoreLocation -framework Foundation -framework CoreGraphics -framework UIKit -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv6/KosherCocoa0#
+
+CLd /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoa normal armv7
+s325717805.325050
+e325717805.366451
+r1
+xLd
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoa
+xnormal
+xarmv7
+lSLF07#2@139"Link /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoa325717805#325717805#0(0"0(0#0#0"8639598272#925"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv IPHONEOS_DEPLOYMENT_TARGET 3.0    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv7 -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -L/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -filelist /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoa.LinkFileList -dead_strip -miphoneos-version-min=3.0 -framework CoreLocation -framework Foundation -framework CoreGraphics -framework UIKit -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/Objects-normal/armv7/KosherCocoa0#
+
+CProcessInfoPlistFile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Info.plist KosherCocoa-Info.plist
+s325660667.794360
+e325660667.876921
+r1
+xProcessInfoPlistFile
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Info.plist
+xKosherCocoa-Info.plist
+lSLF07#2@30"Process KosherCocoa-Info.plist325660667#325660667#0(0"0(0#0#67"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa-Info.plist8631446304#596"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility KosherCocoa-Info.plist -genpkginfo /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/ResourceRules.plist -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/Info.plist0#
+
+CProcessPCH /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-aonmdbtaakpywcgubgydqzqczend/KosherCocoa_Prefix.pch.gch KosherCocoa_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s325660669.987443
+e325660671.002177
+r1
+xProcessPCH
+x/var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-aonmdbtaakpywcgubgydqzqczend/KosherCocoa_Prefix.pch.gch
+xKosherCocoa_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@33"Precompile KosherCocoa_Prefix.pch325660669#325660671#0(0"0(0#0#67"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa_Prefix.pch8636036672#1746"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv7 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa_Prefix.pch -o /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-aonmdbtaakpywcgubgydqzqczend/KosherCocoa_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-caxwhxmfzprnrwbnzohuiqltytiz/KosherCocoa_Prefix.pch.gch KosherCocoa_Prefix.pch normal armv7 c com.apple.compilers.gcc.4_2
+s325660670.809906
+e325660670.888346
+r1
+xProcessPCH
+x/var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-caxwhxmfzprnrwbnzohuiqltytiz/KosherCocoa_Prefix.pch.gch
+xKosherCocoa_Prefix.pch
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@33"Precompile KosherCocoa_Prefix.pch325660670#325660670#0(0"0(0#0#67"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa_Prefix.pch8634922496#1736"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv7 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa_Prefix.pch -o /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-caxwhxmfzprnrwbnzohuiqltytiz/KosherCocoa_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-dpfynbvjxjxxpoepkthfsqjpgsti/KosherCocoa_Prefix.pch.gch KosherCocoa_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s325660669.749989
+e325660670.809759
+r1
+xProcessPCH
+x/var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-dpfynbvjxjxxpoepkthfsqjpgsti/KosherCocoa_Prefix.pch.gch
+xKosherCocoa_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@33"Precompile KosherCocoa_Prefix.pch325660669#325660670#0(0"0(0#0#67"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa_Prefix.pch8638127648#1746"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv6 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa_Prefix.pch -o /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-dpfynbvjxjxxpoepkthfsqjpgsti/KosherCocoa_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-gwnwiqradaowaneffxsfhbexxxxi/KosherCocoa_Prefix.pch.gch KosherCocoa_Prefix.pch normal armv6 c com.apple.compilers.gcc.4_2
+s325660669.750907
+e325660669.987321
+r1
+xProcessPCH
+x/var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-gwnwiqradaowaneffxsfhbexxxxi/KosherCocoa_Prefix.pch.gch
+xKosherCocoa_Prefix.pch
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@33"Precompile KosherCocoa_Prefix.pch325660669#325660669#0(0"0(0#0#67"/Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa_Prefix.pch8637288384#1736"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-generated-files.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-own-target-headers.hmap -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-all-target-headers.hmap -iquote /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa-project-headers.hmap -F/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/include -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources/armv6 -I/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/DerivedSources -c /Users/Moshe/Development/iOS/Academic/Zmanim/KosherCocoa_Prefix.pch -o /var/folders/J6/J6YWIyPTGSmNi1bacyrv1k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/KosherCocoa_Prefix-gwnwiqradaowaneffxsfhbexxxxi/KosherCocoa_Prefix.pch.gch0#
+
+CProcessProductPackaging "/Users/Moshe/Library/MobileDevice/Provisioning Profiles/0A00E17C-9ACE-4C0B-91B9-C98403FC0A99.mobileprovision" /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/embedded.mobileprovision
+s325660672.867613
+e325660672.884523
+r1
+xProcessProductPackaging
+x/Users/Moshe/Library/MobileDevice/Provisioning Profiles/0A00E17C-9ACE-4C0B-91B9-C98403FC0A99.mobileprovision
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/embedded.mobileprovision
+lSLF07#2@196"ProcessProductPackaging "/Users/Moshe/Library/MobileDevice/Provisioning Profiles/0A00E17C-9ACE-4C0B-91B9-C98403FC0A99.mobileprovision" build/Debug-iphoneos/KosherCocoa.app/embedded.mobileprovision325660672#325660672#0(0"0(0#0#106"/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/embedded.mobileprovision8637892480#433"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/Moshe/Library/MobileDevice/Provisioning Profiles/0A00E17C-9ACE-4C0B-91B9-C98403FC0A99.mobileprovision" -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app/embedded.mobileprovision0#
+
+CProcessProductPackaging /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/Entitlements.plist /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa.xcent
+s325660672.897041
+e325660672.921320
+r1
+xProcessProductPackaging
+x/Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/Entitlements.plist
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa.xcent
+lSLF07#2@184"ProcessProductPackaging /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/Entitlements.plist build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa.xcent325660672#325660672#0(0"0(0#0#119"/Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa.xcent8635544800#447"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Xcode3/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/Entitlements.plist -entitlements -format xml -o /Users/Moshe/Development/iOS/Academic/Zmanim/build/KosherCocoa.build/Debug-iphoneos/KosherCocoa.build/KosherCocoa.xcent0#
+
+CTouch /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app
+s325717805.428314
+e325717805.431028
+r1
+xTouch
+x/Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app
+lSLF07#2@87"Touch /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app325717805#325717805#0(0"0(0#0#0"8636143616#274"    cd /Users/Moshe/Development/iOS/Academic/Zmanim    setenv PATH "/Xcode3/Platforms/iPhoneOS.platform/Developer/usr/bin:/Xcode3/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/Moshe/Development/iOS/Academic/Zmanim/build/Debug-iphoneos/KosherCocoa.app0#
+

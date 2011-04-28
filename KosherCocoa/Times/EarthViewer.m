@@ -136,7 +136,7 @@
     //
     
     [suntimes release];
-    
+	
     //
     //  Return the sunrise value
     //
@@ -235,23 +235,8 @@
     
     double sunrise = [suntimes UTCSunriseForDate:date andZenith:kZenithGeometric adjustForElevation:adjustforElevation];
     double sunset = [suntimes UTCSunsetForDate:date andZenith:kZenithGeometric adjustForElevation:adjustforElevation];    
-    
-    //
-    //  If sunset is really late, the double value
-    //  may become later than 24.0 and "wrap" back
-    //  to zero. We fix this here by checking if 
-    //  the sunset value is less than the value of
-    //  sunrise. If it is, we add 24 hours to the
-    //  value of sunset. 
-    //
-    
-    if (sunset < sunrise) {
         
-        sunset = sunset + 24.0;
-        
-    }
-    
-    //
+	//
     //  Release the suntimes object since we don't need it anymore.
     //
     
@@ -261,6 +246,7 @@
     //  Return the sunrise value
     //
     
+	
     return sunset;
 }
 
@@ -338,13 +324,26 @@
     
     double offsetFromGMT = [timeZone secondsFromGMTForDate:date]/3600.0;
     
-    
     //
     //  Apply the offset to the sunset value
     //
     
     sunrise = sunrise + offsetFromGMT;        
     
+	/*
+	int calculatedHour = ((int)sunrise + 240) % 24;
+	double calculatedRemainder = sunrise - floor(sunrise);
+	sunrise = (double)calculatedHour + calculatedRemainder;
+	*/
+	
+	while (sunrise < 0.0) {
+		sunrise = sunrise + 24.0;
+	}
+	
+	while (sunrise > 24.0) {
+		sunrise = sunrise - 24.0;
+	}
+	
     //
     //  Return sunset
     //
@@ -387,12 +386,29 @@
     
     double offsetFromGMT = [timeZone secondsFromGMTForDate:date]/3600.0;
     
+	NSLog(@"Offset from GMT: %f", offsetFromGMT);
+    
     //
     //  Apply the offset to the sunset value
     //
      
     sunset = sunset + offsetFromGMT;                
-    
+    /*
+	int calculatedHour = ((int)sunset + 240) % 24;
+	double calculatedRemainder = sunset - floor(sunset);
+	sunset = (double)calculatedHour + calculatedRemainder;
+	*/
+	
+	//NSLog(@"\n\n Hr: %i\n Rem: %f\n Set: %f", calculatedHour, calculatedRemainder, sunset);
+	
+	while (sunset < 0.0) {
+		sunset = sunset + 24.0;
+	}
+	
+	while (sunset > 24.0) {
+		sunset = sunset - 24.0;
+	}
+	
     //
     //  Return sunset
     //
@@ -510,6 +526,7 @@
 - (BOOL)sunsetHasOccurred{
 
     double currentTimeAsSeconds = [self getSecondsSinceMidnight];
+    
     double sunsetAsSeconds = [self secondsFromTime:[self sunsetAsDoubleOnDate:[NSDate date] inTimeZone:[NSTimeZone systemTimeZone] withElevationAdjustment:NO]];
     
     //NSLog(@"Sunset: %f, Current Time: %f", sunsetAsSeconds, currentTimeAsSeconds);

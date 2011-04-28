@@ -60,7 +60,6 @@
 
 - (NSInteger) lengthOfYearForYear:(NSInteger)year{
     
-    
     //
     //
     //
@@ -131,7 +130,13 @@
 	//	We round here because of slight offsets in the Gregorian calendar.
 	//
 	
-	totalDaysInTheYear = round(totalDaysInTheYear/86400);
+	totalDaysInTheYear = totalDaysInTheYear/86400;
+    
+    //NSLog(@"Total Days in Year: %f", totalDaysInTheYear);
+    
+    totalDaysInTheYear = round(totalDaysInTheYear);
+    
+   //NSLog(@"Total Days in Year: %f", totalDaysInTheYear);
     
     if(totalDaysInTheYear == 353 || totalDaysInTheYear == 383){
 		totalDaysInTheYear = 0;
@@ -149,7 +154,7 @@
 
 - (NSArray *) yearTypeForYear:(NSInteger)year{
 
-    NSLog(@"year: %d", year);
+    //NSLog(@"year: %d", year);
     
 	//totalDaysInTheYear is either "maleh", "chaser", or "regular"
 	NSInteger isLeapYear, firstDayOfWeekOfTheHebrewYear;

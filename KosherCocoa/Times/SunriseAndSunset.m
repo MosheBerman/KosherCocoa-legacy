@@ -115,15 +115,16 @@
     double localMeanTime = [self localMeanTimeForHour:localHour andAscension:sunRightAscensionHours andApproxTimeDays:[self approxTimeDaysForDayOfYear:dayOfYear withHoursFromMeridian:[self hoursFromMeridianForLongitude:longitude] forCalculationType:type]];
     
     double processedTime = localMeanTime - [self hoursFromMeridianForLongitude:longitude];
-    
-    while (processedTime < 0.0) {
-        processedTime += 24.0;
-    }
-    while (processedTime >= 24.0) {
-        processedTime -= 24.0;
-    }
-    
-    //NSLog(@"- (double) sunriseOrSunsetForYear:(int)year andMonth:(int)month andDay:(int)day atLongitude:(double)longitude andLatitude:(double)latitude withZenith:(double)zenith andType:(int)type %.15f", processedTime);
+
+	while (processedTime < 0.0) {
+		processedTime = processedTime + 24.0;
+	}
+	
+	while (processedTime >= 24.0) {
+		processedTime = processedTime - 24.0;
+	}
+
+	//NSLog(@"- (double) sunriseOrSunsetForYear:( int)year andMonth:(int)month andDay:(int)day atLongitude:(double)longitude andLatitude:(double)latitude withZenith:(double)zenith andType:(int)type %.15f", processedTime);
     return processedTime;
 }
 
@@ -291,8 +292,6 @@
     int day = [[[self yearMonthAndDayFromDate:date] objectAtIndex:2]intValue];
     
     doubleTime = [self sunriseOrSunsetForYear:year andMonth:month andDay:day atLongitude:self.geoLocation.longitude andLatitude:self.geoLocation.latitude withZenith:zenith andType:kTypeSunset];
-    
-        //NSLog(@"- (double) getUTCSunsetForDate:(NSDate*)date andZenith:(double)zenith adjustForElevation:(BOOL)adjustForElevation; %.15f", doubleTime);
     
     return doubleTime;
 }
