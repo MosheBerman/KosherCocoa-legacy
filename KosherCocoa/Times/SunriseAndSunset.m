@@ -293,12 +293,14 @@
     
     doubleTime = [self sunriseOrSunsetForYear:year andMonth:month andDay:day atLongitude:self.geoLocation.longitude andLatitude:self.geoLocation.latitude withZenith:zenith andType:kTypeSunset];
     
+    //NSLog(@"Sunset Method:  %.20f", doubleTime);
     return doubleTime;
 }
 
 //
 //
 //
+
 - (double) UTCSunriseForDate:(NSDate*)date andZenith:(double)zenith adjustForElevation:(BOOL)adjustForElevation{
     
     double doubleTime = NAN;
@@ -317,7 +319,9 @@
     
     doubleTime = [self sunriseOrSunsetForYear:year andMonth:month andDay:day atLongitude:self.geoLocation.longitude andLatitude:self.geoLocation.latitude withZenith:zenith andType:kTypeSunrise];
     
-    //NSLog(@"- (double) getUTCSunriseForDate:(NSDate*)date andZenith:(double)zenith adjustForElevation:(BOOL)adjustForElevation; %.15f", doubleTime);
+   // NSLog(@"- (double) getUTCSunriseForDate:(NSDate*)date andZenith:(double)zenith adjustForElevation:(BOOL)adjustForElevation; %.20f", doubleTime);
+    
+    
     
     return doubleTime;
 }
@@ -462,6 +466,8 @@
 //
 //  The dealloc method, as required for 
 //  iOS/Cocoa touch memory management
+//  
+//  iOS 5 ARC doesn't use this.
 //
 
 - (void) dealloc{

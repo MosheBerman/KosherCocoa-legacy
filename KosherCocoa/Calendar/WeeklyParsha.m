@@ -43,35 +43,51 @@
 
 #pragma mark -
 
+//
+//  Returns the current hebrew year as an NSInteger
+//
+
 - (NSInteger)  currentHebrewYear{
 	return [self hebrewYearForDate:[NSDate date]];
-	
 }
+
+//
+//  Returns the hebrew year for a
+//  given date (NSDate) as an NSInteger
+//
 
 - (NSInteger) hebrewYearForDate:(NSDate *)date{
     
+    //  Create a hebrew calendar object
+    
 	NSCalendar *hebrewCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar] autorelease];
 	
+    //  Get the year component from the date
+    
 	NSDateComponents *todayInHebrewComponents = [hebrewCalendar components:NSYearCalendarUnit fromDate:date]; 
-	return [todayInHebrewComponents year];
+	
+    // return the year compononent 
+    
+    return [todayInHebrewComponents year];
 }
 
 #pragma mark - Year Length
 
 - (NSInteger) lengthOfYearForYear:(NSInteger)year{
     
+    //  Create a Hebrew calendar object.
+    
+	NSCalendar *hebrewCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar] autorelease];
+	
+	//	Get the first day of the current hebrew year.
+	
+	NSDateComponents *roshHashanaComponents = [[[NSDateComponents alloc] init] autorelease];
+	
     //
-    //
+    //  Set the components to the 
+    //  first day of this year.
     //
     
-	NSCalendar *hebrewCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar];
-	
-    //
-	//	Then get the first day of the current hebrew year
-	//
-	
-	NSDateComponents *roshHashanaComponents = [[[NSDateComponents alloc] init ]autorelease];
-	
 	[roshHashanaComponents setDay:1];
 	[roshHashanaComponents setMonth:1];
 	[roshHashanaComponents setYear:year];
@@ -79,17 +95,28 @@
 	[roshHashanaComponents setMinute:0];
 	[roshHashanaComponents setSecond:0];
 	
+    //
+    //  Get an NSDate from the "roshHashanaComponents" object,
+    //  using the NSHebrewCalendar which we set up earlier.
+    //
+    
 	NSDate *roshHashanaDate = [hebrewCalendar dateFromComponents:roshHashanaComponents];
 	
+    //
+	//	Now, convert that Hebrew date to a Gregorian date.
 	//
-	//	Then convert that to gregorian
-	//
+    
+	NSCalendar *gregorianCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
 	
-	NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-	
+    //
+    //  Set up the date components to use with the length calculation
+    //
+    
 	NSDateComponents *gregorianDayComponentsForRoshHashana = [gregorianCalendar components:NSWeekdayCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit | NSMinuteCalendarUnit | NSHourCalendarUnit | NSSecondCalendarUnit fromDate:roshHashanaDate];
 	
-	//Determine the day of the week of the first day of the current hebrew year
+    //
+	//  Determine the day of the week of the first day of the current hebrew year
+    //
     
 	NSDate *oneTishreiAsGregorian = [gregorianCalendar dateFromComponents:gregorianDayComponentsForRoshHashana];
 	
@@ -97,9 +124,14 @@
 	//	Then get the first day of the current hebrew year
 	//
 	
-	NSDateComponents *roshHashanaOfNextYearComponents = [[NSDateComponents alloc] init ];
+	NSDateComponents *roshHashanaOfNextYearComponents = [[[NSDateComponents alloc] init] autorelease];
 	
     NSInteger tempYear = year+1;
+    
+    //
+    //  Set the components to the 
+    //  first day of next year.
+    //
     
 	[roshHashanaOfNextYearComponents setDay:1];
 	[roshHashanaOfNextYearComponents setMonth:1];
@@ -109,34 +141,57 @@
 	[roshHashanaOfNextYearComponents setSecond:0];
 	
 	NSDate *roshHashanaOfNextYearAsDate = [hebrewCalendar dateFromComponents:roshHashanaOfNextYearComponents];
-	
-    [roshHashanaOfNextYearComponents release];
     
-    [hebrewCalendar release];
+    //
+	//	Then convert that to 
+    //  the Gregorian calendar.
+	//
     
-	//
-	//	Then convert that to gregorian
-	//
-	
 	NSDateComponents *gregorianDayComponentsForRoshHashanaOfNextYear = [gregorianCalendar components:NSWeekdayCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit | NSMinuteCalendarUnit | NSHourCalendarUnit | NSSecondCalendarUnit fromDate:roshHashanaOfNextYearAsDate];
 	
-	//Determine the first day of the week of the next hebrew year
-	NSDate *oneTishreiOfNextYearAsGregorian = [gregorianCalendar dateFromComponents:gregorianDayComponentsForRoshHashanaOfNextYear];
+    
+    //
+	//  Determine the first day of the 
+    //  week of the next hebrew year
+	//
+    
+    NSDate *oneTishreiOfNextYearAsGregorian = [gregorianCalendar dateFromComponents:gregorianDayComponentsForRoshHashanaOfNextYear];
 	
-	//	Length of this year in days	
+    //
+	//	Length of this year 
+    //  in days, as an NSTimeInterval
+    //  which actually a double
+    //
+    
 	NSTimeInterval totalDaysInTheYear = [oneTishreiOfNextYearAsGregorian timeIntervalSinceReferenceDate] - [oneTishreiAsGregorian timeIntervalSinceReferenceDate];
 	
-	//
-	//	We round here because of slight offsets in the Gregorian calendar.
-	//
-	
-	totalDaysInTheYear = totalDaysInTheYear/86400;
+    //
+    //  Here, we calculate the total 
+    //  number of days in the year.
+    //
+    //  Fun Fact: There are 86,400 seconds in a day
+    //
     
-    //NSLog(@"Total Days in Year: %f", totalDaysInTheYear);
+	totalDaysInTheYear = totalDaysInTheYear/kSecondsInADay;
+    
+    //
+    //  This rounding may be unnecessary, 
+    //  but I'm not ready to remove it.
+    //
+    //  I think this was a faux fix of an 
+    //  earlier bug, which was the lack 
+    //  of an NSDateComponents specefier.
+    //
     
     totalDaysInTheYear = round(totalDaysInTheYear);
     
-   //NSLog(@"Total Days in Year: %f", totalDaysInTheYear);
+    //
+    //  Here, we convert the result
+    //  into an integer, so that we
+    //  can easily use the result
+    //  later on, in the yeartype 
+    //  dependent methods.
+    //
     
     if(totalDaysInTheYear == 353 || totalDaysInTheYear == 383){
 		totalDaysInTheYear = 0;
@@ -145,6 +200,7 @@
 	}else if(totalDaysInTheYear == 355 || totalDaysInTheYear == 385){
 		totalDaysInTheYear = 2;
 	}
+    
     
     return totalDaysInTheYear;
     
@@ -167,7 +223,7 @@
     //
     //
     
-	NSCalendar *hebrewCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar];
+	NSCalendar *hebrewCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar] autorelease];
 	
     //
 	//	Then get the first day of the current hebrew year
@@ -188,7 +244,7 @@
 	//	Then convert that to gregorian
 	//
 	
-	NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	NSCalendar *gregorianCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
 	
 	NSDateComponents *gregorianDayComponentsForRoshHashana = [gregorianCalendar components:NSWeekdayCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit | NSMinuteCalendarUnit | NSHourCalendarUnit | NSSecondCalendarUnit fromDate:roshHashanaDate];
 	
@@ -928,9 +984,7 @@
         //  Double up the parshios
         //
         
-        //[self combineParshiosFromIndex:38 fromMutableArray:tempArray];
-        //combinations++;
-        [self combineParshiosFromIndex:41-combinations fromMutableArray:tempArray];
+        [self combineParshiosFromIndex:41 fromMutableArray:tempArray];
         combinations++;
         [self combineParshiosFromIndex:50-combinations fromMutableArray:tempArray];
 
@@ -1052,7 +1106,7 @@
         //  Double up the parshios
         //
 
-        [self combineParshiosFromIndex:41-combinations fromMutableArray:tempArray];
+        [self combineParshiosFromIndex:41 fromMutableArray:tempArray];
         combinations++;
         [self combineParshiosFromIndex:50-combinations fromMutableArray:tempArray];
         
@@ -1100,7 +1154,7 @@
 
 
 #pragma mark -
-#pragma mark ties it all to her
+#pragma mark Get This Weeks Parasha
 
 - (NSString *) thisWeeksParshaForDate:(NSDate *)date inDiaspora:(BOOL)isInDiaspora{
 	
@@ -1174,23 +1228,38 @@
 	
 	if(isInDiaspora == YES){
 		temp = [self rearrangeParshiosForDiasporaInArray:self.parshios BasedOnTypeOfYear:[self yearTypeForYear:[shabbosComponents year]]];
-	}else if (isInDiaspora == NO) {
+        
+        //
+        //	Then look up this weeks parsha
+        //
+        
+        NSString *parsha;
+        
+        if(weekNumber < [temp count]){
+            parsha = [temp objectAtIndex:weekNumber];
+        }else {
+            parsha = kOutOfRangeString;
+        }
+        
+        return parsha;        
+	}else{
 		temp = [self rearrangeParshiosForIsraelInArray:self.parshios BasedOnTypeOfYear:[self yearTypeForYear:[shabbosComponents year]]];
+        
+        //
+        //	Then look up this weeks parsha
+        //
+        
+        NSString *parsha;
+        
+        if(weekNumber < [temp count]){
+            parsha = [temp objectAtIndex:weekNumber];
+        }else {
+            parsha = kOutOfRangeString;
+        }
+        
+        return parsha;        
 	}
 	
-	//
-	//	Then look up this weeks parsha
-	//
-	
-	NSString *parsha;
-	
-	if(weekNumber < [temp count]){
-		parsha = [temp objectAtIndex:weekNumber];
-	}else {
-		parsha = kOutOfRangeString;
-	}
-	
-	return parsha;
 }
 
 - (NSString *) nextWeeksParshaForDate:(NSDate *)date inDiaspora:(BOOL)isInDiaspora{

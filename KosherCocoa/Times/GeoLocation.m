@@ -64,7 +64,7 @@
 
 - (id) init{
     
-    if (self == [super init]) {
+    if(self == [super init]){
         [self setLocationName:@"Greenwich, England"];
         [self setLongitude:0];  //EH: added for clarity
         [self setLatitude:51.4772];
@@ -84,11 +84,13 @@
  //  
  //
  */
+
 /*
 - (double) elevation{
     return self.elevation;
 }
 */
+
 /*
  //  Method to set elevation in meters above sealevel
  //  

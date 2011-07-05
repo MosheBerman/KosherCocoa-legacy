@@ -77,7 +77,7 @@
 //              we are calculating sunrise and sunset.
 //
 //  elevation - A double representing the elevation of the 
-//              target location in meters.  
+//              target location in meters.
 //
 //  withElevationAdjustment - A boolean deciding if we want to
 //                            adjust for elevation.
@@ -180,7 +180,42 @@
 //  This method takes a time as a double
 //  and returns it as a formatted string.
 //
+//  This method is depracated and should not 
+//  be used. Use the date and string methods 
+//  instead.
+//
 
 - (NSString *) timeAsStringFromDouble:(double)time;
+
+//
+//  A method that returns the calculated time
+//  as an NSDate object based on your time zone
+//  and today's date
+//  
+
+- (NSDate *)dateFromTime:(double)time;
+
+//
+//  A method that returns the calculated time
+//  as an NSDate object based on a given time
+//  zone and a given date. 
+//
+//  Returns nil if the time passed in is NAN.
+//  
+
+- (NSDate *)dateFromTime:(double)time inTimeZone:(NSTimeZone *)tz onDate:(NSDate *)date;
+
+//
+//  Return a given date as 
+//  a string in a given 
+//  time zone.
+//
+//  Here we do some basic formatting
+//  using the NSDateFormatter. 
+//  Feel free to customize the behavior 
+//  as you wish, to best suit your needs.
+//
+
+- (NSString *)stringFromDate:(NSDate *)date forTimeZone:(NSTimeZone *)tz;
 
 @end

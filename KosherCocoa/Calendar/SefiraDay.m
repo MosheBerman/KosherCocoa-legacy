@@ -14,10 +14,9 @@
 - (id) init{
 	
 	if(self == [super init]){
-		if ([self getCurrentDayOfOmer]) {
-			self.day = [self getCurrentDayOfOmer];
+		if ([self currentDayOfOmer]) {
+			self.day = [self currentDayOfOmer];
 		}
-		
 	}
 	
 	//
@@ -128,7 +127,7 @@
     return dayOfOmer;
 }
 
-- (NSInteger) getCurrentDayOfOmer{
+- (NSInteger) currentDayOfOmer{
 	
 	return [self dayOfOmerForDate:[NSDate date]];
 	
@@ -271,7 +270,7 @@
 //	Get the current Hebrew year
 //
 
-- (NSInteger) getCurrentHebrewYear{
+- (NSInteger) currentHebrewYear{
 
 	//
 	//	Get the current date

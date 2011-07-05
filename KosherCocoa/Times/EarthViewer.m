@@ -5,6 +5,9 @@
 //  Created by Moshe Berman on 3/31/11.
 //  Copyright 2011 MosheBerman.com. All rights reserved.
 //
+//  July 5, 2011 - Added warning about 
+//  the deprecated method stringFromTime
+//
 
 #import "EarthViewer.h"
 
@@ -233,7 +236,6 @@
     //  
     //
     
-    double sunrise = [suntimes UTCSunriseForDate:date andZenith:kZenithGeometric adjustForElevation:adjustforElevation];
     double sunset = [suntimes UTCSunsetForDate:date andZenith:kZenithGeometric adjustForElevation:adjustforElevation];    
         
 	//
@@ -318,38 +320,6 @@
     
     double sunrise = [self sunriseAsDoubleOnDate:date withElevationAdjustment:adjustforElevation];
     
-    //
-    //  Get the GMT offset
-    //
-    
-    double offsetFromGMT = [timeZone secondsFromGMTForDate:date]/3600.0;
-    
-    //
-    //  Apply the offset to the sunset value
-    //
-    
-    sunrise = sunrise + offsetFromGMT;        
-    
-	/*
-	int calculatedHour = ((int)sunrise + 240) % 24;
-	double calculatedRemainder = sunrise - floor(sunrise);
-	sunrise = (double)calculatedHour + calculatedRemainder;
-	*/
-	
-	while (sunrise < 0.0) {
-		sunrise = sunrise + 24.0;
-	}
-	
-	while (sunrise > 24.0) {
-		sunrise = sunrise - 24.0;
-	}
-	
-    //
-    //  Return sunset
-    //
-    
-    //NSLog(@"Sunrise: %.15f", sunrise);
-    
     return sunrise;
     
 }
@@ -377,45 +347,141 @@
     //
     
     double sunset = [self sunsetAsDoubleOnDate:date withElevationAdjustment:adjustforElevation];
-    
-    //NSLog(@"Sunset: %.15f", sunset);
-    
-    //
-    //  Get the GMT offset
-    //
-    
-    double offsetFromGMT = [timeZone secondsFromGMTForDate:date]/3600.0;
-    
-	NSLog(@"Offset from GMT: %f", offsetFromGMT);
-    
-    //
-    //  Apply the offset to the sunset value
-    //
-     
-    sunset = sunset + offsetFromGMT;                
-    /*
-	int calculatedHour = ((int)sunset + 240) % 24;
-	double calculatedRemainder = sunset - floor(sunset);
-	sunset = (double)calculatedHour + calculatedRemainder;
-	*/
-	
-	//NSLog(@"\n\n Hr: %i\n Rem: %f\n Set: %f", calculatedHour, calculatedRemainder, sunset);
-	
-	while (sunset < 0.0) {
-		sunset = sunset + 24.0;
-	}
-	
-	while (sunset > 24.0) {
-		sunset = sunset - 24.0;
-	}
-	
-    //
-    //  Return sunset
-    //
-    
-    //NSLog(@"With Offset: %.15f", sunset);
-    
+
     return sunset;
+    
+}
+
+#pragma mark - NSDate from double
+
+//
+//  A method that returns the calculated time
+//  as an NSDate object based on your time zone
+//  and today's date
+//  
+
+- (NSDate *)dateFromTime:(double)time{
+    
+    return [self dateFromTime:time inTimeZone:[NSTimeZone systemTimeZone] onDate:[NSDate date]];
+}
+
+//
+//  A method that returns the calculated time
+//  as an NSDate object based on a given time
+//  zone and a given date. 
+//
+//  Returns nil if the time passed in is NAN.
+//  
+
+- (NSDate *)dateFromTime:(double)time inTimeZone:(NSTimeZone *)tz onDate:(NSDate *)date{
+    
+    //
+    //  Return nil if the time is NAN
+    //
+    
+    if (time == NAN) {
+        NSLog(@"Received an invalid number. I can't do anything with that...");
+        return nil;
+    }
+    
+    //
+    //  Copy the time, so we can
+    //  manipulate it later when
+    //  we need to break it into
+    //  an NSDateComponents object.
+    //
+    
+    double calculatedTime = time;
+    
+    //
+    //  Create an instance of 
+    //  the Gregorian calendar.
+    //
+    
+    NSCalendar *gregorianCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+    
+    //
+    //  Convert the current time
+    //  into an NSDateComponents.
+    //
+    
+    NSDateComponents *components = [gregorianCalendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSEraCalendarUnit  fromDate:date];
+    
+    //
+    //  Set the componenets time 
+    //  zone to GMT, since all of
+    //  our calculations were done
+    //  in GMT intially.
+    //
+    
+    [components setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    
+    int hours = (int) calculatedTime;               // retain only the hours
+    calculatedTime -= hours;
+    int minutes = (int) (calculatedTime *= 60);     // retain only the minutes
+    calculatedTime -= minutes;
+    int seconds = (int)(calculatedTime * 60);       // retain only the seconds
+    //calculatedTime -= seconds;                    // remaining milliseconds - Commented out for Build & Analyze    
+    
+    [components setHour: hours];
+    [components setMinute:minutes];
+    [components setSecond:seconds];
+
+    //
+    //  Convert the NSDateComponents
+    //  to an NSDate which we will 
+    //  return to the user.
+    //
+    
+    NSDate *returnDate = [gregorianCalendar dateFromComponents:components];
+
+    //
+    //  Here we apply a time zone
+    //  offset. If the time is greater
+    //  than 24, or less than 0, then 
+    //  we "roll" the date by a day.
+    //
+    //  We start by getting the 
+    //  timezone offset in hours...
+    //
+    
+    double offsetFromGMT = [tz secondsFromGMTForDate:date]/3600.0;
+    
+    //
+    //  ... here we perform the check 
+    //  then roll the date as necessary.
+    //
+    
+    if (time + offsetFromGMT > 24) {
+        returnDate = [returnDate dateByAddingTimeInterval:-kSecondsInADay];
+    } else if(time + offsetFromGMT < 0){
+       returnDate = [returnDate dateByAddingTimeInterval:kSecondsInADay];
+    }
+    
+    return returnDate; 
+}
+
+#pragma mark - String from NSDate
+
+//
+//  Return a given date as 
+//  a string in a given 
+//  time zone.
+//
+//  Here we do some basic formatting
+//  using the NSDateFormatter. 
+//
+//  Feel free to customize the behavior 
+//  as you wish, to best suit your needs.
+//
+
+- (NSString *)stringFromDate:(NSDate *)date forTimeZone:(NSTimeZone *)tz{
+  
+    NSDateFormatter *form = [[[NSDateFormatter alloc] init] autorelease];
+    [form setTimeStyle:NSDateFormatterMediumStyle];
+    [form setTimeZone:tz];
+    
+    return [form stringFromDate:date];
     
 }
 
@@ -464,7 +530,7 @@
     //  Release the calendar
     //
     
-    [calendar release];
+    [calendar release]; 
     
     //
     //  Return
@@ -494,8 +560,8 @@
     //
     
     double hours = floor(time);
-    double minutes = ( time - floor(time) ) * 60;
-    double seconds = ( minutes - floor(minutes) ) * 60;
+    double minutes = (time - floor(time) ) * 60;
+    double seconds = (minutes - floor(minutes) ) * 60;
     
     //
     //  Multiply out the hours and minutes
@@ -538,6 +604,8 @@
     return NO;
 }
 
+#pragma mark - Time as NSDate
+
 
 
 #pragma mark - Formatting method
@@ -548,6 +616,8 @@
 //
 
 - (NSString *) timeAsStringFromDouble:(double)time{
+    
+#warning <WARNING:>This method is depracated. Use dateFromTime and stringFromDate instead.
     
     //
     //  If the time is greater than 12

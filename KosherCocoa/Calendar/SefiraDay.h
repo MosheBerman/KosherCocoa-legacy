@@ -26,7 +26,7 @@
 
 - (NSInteger) dayOfOmerForDate:(NSDate *)date;
 
-- (NSInteger) getCurrentDayOfOmer;
+- (NSInteger) currentDayOfOmer;
 
 #pragma mark -
 #pragma mark Generic Utility Methods
@@ -35,7 +35,7 @@
 
 - (NSInteger) hebrewYearForGregorianYear:(NSInteger)Year;
 
-- (NSInteger) getCurrentHebrewYear;
+- (NSInteger) currentHebrewYear;
 
 - (NSInteger) hebrewYearForDate:(NSDate *)date;
 

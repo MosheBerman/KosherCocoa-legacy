@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "SunriseAndSunset.h"
 
-@interface KosherCocoaViewController : UIViewController <CLLocationManagerDelegate, UIScrollViewDelegate> {
+@interface KosherCocoaViewController : UIViewController <CLLocationManagerDelegate, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource> {
 
     SunriseAndSunset *sunriset;
     GeoLocation *geoLocation;
@@ -24,13 +24,18 @@
     IBOutlet UIPageControl *pageControl;
     IBOutlet UIView *suntimesView;
     IBOutlet UIView *parashaView;    
+    UITableView *zmanimTable;
     IBOutlet UILabel *parashaLabel;
     IBOutlet UILabel *nextParashaLabel;    
     IBOutlet UILabel *yearInfoLabel;
     IBOutlet UISegmentedControl *inDiasporaSelector;
     CLLocationManager *cl;
     UIBarButtonItem *updateLocation;
+    NSMutableDictionary *zmanim;
     
+    double lat;
+    double lon;
+    double alt;
     
 }
 
@@ -49,6 +54,8 @@
 @property (nonatomic, retain) UILabel *yearInfoLabel;
 @property (nonatomic, retain) UIView *suntimesView;
 @property (nonatomic, retain) UIView *parashaView;
+@property (nonatomic, retain) NSMutableDictionary *zmanim;
+@property (nonatomic, retain) IBOutlet UITableView *zmanimTable;
 
 - (IBAction)goAheadOneDay:(id)sender;
 - (IBAction)goToToday:(id)sender;

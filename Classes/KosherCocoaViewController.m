@@ -11,9 +11,16 @@
 #import "WeeklyParsha.h"
 
 @implementation KosherCocoaViewController
+@synthesize zmanimTable;
+
+@synthesize zmanim;
 
 @synthesize sunriset, geoLocation, datePicker, latBox, lonBox, cl, scroller, pageControl;
 @synthesize parashaLabel, nextParashaLabel ,yearInfoLabel, parashaView, suntimesView;
+
+//
+//
+//
 
 - (void)viewDidLoad{
     
@@ -25,18 +32,26 @@
     if (self.cl == nil) {
         
         CLLocationManager *tempCL = [[CLLocationManager alloc] init];
+        [tempCL setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
         self.cl = tempCL;
         [tempCL release];
         
-        [self.cl setDesiredAccuracy:kCLLocationAccuracyBest];
         self.cl.delegate = self;
         
         [self.cl startUpdatingLocation];
     }
-    
+    if (self.zmanim == nil) {
+        NSMutableDictionary *t = [[NSMutableDictionary alloc] init];
+        [self setZmanim:t];
+        [t release];    
+    }
+
 }    
 
 - (void)viewDidUnload{
+    
+    [zmanimTable release];
+    zmanimTable = nil;
     
     [self.cl stopUpdatingLocation];
 }
@@ -79,8 +94,9 @@
     //  Show the new location info
     //
     
-    self.latBox.text = [NSString stringWithFormat:@"%Lf", newLocation.coordinate.latitude];
-    self.lonBox.text = [NSString stringWithFormat:@"%Lf", newLocation.coordinate.longitude];    
+    lat = newLocation.coordinate.latitude;
+    lon = newLocation.coordinate.longitude;
+    alt = newLocation.altitude;
     
     //
     //  If we got all of the information that we need, 
@@ -90,13 +106,19 @@
     //
 
     if (newLocation.altitude != 0.0) {
+        [self goToToday:nil];
         [self.cl stopUpdatingLocation];
     }else{
         //We still don't have an altitude. Keep trying.
+        [self goToToday:nil];        
     }
         
     
 }
+
+//
+//  Start updating the location
+//
 
 - (IBAction)updateLocation:(id)sender {
     
@@ -116,7 +138,7 @@
     //  Create the human with a given latitude and longitude
     //
     
-    EarthViewer *human = [[EarthViewer alloc] initWithLatitude:[self.latBox.text doubleValue] andLongitude:[self.lonBox.text doubleValue] andElevation:0.0];
+    EarthViewer *human = [[EarthViewer alloc] initWithLatitude:lat andLongitude:lon andElevation:0.0];
 
     //
     //  Calculate the sunrise and sunset
@@ -125,23 +147,31 @@
     double sunset = [human sunsetAsDoubleOnDate:[datePicker date] inTimeZone:[NSTimeZone systemTimeZone] withElevationAdjustment:NO];
 
     double sunrise = [human sunriseAsDoubleOnDate:[datePicker date] inTimeZone:[NSTimeZone systemTimeZone] withElevationAdjustment:NO];
-    
-	NSLog(@"Sunrise: %f Sunset: %f", sunrise, sunset);
 	
     //
-    //  
+    //  Store the new times in the zmanim dictionary
     //
     
-    [sunriseLabel setText:[NSString stringWithFormat:@"Sunrise: %@",[human timeAsStringFromDouble:sunrise]]];
-    [sunsetLabel setText:[NSString stringWithFormat:@"Sunset: %@",[human timeAsStringFromDouble:sunset]]];    
+    [self.zmanim setObject:[human stringFromDate:[human dateFromTime:sunrise] forTimeZone:[NSTimeZone systemTimeZone]] forKey:@"Sunrise"];
+    [self.zmanim setObject:[human stringFromDate:[human dateFromTime:sunset] forTimeZone:[NSTimeZone systemTimeZone]] forKey:@"Sunset"];      
+    
+    //
+    //  Release the EarthViewer
+    //
     
     [human release];
+    
+    //
+    //  Reload the data
+    //
+    
+    [zmanimTable reloadData];
 
 }
 
 #pragma mark - Parasha Code
 
-- (IBAction)refreshParasha:(id)sender {
+- (IBAction)refreshParasha:(id)sender{
     
     WeeklyParsha *parsha = [[WeeklyParsha alloc] init];
     WeeklyParsha *nextWeekParsha = [[WeeklyParsha alloc] init];
@@ -168,9 +198,9 @@
 
 #pragma mark - ScrollView Delegate
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 
-    pageControl.currentPage = scrollView.contentSize.width/scrollView.contentOffset.x;
+    [pageControl setCurrentPage:(scrollView.contentOffset.x/scrollView.frame.size.width)];
 }
 
 #pragma mark - Wheel controls
@@ -194,6 +224,70 @@
     [self refreshParasha:nil];
 }
 
+#pragma mark - Table Datasource and Delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section == 0) {
+
+        //
+        //  This is commented out 
+        //  since Core Location does
+        //  not seem to want to return
+        //  an altitude, no matter
+        //  how hard I try...
+        //
+        
+        return 3;
+        
+        return 2;
+    }else{
+        return [[self.zmanim allValues] count];
+    }
+    
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *str = @"id";
+    
+    UITableViewCell *cell;
+    
+    cell = [tableView dequeueReusableCellWithIdentifier:str];
+    
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:str] autorelease];
+    }
+    
+    //
+    //  Show the current latitude, longitude and altitude in thier cells
+    //
+    
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            [cell.textLabel setText:@"Latitude:"];
+            [cell.detailTextLabel setText:[NSString stringWithFormat:@"%f", lat]];
+        }else if(indexPath.row == 1){
+            [cell.textLabel setText:@"Longitude:"];
+            [cell.detailTextLabel setText:[NSString stringWithFormat:@"%f", lon]];            
+        }else if(indexPath.row == 2){
+            [cell.textLabel setText:@"Altitude:"];
+            [cell.detailTextLabel setText:[NSString stringWithFormat:@"%f", alt]];            
+        }
+        
+        
+        
+    }else if (indexPath.section == 1) {
+        [cell.textLabel setText:[[zmanim allKeys] objectAtIndex:[indexPath row]]];
+        [cell.detailTextLabel setText:[zmanim objectForKey:[[zmanim allKeys] objectAtIndex:[indexPath row]]]];
+    }
+
+    return cell;
+}
 
 #pragma mark - Memory Management
 
@@ -204,10 +298,8 @@
 	// Release any cached data, images, etc that aren't in use.
 }
 
-
-
 - (void)dealloc {
-
+    [zmanim release];
     [yearInfoLabel release];
     [parashaLabel release];
     [nextParashaLabel release];
@@ -221,6 +313,8 @@
     [geoLocation release];
     [sunriset release];
     [updateLocation release];
+    [zmanimTable release];
+    [zmanimTable release];
     [super dealloc];
 }
 
