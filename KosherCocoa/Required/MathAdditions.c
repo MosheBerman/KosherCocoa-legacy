@@ -23,9 +23,11 @@ double toRadians(double degrees){
 double toDegrees(double radians){
     return radians * 180.0 / kMyPI;
 }
+
 /**
  * sin of an angle in degrees
  */
+
 double sinDeg(double deg) {
     return sin(deg * 2.0 * kMyPI / 360.0);
 }
@@ -40,6 +42,7 @@ double sinDeg(double deg) {
 /**
  * asin of an angle, result in degrees
  */
+
  double asinDeg(double x) {
     return asin(x) * 360.0 / (2 * kMyPI);
 }

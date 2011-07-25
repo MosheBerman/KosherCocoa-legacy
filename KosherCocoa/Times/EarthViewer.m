@@ -8,6 +8,8 @@
 //  July 5, 2011 - Added warning about 
 //  the deprecated method stringFromTime
 //
+//  July 23, 2010 - Deleted Depracated methods.
+//
 
 #import "EarthViewer.h"
 
@@ -39,217 +41,6 @@
     }
     
     return self;
-}
-
-#pragma mark - Get Sunrise Or Sunset With Lat, Lon, Date, Elevation and optional elevation adjustment
-
-//
-//  This method returns the number of seconds since midnight 
-//  at which sunrise occurs at a given location on a given 
-//  date. The time is in GMT and must be adjusted for the
-//  local time zone.
-//
-//  latitude  - This is a double representing the latitude.
-//              Use a negative value for south and a positive
-//              value for north.
-//
-//  longitude - This is a double representing the longitude.
-//              Use a negative value for west and a positive
-//              value for east.
-//
-//  date      - An NSDate object, representing the day for which
-//              we are calculating sunrise and sunset.
-//
-//  elevation - A double representing the elevation of the 
-//              target location in meters.  
-//
-//  withElevationAdjustment - A boolean deciding if we want to
-//                            adjust for elevation.
-//
-
-- (double)sunriseAsDoubleForLatitude:(double)latitude andLongitude:(double)longitude onDate:(NSDate *)date atElevation:(double)elevation withElevationAdjustment:(BOOL)adjustforElevation{
-    
-    //
-    //  Set up a NSTimeZone object.
-    //
-    //  This is actually not used in the SunriseAndSunset 
-    //  implementation of calculating the times, but it was
-    //  required in the original Java version, due to Java
-    //  inheritance.
-    //
-    
-    NSTimeZone *tz = [NSTimeZone systemTimeZone];
-    
-    //  
-    //  Set up the GeoLocation object.
-    //
-    //  This represents the latitude and longitude used in
-    //  the SunriseAndSunset object, to calculate location
-    //  sensitive times for sunrise and sunset. The name
-    //  argument is an artifact of the Java implementation.
-    //
-    //
-    //
-    
-    GeoLocation *tempG = [[GeoLocation alloc] initWithName:@"SunViewer" andLatitude: latitude andLongitude: longitude forTimeZone:tz];
-    
-    //
-    //  Set the elevation of the GeoLocation Object.
-    //
-    //  Elevation above sea level is measered in meters
-    //  and affects the outcome of the calculations.
-    //
-    
-    [tempG setElevation:elevation];
-    
-    //
-    //  Set up the SunriseAndSunset object.
-    //
-    //  This object takes the GeoLocation object
-    //  which we just created and uses it to do
-    //  the sunrise and sunset calculations.
-    //
-    
-    SunriseAndSunset *suntimes = [[SunriseAndSunset alloc] initWithGeoLocation:tempG];
-    
-    //
-    //  Release the GeoLocation object.
-    //
-    
-    [tempG release];
-    
-    //
-    //  This next line calculates the sunrise and sunset 
-    //  for a given date. We've already passed in a GeoLocation
-    //  object and here we pass in an NSDate object, which 
-    //  reperesents the day we are calculating sunrise and sunset
-    //  on. We also pass in a value for Zenith (90.0, which gets 
-    //  adjusted for civil sunrise and sunset inside of the
-    //  "suntimes" instance of SunriseAndSunset.
-    //
-    //  We also pass in a Boolean which determines if we should
-    //  adjust the values for for elevation.
-    //  
-    //
-    
-    double sunrise = [suntimes UTCSunriseForDate:date andZenith:kZenithGeometric adjustForElevation:adjustforElevation];
-    
-    //
-    //  Release the suntimes object since we don't need it anymore.
-    //
-    
-    [suntimes release];
-	
-    //
-    //  Return the sunrise value
-    //
-    
-    return sunrise;
-}
-
-//
-//  This method returns the number of seconds since midnight 
-//  at which sunset occurs at a given location on a given 
-//  date. The time is in GMT and must be adjusted for the
-//  local time zone.
-//
-//  latitude  - This is a double representing the latitude.
-//              Use a negative value for south and a positive
-//              value for north.
-//
-//  longitude - This is a double representing the longitude.
-//              Use a negative value for west and a positive
-//              value for east.
-//
-//  date      - An NSDate object, representing the day for which
-//              we are calculating sunrise and sunset.
-//
-//  elevation - A double representing the elevation of the 
-//              target location in meters.  
-//
-//  withElevationAdjustment - A boolean deciding if we want to
-//                            adjust for elevation.
-//
-
-- (double)sunsetAsDoubleForLatitude:(double)latitude andLongitude:(double)longitude onDate:(NSDate *)date atElevation:(double)elevation withElevationAdjustment:(BOOL)adjustforElevation{
-    
-    //
-    //  Set up a NSTimeZone object.
-    //
-    //  This is actually not used in the SunriseAndSunset 
-    //  implementation of calculating the times, but it was
-    //  required in the original Java version, due to Java
-    //  inheritance.
-    //
-    
-    NSTimeZone *tz = [NSTimeZone systemTimeZone];
-    
-    //  
-    //  Set up the GeoLocation object.
-    //
-    //  This represents the latitude and longitude used in
-    //  the SunriseAndSunset object, to calculate location
-    //  sensitive times for sunrise and sunset. The name
-    //  argument is an artifact of the Java implementation.
-    //
-    //
-    //
-    
-    GeoLocation *tempG = [[GeoLocation alloc] initWithName:@"SunViewer" andLatitude: latitude andLongitude: longitude forTimeZone:tz];
-    
-    //
-    //  Set the elevation of the GeoLocation Object.
-    //
-    //  Elevation above sea level is measered in meters
-    //  and affects the outcome of the calculations.
-    //
-    
-    [tempG setElevation:elevation];
-    
-    //
-    //  Set up the SunriseAndSunset object.
-    //
-    //  This object takes the GeoLocation object
-    //  which we just created and uses it to do
-    //  the sunrise and sunset calculations.
-    //
-    
-    SunriseAndSunset *suntimes = [[SunriseAndSunset alloc] initWithGeoLocation:tempG];
-    
-    //
-    //  Release the GeoLocation object.
-    //
-    
-    [tempG release];
-    
-    //
-    //  This next line calculates the sunrise and sunset 
-    //  for a given date. We've already passed in a GeoLocation
-    //  object and here we pass in an NSDate object, which 
-    //  reperesents the day we are calculating sunrise and sunset
-    //  on. We also pass in a value for Zenith (90.0, which gets 
-    //  adjusted for civil sunrise and sunset inside of the
-    //  "suntimes" instance of SunriseAndSunset.
-    //
-    //  We also pass in a Boolean which determines if we should
-    //  adjust the values for for elevation.
-    //  
-    //
-    
-    double sunset = [suntimes UTCSunsetForDate:date andZenith:kZenithGeometric adjustForElevation:adjustforElevation];    
-        
-	//
-    //  Release the suntimes object since we don't need it anymore.
-    //
-    
-    [suntimes release];
-    
-    //
-    //  Return the sunrise value
-    //
-    
-	
-    return sunset;
 }
 
 #pragma mark - Get sunrise or sunset on Date with optional elevation adjustment
@@ -347,9 +138,221 @@
     //
     
     double sunset = [self sunsetAsDoubleOnDate:date withElevationAdjustment:adjustforElevation];
-
+    
     return sunset;
     
+}
+
+
+#pragma mark - Get Sunrise Or Sunset With Lat, Lon, Date, Elevation and optional elevation adjustment
+
+//
+//  This method returns the number of seconds since midnight 
+//  at which sunrise occurs at a given location on a given 
+//  date. The time is in GMT and must be adjusted for the
+//  local time zone.
+//
+//  latitude  - This is a double representing the latitude.
+//              Use a negative value for south and a positive
+//              value for north.
+//
+//  longitude - This is a double representing the longitude.
+//              Use a negative value for west and a positive
+//              value for east.
+//
+//  date      - An NSDate object, representing the day for which
+//              we are calculating sunrise and sunset.
+//
+//  elevation - A double representing the elevation of the 
+//              target location in meters.  
+//
+//  withElevationAdjustment - A boolean deciding if we want to
+//                            adjust for elevation.
+//
+
+- (double)sunriseAsDoubleForLatitude:(double)latitude andLongitude:(double)longitude onDate:(NSDate *)date atElevation:(double)elevation withElevationAdjustment:(BOOL)adjustforElevation{
+    
+    //
+    //  Set up a NSTimeZone object.
+    //
+    //  This is actually not used in the SunriseAndSunset 
+    //  implementation of calculating the times, but it was
+    //  required in the original Java version, due to Java
+    //  inheritance.
+    //
+    
+    NSTimeZone *tz = [NSTimeZone systemTimeZone];
+    
+    //  
+    //  Set up the GeoLocation object.
+    //
+    //  This represents the latitude and longitude used in
+    //  the SunriseAndSunset object, to calculate location
+    //  sensitive times for sunrise and sunset. The name
+    //  argument is an artifact of the Java implementation.
+    //
+    //
+    //
+    
+    GeoLocation *tempG = [[GeoLocation alloc] initWithName:@"SunViewer" andLatitude: latitude andLongitude: longitude andTimeZone:tz];
+    
+    //
+    //  Set the elevation of the GeoLocation Object.
+    //
+    //  Elevation above sea level is measered in meters
+    //  and affects the outcome of the calculations.
+    //
+    
+    [tempG setAltitude:elevation];
+    
+    //
+    //  Set up the SunriseAndSunset object.
+    //
+    //  This object takes the GeoLocation object
+    //  which we just created and uses it to do
+    //  the sunrise and sunset calculations.
+    //
+    
+    SunriseAndSunset *suntimes = [[SunriseAndSunset alloc] initWithGeoLocation:tempG];
+    
+    //
+    //  Release the GeoLocation object.
+    //
+    
+    [tempG release];
+    
+    //
+    //  This next line calculates the sunrise and sunset 
+    //  for a given date. We've already passed in a GeoLocation
+    //  object and here we pass in an NSDate object, which 
+    //  reperesents the day we are calculating sunrise and sunset
+    //  on. We also pass in a value for Zenith (90.0, which gets 
+    //  adjusted for civil sunrise and sunset inside of the
+    //  "suntimes" instance of SunriseAndSunset.
+    //
+    //  We also pass in a Boolean which determines if we should
+    //  adjust the values for for elevation.
+    //  
+    //
+    
+    double sunrise = [suntimes UTCSunriseForDate:date andZenith:kZenithGeometric adjustForElevation:adjustforElevation];
+    
+    //
+    //  Release the suntimes object since we don't need it anymore.
+    //
+    
+    [suntimes release];
+	
+    //
+    //  Return the sunrise value
+    //
+    
+    return sunrise;
+}
+
+//
+//  This method returns the number of seconds since midnight 
+//  at which sunset occurs at a given location on a given 
+//  date. The time is in GMT and must be adjusted for the
+//  local time zone.
+//
+//  latitude  - This is a double representing the latitude.
+//              Use a negative value for south and a positive
+//              value for north.
+//
+//  longitude - This is a double representing the longitude.
+//              Use a negative value for west and a positive
+//              value for east.
+//
+//  date      - An NSDate object, representing the day for which
+//              we are calculating sunrise and sunset.
+//
+//  elevation - A double representing the elevation of the 
+//              target location in meters.  
+//
+//  withElevationAdjustment - A boolean deciding if we want to
+//                            adjust for elevation.
+//
+
+- (double)sunsetAsDoubleForLatitude:(double)latitude andLongitude:(double)longitude onDate:(NSDate *)date atElevation:(double)elevation withElevationAdjustment:(BOOL)adjustforElevation{
+    
+    //
+    //  Set up a NSTimeZone object.
+    //
+    //  This is actually not used in the SunriseAndSunset 
+    //  implementation of calculating the times, but it was
+    //  required in the original Java version, due to Java
+    //  inheritance.
+    //
+    
+    NSTimeZone *tz = [NSTimeZone systemTimeZone];
+    
+    //  
+    //  Set up the GeoLocation object.
+    //
+    //  This represents the latitude and longitude used in
+    //  the SunriseAndSunset object, to calculate location
+    //  sensitive times for sunrise and sunset. The name
+    //  argument is an artifact of the Java implementation.
+    //
+    //
+    //
+    
+    GeoLocation *tempG = [[GeoLocation alloc] initWithName:@"SunViewer" andLatitude: latitude andLongitude: longitude andTimeZone:tz];
+    
+    //
+    //  Set the elevation of the GeoLocation Object.
+    //
+    //  Elevation above sea level is measered in meters
+    //  and affects the outcome of the calculations.
+    //
+    
+    [tempG setAltitude:elevation];
+    
+    //
+    //  Set up the SunriseAndSunset object.
+    //
+    //  This object takes the GeoLocation object
+    //  which we just created and uses it to do
+    //  the sunrise and sunset calculations.
+    //
+    
+    SunriseAndSunset *suntimes = [[SunriseAndSunset alloc] initWithGeoLocation:tempG];
+    
+    //
+    //  Release the GeoLocation object.
+    //
+    
+    [tempG release];
+    
+    //
+    //  This next line calculates the sunrise and sunset 
+    //  for a given date. We've already passed in a GeoLocation
+    //  object and here we pass in an NSDate object, which 
+    //  reperesents the day we are calculating sunrise and sunset
+    //  on. We also pass in a value for Zenith (90.0, which gets 
+    //  adjusted for civil sunrise and sunset inside of the
+    //  "suntimes" instance of SunriseAndSunset.
+    //
+    //  We also pass in a Boolean which determines if we should
+    //  adjust the values for for elevation.
+    //  
+    //
+    
+    double sunset = [suntimes UTCSunsetForDate:date andZenith:kZenithGeometric adjustForElevation:adjustforElevation];    
+        
+	//
+    //  Release the suntimes object since we don't need it anymore.
+    //
+    
+    [suntimes release];
+    
+    //
+    //  Return the sunrise value
+    //
+    
+	
+    return sunset;
 }
 
 #pragma mark - NSDate from double
@@ -380,7 +383,7 @@
     //
     
     if (time == NAN) {
-        NSLog(@"Received an invalid number. I can't do anything with that...");
+        NSLog(@"<Uh-Oh:> Received an invalid number. I can't do anything with that...");
         return nil;
     }
     
@@ -588,6 +591,9 @@
 //
 //  Determines if sunset has ocurred yet today
 //
+//
+//  TODO: Rewrite this to use NSDate and intervalSinceDate
+//
 
 - (BOOL)sunsetHasOccurred{
 
@@ -595,65 +601,11 @@
     
     double sunsetAsSeconds = [self secondsFromTime:[self sunsetAsDoubleOnDate:[NSDate date] inTimeZone:[NSTimeZone systemTimeZone] withElevationAdjustment:NO]];
     
-    //NSLog(@"Sunset: %f, Current Time: %f", sunsetAsSeconds, currentTimeAsSeconds);
-    
     if (currentTimeAsSeconds > sunsetAsSeconds) {
         return YES;
     }
     
     return NO;
-}
-
-#pragma mark - Time as NSDate
-
-
-
-#pragma mark - Formatting method
-
-//
-//  This method takes a time as a double
-//  and returns it as a formatted string.
-//
-
-- (NSString *) timeAsStringFromDouble:(double)time{
-    
-#warning <WARNING:>This method is depracated. Use dateFromTime and stringFromDate instead.
-    
-    //
-    //  If the time is greater than 12
-    //  then we want to convert it to 
-    //  twelve hour format and set the 
-    //  AM or PM string to PM. If it's 
-    //  less than twelve, make it AM.
-    //  
-    
-    NSMutableString *AMOrPM = [[NSMutableString alloc] init];
-    
-    if (time > 12.0) {
-        [AMOrPM setString:@"PM"];
-        time = time - 12.0;
-    }else{
-        [AMOrPM setString:@"AM"];
-    }
-    
-    //
-    //  Get an immutable copy of the AM PM string,
-    //  then release the mutable version of the string.
-    //
-    
-    NSString *AnteOrPostMeridiem = [[AMOrPM copy] autorelease];
-    [AMOrPM release];
-    
-    //
-    //  Break up seconds into appropriate units
-    //
-    
-    double hours = floor(time);
-    double minutes = ( time - floor(time) ) * 60;
-    double seconds = ( minutes - floor(minutes) ) * 60;
-    
-    return [NSString stringWithFormat:@"%02.0f:%02.0f:%02.0f %@", hours, minutes, seconds, AnteOrPostMeridiem];
-
 }
 
 

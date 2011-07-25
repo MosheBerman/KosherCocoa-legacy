@@ -7,22 +7,30 @@
 //
 
 #import "KosherCocoaViewController.h"
-#import "EarthViewer.h"
 #import "WeeklyParsha.h"
+#import "ZmanimCalendar.h"
+#import "GeoLocation.h"
 
 @implementation KosherCocoaViewController
 @synthesize zmanimTable;
 
-@synthesize zmanim;
+@synthesize zmanimArray;
 
-@synthesize sunriset, geoLocation, datePicker, latBox, lonBox, cl, scroller, pageControl;
-@synthesize parashaLabel, nextParashaLabel ,yearInfoLabel, parashaView, suntimesView;
+@synthesize datePicker, cl, calendar;
 
 //
 //
 //
 
 - (void)viewDidLoad{
+    
+    //
+    //  Set some default values
+    //
+    
+    lat = 40.714353;
+    
+    lon = -74.005973;
     
     //
     // Create the location manager if this object does not
@@ -40,11 +48,13 @@
         
         [self.cl startUpdatingLocation];
     }
-    if (self.zmanim == nil) {
-        NSMutableDictionary *t = [[NSMutableDictionary alloc] init];
-        [self setZmanim:t];
+    if (self.zmanimArray == nil) {
+        NSMutableArray *t = [[NSMutableArray alloc] init];
+        [self setZmanimArray:t];
         [t release];    
     }
+    
+    //[inDiasporaSelector addTarget:self action:@selector(locationModeChanged:) forControlEvents:UIControlEventValueChanged];    
 
 }    
 
@@ -56,21 +66,11 @@
     [self.cl stopUpdatingLocation];
 }
 
+/*
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
-    scroller.pagingEnabled = YES;
-    scroller.showsHorizontalScrollIndicator = NO;
-    scroller.contentSize = CGSizeMake(scroller.frame.size.width*2, scroller.frame.size.height);
-
-    [suntimesView setFrame:CGRectMake(0, 0, scroller.frame.size.width, scroller.frame.size.height)];
-    [parashaView setFrame:CGRectMake(scroller.frame.size.width, 0, scroller.frame.size.width, scroller.frame.size.height)];
-    [scroller addSubview:suntimesView];
-    [scroller addSubview:parashaView];
-    [pageControl setNumberOfPages:2];
-    scroller.delegate = self;
 }
-
+*/
 
 #pragma mark - Core Location
 
@@ -110,7 +110,9 @@
         [self.cl stopUpdatingLocation];
     }else{
         //We still don't have an altitude. Keep trying.
-        [self goToToday:nil];        
+        //[self goToToday:nil];        
+        
+        [zmanimTable reloadData];
     }
         
     
@@ -134,32 +136,55 @@
 
 - (IBAction)recalcSunTimes:(id)sender{
     
+    if (self.calendar == nil) {
+        
+        //
+        //  Create a GeoLocation Object
+        //
+        //  The values here are for New York City
+        //  Lat: 40.714353
+        //  Lon: -74.005973
+        //
+        
+        GeoLocation *AGeoLocation = [[GeoLocation alloc] initWithName:@"NYC" andLatitude:lat andLongitude:lon andTimeZone:[NSTimeZone systemTimeZone]];
+        
+        //
+        //  Create a Zmanim Calendar
+        //
+        
+        ZmanimCalendar *zmanimCalendar = [[ZmanimCalendar alloc] initWithLocation:AGeoLocation];
+        
+        [AGeoLocation release];
+        
+        self.calendar = zmanimCalendar;
+        
+        [zmanimCalendar release];        
+        
+    }
+    
     //
-    //  Create the human with a given latitude and longitude
+    //  Set the date to the working date
     //
     
-    EarthViewer *human = [[EarthViewer alloc] initWithLatitude:lat andLongitude:lon andElevation:0.0];
+    [self.calendar setWorkingDate:[datePicker date]];
+    
+    
+    [self.zmanimArray removeAllObjects];
 
-    //
-    //  Calculate the sunrise and sunset
-    //
-    
-    double sunset = [human sunsetAsDoubleOnDate:[datePicker date] inTimeZone:[NSTimeZone systemTimeZone] withElevationAdjustment:NO];
-
-    double sunrise = [human sunriseAsDoubleOnDate:[datePicker date] inTimeZone:[NSTimeZone systemTimeZone] withElevationAdjustment:NO];
-	
-    //
-    //  Store the new times in the zmanim dictionary
-    //
-    
-    [self.zmanim setObject:[human stringFromDate:[human dateFromTime:sunrise] forTimeZone:[NSTimeZone systemTimeZone]] forKey:@"Sunrise"];
-    [self.zmanim setObject:[human stringFromDate:[human dateFromTime:sunset] forTimeZone:[NSTimeZone systemTimeZone]] forKey:@"Sunset"];      
-    
-    //
-    //  Release the EarthViewer
-    //
-    
-    [human release];
+    [self.zmanimArray addObject:[self calculateZman:@"alosHashachar" andCallIt:@"Alos (16.1 deg)"]];
+    [self.zmanimArray addObject:[self calculateZman:@"alos72" andCallIt:@"Alos (72 min)"]];    
+    [self.zmanimArray addObject:[self calculateZman:@"sunrise" andCallIt:@"Sunrise"]];
+    [self.zmanimArray addObject:[self calculateZman:@"sofZmanShmaMogenAvraham" andCallIt:@"Shma (M.A.)"]];        
+    [self.zmanimArray addObject:[self calculateZman:@"sofZmanShmaGra" andCallIt:@"Shma (Gra)"]];
+    [self.zmanimArray addObject:[self calculateZman:@"sofZmanTfilaMogenAvraham" andCallIt:@"Tfila (M.A.)"]];        
+    [self.zmanimArray addObject:[self calculateZman:@"sofZmanTfilaGra" andCallIt:@"Tfila (Gra)"]];            
+    [self.zmanimArray addObject:[self calculateZman:@"chatzos" andCallIt:@"Chatzos"]]; 
+    [self.zmanimArray addObject:[self calculateZman:@"minchaGedola" andCallIt:@"Mincha Gedola"]];     
+    [self.zmanimArray addObject:[self calculateZman:@"minchaKetana" andCallIt:@"Mincha Ketana"]];         
+    [self.zmanimArray addObject:[self calculateZman:@"plagHamincha" andCallIt:@"Plag HaMincha"]];             
+    [self.zmanimArray addObject:[self calculateZman:@"sunset" andCallIt:@"Sunset"]];    
+    [self.zmanimArray addObject:[self calculateZman:@"tzais" andCallIt:@"Tzais (8.5 deg)"]];         
+    [self.zmanimArray addObject:[self calculateZman:@"tzais72" andCallIt:@"Tzais (72 min)"]];             
     
     //
     //  Reload the data
@@ -169,39 +194,24 @@
 
 }
 
-#pragma mark - Parasha Code
+- (CalculatedZman *)calculateZman:(NSString *)zman andCallIt:(NSString *)name{
 
-- (IBAction)refreshParasha:(id)sender{
+    CalculatedZman *calcZman = [[[CalculatedZman alloc] init] autorelease];
+    calcZman.name = name;
     
-    WeeklyParsha *parsha = [[WeeklyParsha alloc] init];
-    WeeklyParsha *nextWeekParsha = [[WeeklyParsha alloc] init];
+    //
+    //  If a real selector was passed in, use it.
+    //
     
-    
-    if ([inDiasporaSelector selectedSegmentIndex] == 0) {
+    if ([self.calendar respondsToSelector:NSSelectorFromString(zman)]) {
         
-        parashaLabel.text = [parsha thisWeeksParshaForDate:[self.datePicker date] inDiaspora:NO];
-        nextParashaLabel.text = [nextWeekParsha nextWeeksParshaForDate:[datePicker date] inDiaspora:NO];
-        
-    }else if([inDiasporaSelector selectedSegmentIndex] == 1){
-        
-        parashaLabel.text = [parsha thisWeeksParshaForDate:[datePicker date] inDiaspora:YES];
-        nextParashaLabel.text = [parsha nextWeeksParshaForDate:[datePicker date] inDiaspora:YES];       
+        calcZman.time = [self.calendar stringFromDate:[self.calendar performSelector:NSSelectorFromString(zman)] forTimeZone:self.calendar.geoLocation.timeZone];
     }
     
-    yearInfoLabel.text = [parsha yearTypeStringForDate:[datePicker date]];
-    
-    [nextWeekParsha release];
-    [parsha release];
-    
-    [inDiasporaSelector addTarget:self action:@selector(locationModeChanged:) forControlEvents:UIControlEventValueChanged];
+    return calcZman;    
 }
 
-#pragma mark - ScrollView Delegate
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-
-    [pageControl setCurrentPage:(scrollView.contentOffset.x/scrollView.frame.size.width)];
-}
+#pragma mark - Parasha Code
 
 #pragma mark - Wheel controls
 
@@ -209,46 +219,51 @@
     
     [self.datePicker setDate:[NSDate dateWithTimeInterval:86400 sinceDate:[self.datePicker date]] animated:YES];
     [self recalcSunTimes:nil]; 
-    [self refreshParasha:nil];
 }
 
 - (IBAction)goToToday:(id)sender {
     [self.datePicker setDate:[NSDate date] animated:YES];
     [self recalcSunTimes:nil];
-    [self refreshParasha:nil];
 }
 
 - (IBAction)goBackADay:(id)sender {
-        [self.datePicker setDate:[NSDate dateWithTimeInterval:-86400 sinceDate:[self.datePicker date]] animated:YES];
-    [self recalcSunTimes:nil];
-    [self refreshParasha:nil];
+    [self.datePicker setDate:[NSDate dateWithTimeInterval:-86400 sinceDate:[self.datePicker date]] animated:YES];
+    [self recalcSunTimes:nil]; 
 }
 
 #pragma mark - Table Datasource and Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0) {
+    if (section == 2) {
 
         //
-        //  This is commented out 
-        //  since Core Location does
-        //  not seem to want to return
+        //  Core Location does not
+        //  seem to want to return
         //  an altitude, no matter
         //  how hard I try...
         //
         
         return 3;
         
-        return 2;
-    }else{
-        return [[self.zmanim allValues] count];
+    }else if (section == 0){
+        return [self.zmanimArray count];
+    }else if (section == 1){
+        return 2;//parasha israel and diaspora
     }
     
     return 1;
 }
 
+//
+//  We now have three sections -
+//
+//  One for basic zmanim, one for the
+//  parasha, and one for location information.
+//
+//
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -267,7 +282,8 @@
     //  Show the current latitude, longitude and altitude in thier cells
     //
     
-    if (indexPath.section == 0) {
+    if (indexPath.section == 2) {
+        
         if (indexPath.row == 0) {
             [cell.textLabel setText:@"Latitude:"];
             [cell.detailTextLabel setText:[NSString stringWithFormat:@"%f", lat]];
@@ -281,9 +297,28 @@
         
         
         
-    }else if (indexPath.section == 1) {
-        [cell.textLabel setText:[[zmanim allKeys] objectAtIndex:[indexPath row]]];
-        [cell.detailTextLabel setText:[zmanim objectForKey:[[zmanim allKeys] objectAtIndex:[indexPath row]]]];
+    }else if (indexPath.section == 0) {
+        
+
+        [cell.textLabel setText:((CalculatedZman *)[zmanimArray objectAtIndex:[indexPath row]]).name];
+        [cell.detailTextLabel setText:((CalculatedZman *)[zmanimArray objectAtIndex:[indexPath row]]).time];
+        
+    }else if (indexPath.section == 1){
+
+        WeeklyParsha *parsha = [[WeeklyParsha alloc] init];
+        
+        if (indexPath.row == 0) {
+            
+            cell.textLabel.text = @"Parasha (Diaspora)";
+            cell.detailTextLabel.text = [parsha thisWeeksParshaForDate:[datePicker date] inDiaspora:YES];
+            
+
+        }else if(indexPath.row == 1){
+            cell.textLabel.text = @"Parasha (Israel)";
+            cell.detailTextLabel.text = [parsha thisWeeksParshaForDate:[datePicker date] inDiaspora:NO];
+        }
+        
+        [parsha release];        
     }
 
     return cell;
@@ -299,21 +334,11 @@
 }
 
 - (void)dealloc {
-    [zmanim release];
-    [yearInfoLabel release];
-    [parashaLabel release];
-    [nextParashaLabel release];
-    [parashaView release];
-    [suntimesView release];
-    [scroller release];
+    [zmanimArray release];
+    [calendar release];
     [cl release];
-    [latBox release];
-    [lonBox release];
     [datePicker release];
-    [geoLocation release];
-    [sunriset release];
     [updateLocation release];
-    [zmanimTable release];
     [zmanimTable release];
     [super dealloc];
 }

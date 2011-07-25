@@ -436,7 +436,7 @@
         [self addParsha:@"Vayelech" toMutableArray:tempArray];        
     }
     
-    if(a==0&&b==0&&c==2||a==0&&b==1&&c==1){
+    if((a==0&&b==0&&c==2)||(a==0&&b==1&&c==1)){
         
         //
         //  Double up the parshios
@@ -635,7 +635,7 @@
         
     }
     
-    if(a==1&&b==0&&c==2||a==1&&b==1&&c==1){
+    if((a==1&&b==0&&c==2)||(a==1&&b==1&&c==1)){
         //
         //  Double up the parshios
         //
@@ -809,7 +809,7 @@
         [self addParsha:@"Vayelech" toMutableArray:tempArray];        
     }
     
-    if(a==0&&b==0&&c==2||a==0&&b==1&&c==1){
+    if((a==0&&b==0&&c==2)||(a==0&&b==1&&c==1)){
         
         //
         //  Double up the parshios
@@ -1005,7 +1005,7 @@
         
     }
     
-    if(a==1&&b==0&&c==2||a==1&&b==1&&c==1){
+    if((a==1&&b==0&&c==2)||(a==1&&b==1&&c==1)){
         
         //
         //  We don't double any parshiot in Israel this year!

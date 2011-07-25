@@ -10,12 +10,13 @@
 #import "MathAdditions.h"
 #import "GeoLocation.h"
 #import "KosherCocoaConstants.h"
+#import "AstronomicalCalculator.h"
 
 //
 //  The class interface
 //
 
-@interface SunriseAndSunset : NSObject {
+@interface SunriseAndSunset : AstronomicalCalculator {
     
     NSString *calculatorName;
     GeoLocation *geoLocation;
@@ -32,7 +33,7 @@
 //
 //
 
-- (id)initWithGeoLocation:(GeoLocation *)geoLoc;
+- (id)initWithGeoLocation:(GeoLocation *)aGeoLocation;
 
 //
 //  A method returning the sunrise in UTC as a double. If an error was
@@ -49,7 +50,7 @@
 //
 //  - Latitude: in degrees, longitudes south of Equator are negative
 //
-//  - Type:  type of calculation to carry out. kCalcTypeSunrise or kCalcTypeSunset
+//  - Type:  type of calculation to carry out. kCalcTypeSunrise or kCalcTypeSunset (int 0 or 1)
 //
 //
 
@@ -121,13 +122,13 @@
 - (int) dayOfYearForYear:(int)year andMonth:(int)month andDay:(int)day;
 
 //
-//
+//  Get sunrise as a double
 //
 
 - (double) UTCSunsetForDate:(NSDate*)date andZenith:(double)zenith adjustForElevation:(BOOL)adjustForElevation;
 
 //
-//
+//  Get sunset as a double
 //
 - 
 (double) UTCSunriseForDate:(NSDate*)date andZenith:(double)zenith adjustForElevation:(BOOL)adjustForElevation;
@@ -200,5 +201,6 @@
 //
 
 -(double) adjustZenith:(double) zenith forElevation:(double) elevation;
+
 
 @end

@@ -16,13 +16,13 @@
     double longitude;
     NSString *locationName;
     NSTimeZone *timeZone;
-    double elevation;
+    double altitude;
     
 }
 
 @property double latitude;
 @property double longitude;
-@property double elevation;
+@property double altitude;
 @property (nonatomic, retain) NSString *locationName;
 @property (nonatomic, retain) NSTimeZone *timeZone;
 
@@ -30,13 +30,13 @@
 //  Initializers
 //
 
-- (id) initWithName:(NSString *)name andLatitude:(double)_latitude andLongitude:(double)_longitude forTimeZone:(NSTimeZone *)timezone;
+- (id) initWithName:(NSString *)name andLatitude:(double)_latitude andLongitude:(double)_longitude andTimeZone:(NSTimeZone *)timezone;
 
 //
 //
 //
 
-- (id) initWithName:(NSString *)name andLatitude:(double)_latitude andLongitude:(double)_longitude andElevation:(double)_elevation forTimeZone:(NSTimeZone *)timezone;
+- (id) initWithName:(NSString *)name andLatitude:(double)_latitude andLongitude:(double)_longitude andElevation:(double)_elevation andTimeZone:(NSTimeZone *)timezone;
 
 //
 //

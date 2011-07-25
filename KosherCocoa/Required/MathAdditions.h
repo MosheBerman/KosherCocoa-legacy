@@ -26,21 +26,29 @@ double toDegrees(double radians);
 //
 // sin of an angle in degrees
 //
+
 double sinDeg(double deg);
+
 //
 //acos of an angle, result in degrees
 //
+
 double acosDeg(double x);
+
 //
 // asin of an angle, result in degrees
 //
+
 double asinDeg(double x);
+
 //
 //  tan of an angle in degrees
 //
+
 double tanDeg(double deg);
 
 //
 //  cos of an angle in degrees
 //
+
 double cosDeg(double deg);

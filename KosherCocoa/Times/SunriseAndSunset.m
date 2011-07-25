@@ -17,7 +17,7 @@
 //  The initializer.
 //
 
-- (id)initWithGeoLocation:(GeoLocation *)geoLoc{
+- (id)initWithGeoLocation:(GeoLocation *)aGeoLocation{
     
     if (self == [super init]) {
         
@@ -30,26 +30,20 @@
         //
         
         
-        if (geoLoc == nil) {
+        if (aGeoLocation == nil) {
             
             //
             //  Create the GeoLocation
             //
             
-            GeoLocation *tempG = [[GeoLocation alloc] initWithName:@"Default" andLatitude:0.0 andLongitude:0.0 forTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+            GeoLocation *tempG = [[[GeoLocation alloc] initWithName:@"Default" andLatitude:0.0 andLongitude:0.0 andTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]]autorelease];
                                   
-            
+
             //
             //  Assign it to the geoLoc object
             //
             
-            geoLoc = tempG;
-            
-            //
-            //  Release the new GeoLocation
-            //
-            
-            [tempG release];
+            aGeoLocation = tempG;
             
         }
         
@@ -57,7 +51,7 @@
         //  Store the geoLocation object
         //
         
-        self.geoLocation = geoLoc;
+        self.geoLocation = aGeoLocation;
     }
     
     return self;
@@ -130,7 +124,7 @@
 
 //
 //  Calculate the local mean time of rising or setting.
-//  By `local' is meant the
+//  By 'local' is meant the
 //  exact time at the location, assuming that there were no time zone. That
 //  is, the time difference between the location and the Meridian depended
 //  entirely on the longitude. We can't do anything with this time directly;
@@ -261,6 +255,12 @@
 // method needs to know the year, because leap years have an impact here
 //
 
+
+//
+// Calculate the day of the year, where Jan 1st is day 1. Note that this
+// method needs to know the year, because leap years have an impact here
+//
+
 - (int) dayOfYearForYear:(int)year andMonth:(int)month andDay:(int)day{
     int n1 = 275 * month / 9;
     int n2 = (month + 9) / 12;
@@ -280,7 +280,7 @@
     double doubleTime = NAN;
     
     if (adjustForElevation == YES) {
-        zenith = [self adjustZenith:zenith forElevation:self.geoLocation.elevation];
+        zenith = [self adjustZenith:zenith forElevation:self.geoLocation.altitude];
     }else{
         zenith = [self adjustZenith:zenith forElevation:0];
     }
@@ -293,7 +293,6 @@
     
     doubleTime = [self sunriseOrSunsetForYear:year andMonth:month andDay:day atLongitude:self.geoLocation.longitude andLatitude:self.geoLocation.latitude withZenith:zenith andType:kTypeSunset];
     
-    //NSLog(@"Sunset Method:  %.20f", doubleTime);
     return doubleTime;
 }
 
@@ -306,7 +305,7 @@
     double doubleTime = NAN;
     
     if (adjustForElevation == YES) {
-        zenith = [self adjustZenith:zenith forElevation:self.geoLocation.elevation];
+        zenith = [self adjustZenith:zenith forElevation:self.geoLocation.altitude];
     }else{
         zenith = [self adjustZenith:zenith forElevation:0];
     }
@@ -318,10 +317,6 @@
     int day = [[[self yearMonthAndDayFromDate:date] objectAtIndex:2]intValue];
     
     doubleTime = [self sunriseOrSunsetForYear:year andMonth:month andDay:day atLongitude:self.geoLocation.longitude andLatitude:self.geoLocation.latitude withZenith:zenith andType:kTypeSunrise];
-    
-   // NSLog(@"- (double) getUTCSunriseForDate:(NSDate*)date andZenith:(double)zenith adjustForElevation:(BOOL)adjustForElevation; %.20f", doubleTime);
-    
-    
     
     return doubleTime;
 }
@@ -371,7 +366,6 @@
     ////NSLog(@"Elevation Adjustment: %.15f", elevationAdjustment);
     
     return elevationAdjustment;    
-    
 }
 
 //
@@ -405,10 +399,6 @@
         zenith = zenith
         + (kSolarRadius + kRefraction + [self elevationAdjustmentForElevation:elevation]);
     }
-    
-    //NSLog(@"- (double) adjustZenith:(double) zenith forElevation:(double) elevation; %.15f", zenith);
-    
-    //NSLog(@"\n\n\n\n\n\nPI: %.15f", kMyPI);
     
     return zenith;
 }
@@ -466,11 +456,10 @@
 //
 //  The dealloc method, as required for 
 //  iOS/Cocoa touch memory management
-//  
-//  iOS 5 ARC doesn't use this.
 //
 
 - (void) dealloc{
+    [geoLocation release];
     [calculatorName release];
     [super dealloc];
 }

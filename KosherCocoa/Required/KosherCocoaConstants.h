@@ -43,12 +43,52 @@
 
 #define kZenithAstronomical 102.0
 
+//  These zeniths are defined in the ZmanimCalendar in KosherCocoa
+
+#define kZenithSixteenPointOne kZenithGeometric + 16.1
+
+#define kZenithEightPointFive kZenithGeometric + 8.5
+
 /* ---- Astronomical Constants --- */
 
 #define kDegreesPerHour (360.0 / 24.0)
+
 #define kSolarRadius (16.0/60.0)
+
 #define kRefraction (34.0/60.0)
+
 #define kEarthRadius 6356.9
+
+/* --- Complex Zmanim Constants --- */
+
+#define kZenithThreePointSeven kZenithGeometric + 3.7
+
+#define kZenithFivePointNinetyFive kZenithGeometric + 5.95
+
+#define kZenithSevenPointZeroEightThree kZenithGeometric + 7 + (5/60)
+
+#define kZenithTenPointTwo kZenithGeometric + 10.2
+
+#define kZenithElevenDegrees kZenithGeometric + 11
+
+#define kZenithElevenPointFive kZenithGeometric + 11.5
+
+#define kZenithThirteenDegrees kZenithGeometric + 13
+
+#define kZenithNineteenPointEight kZenithGeometric + 19.8
+
+#define kZenithTwentySix kZenithGeometric + 26.0
+
+#define kZenithFourPointThirtySeven kZenithGeometric + 4.37 
+
+#define kZenithFourPointSixtyOne kZenithGeometric + 4.61
+
+#define kZenithFourPointEight kZenithGeometric + 4.8
+
+#define kZenithThreePointSixtyFive kZenithGeometric + 3.65
+
+#define kZenithFivePointEightyEight kZenithGeometric + 5.88
+
 
 /* ------------------------ GeoLocation Constants ----------------------- */
 
@@ -88,6 +128,9 @@
 
 //how many hours are in a day
 #define kHoursInADay 24
+
+//How many seconds are in an hour 
+#define kSecondsInAnHour (kSecondsInAMinute * kMinutesInAnHour)
 
 //The number of seconds in a day
 #define kSecondsInADay (kSecondsInAMinute * kMinutesInAnHour * kHoursInADay)

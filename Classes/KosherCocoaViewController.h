@@ -9,29 +9,58 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "SunriseAndSunset.h"
+#import "CalculatedZman.h"
+#import "ZmanimCalendar.h"
 
 @interface KosherCocoaViewController : UIViewController <CLLocationManagerDelegate, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource> {
 
-    SunriseAndSunset *sunriset;
-    GeoLocation *geoLocation;
+    //
+    //  This is the object that does all the calculations
+    //
     
-    IBOutlet UILabel *sunriseLabel;
-    IBOutlet UILabel *sunsetLabel;
-    IBOutlet UILabel *latBox;
-    IBOutlet UILabel *lonBox;
+    ZmanimCalendar *calendar;
+    
+    //
+    //  This picker allows the user to choose a date
+    //
+    
     IBOutlet UIDatePicker *datePicker;
-    IBOutlet UIScrollView *scroller;
-    IBOutlet UIPageControl *pageControl;
-    IBOutlet UIView *suntimesView;
-    IBOutlet UIView *parashaView;    
+    
+    //
+    //  This table lists all of the information
+    //
+    
     UITableView *zmanimTable;
-    IBOutlet UILabel *parashaLabel;
-    IBOutlet UILabel *nextParashaLabel;    
-    IBOutlet UILabel *yearInfoLabel;
+    
+    //
+    //
+    //
+    
     IBOutlet UISegmentedControl *inDiasporaSelector;
+    
+    //
+    //  This is the CLLocationManager which 
+    //  gets the user's location
+    //
+    
     CLLocationManager *cl;
+    
+    
+    //
+    //  This button invokes the CLLocationManager
+    //
+    
     UIBarButtonItem *updateLocation;
-    NSMutableDictionary *zmanim;
+    
+    //
+    //  An array which holds the calculated times
+    //
+    
+    NSMutableArray *zmanimArray;
+    
+    //
+    //  Location variables
+    //
     
     double lat;
     double lon;
@@ -39,29 +68,18 @@
     
 }
 
-- (IBAction)recalcSunTimes:(id)sender;
-
-@property (nonatomic, retain) SunriseAndSunset *sunriset;
-@property (nonatomic, retain) GeoLocation *geoLocation;
 @property (nonatomic, retain) UIDatePicker *datePicker;
-@property (nonatomic, retain) UILabel*latBox;
-@property (nonatomic, retain) UILabel *lonBox;
 @property (nonatomic, retain) CLLocationManager *cl;
-@property (nonatomic, retain) UIScrollView *scroller;
-@property (nonatomic, retain) UIPageControl *pageControl;
-@property (nonatomic, retain) UILabel *parashaLabel;
-@property (nonatomic, retain) UILabel *nextParashaLabel;
-@property (nonatomic, retain) UILabel *yearInfoLabel;
-@property (nonatomic, retain) UIView *suntimesView;
-@property (nonatomic, retain) UIView *parashaView;
-@property (nonatomic, retain) NSMutableDictionary *zmanim;
+@property (nonatomic, retain) NSMutableArray *zmanimArray;
 @property (nonatomic, retain) IBOutlet UITableView *zmanimTable;
+@property (nonatomic, retain) ZmanimCalendar *calendar;
 
 - (IBAction)goAheadOneDay:(id)sender;
 - (IBAction)goToToday:(id)sender;
 - (IBAction)goBackADay:(id)sender;
 - (IBAction)updateLocation:(id)sender;
-- (IBAction)refreshParasha:(id)sender;
+- (CalculatedZman *)calculateZman:(NSString *)zman andCallIt:(NSString *)name;
+- (IBAction)recalcSunTimes:(id)sender;
 
 @end
 

@@ -17,9 +17,7 @@
 
 @implementation GeoLocation
 
-@synthesize locationName, timeZone, latitude, longitude, elevation;
-
-/* ------------------------------ Initializers --------------------------------- */
+@synthesize locationName, timeZone, latitude, longitude, altitude;
 
  /*
  //
@@ -28,10 +26,10 @@
  //
  */
 
-- (id) initWithName:(NSString *)name andLatitude:(double)_latitude andLongitude:(double)_longitude forTimeZone:(NSTimeZone *)timezone{
+- (id) initWithName:(NSString *)name andLatitude:(double)_latitude andLongitude:(double)_longitude andTimeZone:(NSTimeZone *)timezone{
     
     
-    return [self initWithName:name andLatitude:_latitude andLongitude:_longitude andElevation:0 forTimeZone:timeZone];
+    return [self initWithName:name andLatitude:_latitude andLongitude:_longitude andElevation:0 andTimeZone:timeZone];
 }
 
 /*
@@ -40,14 +38,14 @@
 //
 */
 
-- (id) initWithName:(NSString *)name andLatitude:(double)_latitude andLongitude:(double)_longitude andElevation:(double)_elevation forTimeZone:(NSTimeZone *)timezone{
+- (id) initWithName:(NSString *)name andLatitude:(double)_latitude andLongitude:(double)_longitude andElevation:(double)_elevation andTimeZone:(NSTimeZone *)timezone{
     
     if(self == [super init]){
         
         [self setLocationName:name];
         [self setLatitude:_latitude];
         [self setLongitude:_longitude];
-        [self setElevation:_elevation];
+        [self setAltitude:_elevation];
         [self setTimeZone:timeZone];
      }
     
