@@ -118,7 +118,6 @@
 		processedTime = processedTime - 24.0;
 	}
 
-	//NSLog(@"- (double) sunriseOrSunsetForYear:( int)year andMonth:(int)month andDay:(int)day atLongitude:(double)longitude andLatitude:(double)latitude withZenith:(double)zenith andType:(int)type %.15f", processedTime);
     return processedTime;
 }
 
@@ -279,7 +278,7 @@
     
     double doubleTime = NAN;
     
-    if (adjustForElevation == YES) {
+    if (adjustForElevation) {
         zenith = [self adjustZenith:zenith forElevation:self.geoLocation.altitude];
     }else{
         zenith = [self adjustZenith:zenith forElevation:0];
@@ -304,17 +303,21 @@
     
     double doubleTime = NAN;
     
-    if (adjustForElevation == YES) {
+    if (adjustForElevation) {
         zenith = [self adjustZenith:zenith forElevation:self.geoLocation.altitude];
     }else{
         zenith = [self adjustZenith:zenith forElevation:0];
     }
+    
+//    9.946528
+    //9.866219
     
     int year = [[[self yearMonthAndDayFromDate:date] objectAtIndex:0]intValue];
 
     int month = [[[self yearMonthAndDayFromDate:date] objectAtIndex:1]intValue];
     
     int day = [[[self yearMonthAndDayFromDate:date] objectAtIndex:2]intValue];
+    
     
     doubleTime = [self sunriseOrSunsetForYear:year andMonth:month andDay:day atLongitude:self.geoLocation.longitude andLatitude:self.geoLocation.latitude withZenith:zenith andType:kTypeSunrise];
     
@@ -360,7 +363,7 @@
     
     double earthRadius = kEarthRadius;
     
-    // double elevationAdjustment = 0.0347 * Math.sqrt(elevation);
+     //double elevationAdjustment = 0.0347 * sqrt(elevation);
     double elevationAdjustment = toDegrees(acos(earthRadius/(earthRadius + (elevation / 1000))));
     
     ////NSLog(@"Elevation Adjustment: %.15f", elevationAdjustment);
@@ -428,9 +431,9 @@
     //  Store the values in NSNumbers
     //
     
-    NSNumber *year = [NSNumber numberWithInt:[parts year]];
-    NSNumber *month = [NSNumber numberWithInt:[parts month]];    
-    NSNumber *day = [NSNumber numberWithInt:[parts day]];
+    NSNumber *year = [NSNumber numberWithInt:(int)[parts year]];
+    NSNumber *month = [NSNumber numberWithInt:(int)[parts month]];    
+    NSNumber *day = [NSNumber numberWithInt:(int)[parts day]];
     
     //
     //  Create an array to hold the day, month and year

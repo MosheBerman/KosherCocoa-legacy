@@ -6,10 +6,9 @@
 //  Copyright 2011 MosheBerman.com. All rights reserved.
 //
 //  KosherCocoa Zmanim API ported by Moshe Berman from
-//  the original KosherJava project by Eliyahu Herschfeld.
+//  the original KosherJava project by Eliyahu Hershfeld.
 //
-//
-//
+ 
 */
 
 #import "GeoLocation.h"
@@ -380,6 +379,11 @@
     double d = sqrt(dLat * dLat + q * q * dLon * dLon);
     return d * R;
     
+}
+
+- (NSString *)description {
+    
+    return [NSString stringWithFormat:@"<GeoLocation:> ----\nName: %@ \nLatitude: %f, \nLongitude: %f \nAltitude: %f", self.locationName, self.latitude, self.longitude, self.altitude];
 }
 
 /* ------------------------------ Dealloc Method --------------------------------*/

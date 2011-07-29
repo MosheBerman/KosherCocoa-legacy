@@ -54,19 +54,19 @@
         return nil;
     }
     
-    return [self dateFromTime:(sunrise)];
+    return [self dateFromTime:sunrise];
     
 }
 
 - (NSDate *) seaLevelSunrise{
     
-    double sunrise = [self UTCSunrise:kZenithGeometric];
+    double sunrise = [self UTCSeaLevelSunrise:kZenithGeometric];
     
     if (sunrise == NAN) {
         return nil;
     }
     
-    return [self dateFromTime:(sunrise)];    
+    return [self dateFromTime:sunrise];    
 }
 
 - (NSDate *) beginCivilTwilight{
@@ -92,7 +92,7 @@
 }
 
 - (NSDate *) seaLevelSunset{
-    double sunset = [self UTCSunset:kZenithGeometric];
+    double sunset = [self UTCSeaLevelSunset:kZenithGeometric];
     
     if (sunset == NAN) {
         return nil;
@@ -150,7 +150,11 @@
 }
 
 - (double) UTCSeaLevelSunrise:(double)zenith{
-    return [((SunriseAndSunset *)self.astronomicalCalculator) UTCSunriseForDate:self.workingDate andZenith:zenith adjustForElevation:NO];    
+    double sunrise = [((SunriseAndSunset *)self.astronomicalCalculator) UTCSunriseForDate:self.workingDate andZenith:zenith adjustForElevation:NO]; 
+    
+    NSLog(@"Sea level sunrise %f", sunrise);
+    
+    return sunrise;
 }
 
 - (double) UTCSunset:(double)zenith{
@@ -173,7 +177,7 @@
         return LONG_MIN;
     }
     
-    return [sunset timeIntervalSinceDate:sunrise] /12;
+    return [sunset timeIntervalSinceDate:sunrise]/12;
     
 }
 
@@ -193,7 +197,7 @@
 
 - (NSDate *)dateFromTime:(double)time{
     
-    return [self dateFromTime:time inTimeZone:[NSTimeZone systemTimeZone] onDate:self.workingDate];
+    return [self dateFromTime:time inTimeZone:[NSTimeZone localTimeZone] onDate:self.workingDate];
 }
 
 

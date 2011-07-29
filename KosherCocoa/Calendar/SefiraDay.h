@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EarthViewer.h"
+#import "GeoLocation.h"
+#import "ZmanimCalendar.h"
 
 @interface SefiraDay : NSObject {
 

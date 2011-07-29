@@ -11,27 +11,8 @@
 //
 //
 
-#define kSettings [NSUserDefaults standardUserDefaults]
-
-/* ------------- Latitude and Longitude Constants ------------ */
-
-//
-//  NOTE: These values are set to use stored settings value,
-//  but they can be hard coded or can refer to some other value.
-//
-//  This is the simplest way to do though, if you want real
-//  integration into your app.
-//
-//  For testing purposes, feel free to change the values
-//  with some dummy latitude and longitude values.
-//
-//
-
-#define kLatitude [[kSettings valueForKey:@"latitude"] doubleValue]
-
-#define kLongitude [[kSettings valueForKey:@"longitude"] doubleValue]
-
-
+#ifndef kKosherCocoaConstants
+#define kKosherCocoaConstants
 
 /* ------------ Zenith constants --------------- */
 
@@ -41,13 +22,13 @@
 
 #define kZenithNautical 102.0
 
-#define kZenithAstronomical 102.0
+#define kZenithAstronomical 108.0
 
 //  These zeniths are defined in the ZmanimCalendar in KosherCocoa
 
-#define kZenithSixteenPointOne kZenithGeometric + 16.1
+#define kZenithSixteenPointOne (kZenithGeometric + 16.1)
 
-#define kZenithEightPointFive kZenithGeometric + 8.5
+#define kZenithEightPointFive (kZenithGeometric + 8.5)
 
 /* ---- Astronomical Constants --- */
 
@@ -137,3 +118,5 @@
 
 //The number of seconds in a thirty day month
 #define kSecondsInSolarYear kSecondsInADay * 365
+
+#endif

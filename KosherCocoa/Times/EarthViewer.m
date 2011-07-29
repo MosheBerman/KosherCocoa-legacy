@@ -181,7 +181,7 @@
     //  inheritance.
     //
     
-    NSTimeZone *tz = [NSTimeZone systemTimeZone];
+    NSTimeZone *tz = [NSTimeZone localTimeZone];
     
     //  
     //  Set up the GeoLocation object.
@@ -285,7 +285,7 @@
     //  inheritance.
     //
     
-    NSTimeZone *tz = [NSTimeZone systemTimeZone];
+    NSTimeZone *tz = [NSTimeZone localTimeZone];
     
     //  
     //  Set up the GeoLocation object.
@@ -365,7 +365,7 @@
 
 - (NSDate *)dateFromTime:(double)time{
     
-    return [self dateFromTime:time inTimeZone:[NSTimeZone systemTimeZone] onDate:[NSDate date]];
+    return [self dateFromTime:time inTimeZone:[NSTimeZone localTimeZone] onDate:[NSDate date]];
 }
 
 //
@@ -424,7 +424,6 @@
     int minutes = (int) (calculatedTime *= 60);     // retain only the minutes
     calculatedTime -= minutes;
     int seconds = (int)(calculatedTime * 60);       // retain only the seconds
-    //calculatedTime -= seconds;                    // remaining milliseconds - Commented out for Build & Analyze    
     
     [components setHour: hours];
     [components setMinute:minutes];
@@ -599,7 +598,7 @@
 
     double currentTimeAsSeconds = [self getSecondsSinceMidnight];
     
-    double sunsetAsSeconds = [self secondsFromTime:[self sunsetAsDoubleOnDate:[NSDate date] inTimeZone:[NSTimeZone systemTimeZone] withElevationAdjustment:NO]];
+    double sunsetAsSeconds = [self secondsFromTime:[self sunsetAsDoubleOnDate:[NSDate date] inTimeZone:[NSTimeZone localTimeZone] withElevationAdjustment:NO]];
     
     if (currentTimeAsSeconds > sunsetAsSeconds) {
         return YES;

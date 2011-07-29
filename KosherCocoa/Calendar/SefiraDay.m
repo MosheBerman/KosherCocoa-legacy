@@ -83,17 +83,21 @@
     //  Adjust for Shkia here
     //
     
-    EarthViewer *viewer = [[EarthViewer alloc] initWithLatitude:kLatitude andLongitude:kLongitude andElevation:0.0];
+    GeoLocation *geoLocation = [[GeoLocation alloc] initWithName:@"User's location" andLatitude:kLatitude andLongitude:kLongitude andElevation:0.0 andTimeZone:[NSTimeZone localTimeZone]];
+    
+    ZmanimCalendar *viewer = [[ZmanimCalendar alloc]initWithLocation:geoLocation];// initWithLatitude:
+    
+    [geoLocation release];
     
     //
     //  If sunset has occured, it's already tomorrow
     //  on the hebrew calendar. 
     //
     
-    if ([viewer sunsetHasOccurred]) {
+    if ([[NSDate date] timeIntervalSinceDate:[viewer sunset]] > 0) {
         
         date = [date dateByAddingTimeInterval:kSecondsInADay];
-    
+        
     }
     
     [viewer release];
@@ -112,11 +116,11 @@
 	double arbitraryDay = [date timeIntervalSinceReferenceDate];
     
     int dayOfOmer;
-
+    
     //
     //  Calculate the day of the omer
     //
-        
+    
     dayOfOmer = (arbitraryDay/kSecondsInADay) - ((firstDay/kSecondsInADay)-1);
     
     if (dayOfOmer < 0 || dayOfOmer > 49) {
@@ -125,6 +129,7 @@
     }
     
     return dayOfOmer;
+    
 }
 
 - (NSInteger) currentDayOfOmer{

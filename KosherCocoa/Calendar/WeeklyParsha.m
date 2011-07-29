@@ -1166,7 +1166,7 @@
 	
 	NSDateComponents *gregorianDateComponents = [gregorianCalendar components:NSWeekdayCalendarUnit fromDate:date];
  	
-	int weekday = [gregorianDateComponents weekday];
+	int weekday = (int)[gregorianDateComponents weekday];
 	
 	//Get the date of this shabbos
 	NSDate *thisShabbos = [NSDate dateWithTimeInterval:(kSecondsInADay * (7-weekday)) sinceDate:date];
@@ -1269,7 +1269,7 @@
     
     NSDateComponents *gregorianDateComponents = [gregorianCalendar components:NSWeekdayCalendarUnit fromDate:date];
  	
-	int weekday = [gregorianDateComponents weekday];
+	int weekday = (int)[gregorianDateComponents weekday];
     
     //Get the date of next shabbos
 	NSDate *nextShabbos = [NSDate dateWithTimeInterval:(kSecondsInADay * (7-weekday))+(kSecondsInADay*7) sinceDate:date];
@@ -1289,7 +1289,7 @@
 	
 	NSDateComponents *gregorianDateComponents = [gregorianCalendar components:NSWeekdayCalendarUnit fromDate:date];
  	
-	int weekday = [gregorianDateComponents weekday];
+	int weekday = (int)[gregorianDateComponents weekday];
     
     //Get the date of next shabbos
 	NSDate *nextShabbos = [NSDate dateWithTimeInterval:(kSecondsInADay * (7-weekday)) sinceDate:date];
