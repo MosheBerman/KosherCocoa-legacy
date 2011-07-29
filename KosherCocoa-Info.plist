@@ -18,7 +18,7 @@
 		<string>Icon.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.yetanotheriphoneapp.KosherCocoa</string>
+	<string>com.yetanotheriphoneapp.KosherCocoaAPI</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

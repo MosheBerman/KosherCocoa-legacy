@@ -76,24 +76,6 @@
 		46BCFB5213D9FE3B004D46EB /* AstronomicalCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AstronomicalCalendar.m; sourceTree = "<group>"; };
 		46BCFB5713DA1BB0004D46EB /* AstronomicalCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AstronomicalCalculator.h; sourceTree = "<group>"; };
 		46BCFB5813DA1BB0004D46EB /* AstronomicalCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AstronomicalCalculator.m; sourceTree = "<group>"; };
-		46C747B513D642E6001E6C08 /* AstronomicalCalendar.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = AstronomicalCalendar.java; sourceTree = "<group>"; };
-		46C747B613D642E6001E6C08 /* ComplexZmanimCalendar.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = ComplexZmanimCalendar.java; sourceTree = "<group>"; };
-		46C747B813D642E6001E6C08 /* Daf.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = Daf.java; sourceTree = "<group>"; };
-		46C747B913D642E6001E6C08 /* HebrewDateFormatter.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = HebrewDateFormatter.java; sourceTree = "<group>"; };
-		46C747BA13D642E6001E6C08 /* JewishCalendar.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = JewishCalendar.java; sourceTree = "<group>"; };
-		46C747BB13D642E6001E6C08 /* JewishDate.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = JewishDate.java; sourceTree = "<group>"; };
-		46C747BD13D642E6001E6C08 /* YomiCalculator.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = YomiCalculator.java; sourceTree = "<group>"; };
-		46C747C013D642E6001E6C08 /* AstronomicalCalculator.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = AstronomicalCalculator.java; sourceTree = "<group>"; };
-		46C747C113D642E6001E6C08 /* GeoLocation.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = GeoLocation.java; sourceTree = "<group>"; };
-		46C747C213D642E6001E6C08 /* GeoLocationUtils.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = GeoLocationUtils.java; sourceTree = "<group>"; };
-		46C747C313D642E6001E6C08 /* JSuntimeCalculator.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = JSuntimeCalculator.java; sourceTree = "<group>"; };
-		46C747C413D642E6001E6C08 /* NOAACalculator.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = NOAACalculator.java; sourceTree = "<group>"; };
-		46C747C613D642E6001E6C08 /* SunTimesCalculator.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = SunTimesCalculator.java; sourceTree = "<group>"; };
-		46C747C713D642E6001E6C08 /* Time.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = Time.java; sourceTree = "<group>"; };
-		46C747C813D642E6001E6C08 /* Zman.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = Zman.java; sourceTree = "<group>"; };
-		46C747C913D642E6001E6C08 /* ZmanimCalculator.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = ZmanimCalculator.java; sourceTree = "<group>"; };
-		46C747CA13D642E6001E6C08 /* ZmanimFormatter.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = ZmanimFormatter.java; sourceTree = "<group>"; };
-		46C747CB13D642E6001E6C08 /* ZmanimCalendar.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = ZmanimCalendar.java; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* KosherCocoa-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KosherCocoa-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +124,6 @@
 				46652F4513453ED900CAF9B0 /* Target.png */,
 				46652F4613453ED900CAF9B0 /* Target@2x.png */,
 				460CEA881362118400737E03 /* KosherCocoa */,
-				46C747B413D642E6001E6C08 /* java-zmanim */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -240,47 +221,6 @@
 				467FC13A13DC962400DFAB4D /* ComplexZmanimCalendar.m */,
 			);
 			name = "Halachic Times";
-			sourceTree = "<group>";
-		};
-		46C747B413D642E6001E6C08 /* java-zmanim */ = {
-			isa = PBXGroup;
-			children = (
-				46C747B513D642E6001E6C08 /* AstronomicalCalendar.java */,
-				46C747B613D642E6001E6C08 /* ComplexZmanimCalendar.java */,
-				46C747B713D642E6001E6C08 /* hebrewcalendar */,
-				46C747BF13D642E6001E6C08 /* util */,
-				46C747CB13D642E6001E6C08 /* ZmanimCalendar.java */,
-			);
-			path = "java-zmanim";
-			sourceTree = "<group>";
-		};
-		46C747B713D642E6001E6C08 /* hebrewcalendar */ = {
-			isa = PBXGroup;
-			children = (
-				46C747B813D642E6001E6C08 /* Daf.java */,
-				46C747B913D642E6001E6C08 /* HebrewDateFormatter.java */,
-				46C747BA13D642E6001E6C08 /* JewishCalendar.java */,
-				46C747BB13D642E6001E6C08 /* JewishDate.java */,
-				46C747BD13D642E6001E6C08 /* YomiCalculator.java */,
-			);
-			path = hebrewcalendar;
-			sourceTree = "<group>";
-		};
-		46C747BF13D642E6001E6C08 /* util */ = {
-			isa = PBXGroup;
-			children = (
-				46C747C013D642E6001E6C08 /* AstronomicalCalculator.java */,
-				46C747C113D642E6001E6C08 /* GeoLocation.java */,
-				46C747C213D642E6001E6C08 /* GeoLocationUtils.java */,
-				46C747C313D642E6001E6C08 /* JSuntimeCalculator.java */,
-				46C747C413D642E6001E6C08 /* NOAACalculator.java */,
-				46C747C613D642E6001E6C08 /* SunTimesCalculator.java */,
-				46C747C713D642E6001E6C08 /* Time.java */,
-				46C747C813D642E6001E6C08 /* Zman.java */,
-				46C747C913D642E6001E6C08 /* ZmanimCalculator.java */,
-				46C747CA13D642E6001E6C08 /* ZmanimFormatter.java */,
-			);
-			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
