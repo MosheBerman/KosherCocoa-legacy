@@ -83,7 +83,7 @@
     //  Adjust for Shkia here
     //
     
-    GeoLocation *geoLocation = [[GeoLocation alloc] initWithName:@"User's location" andLatitude:kLatitude andLongitude:kLongitude andElevation:0.0 andTimeZone:[NSTimeZone localTimeZone]];
+    GeoLocation *geoLocation = [[GeoLocation alloc] initWithName:@"User's location" andLatitude:[[[NSUserDefaults standardUserDefaults] objectForKey:@"latitude"] doubleValue] andLongitude:[[[NSUserDefaults standardUserDefaults] objectForKey:@"longitude"]doubleValue] andElevation:0.0 andTimeZone:[NSTimeZone localTimeZone]];
     
     ZmanimCalendar *viewer = [[ZmanimCalendar alloc]initWithLocation:geoLocation];// initWithLatitude:
     
