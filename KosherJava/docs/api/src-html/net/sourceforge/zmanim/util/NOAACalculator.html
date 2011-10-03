@@ -1,0 +1,538 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>/*<a name="line.1"></a>
+<span class="sourceLineNo">002</span> * Zmanim Java API<a name="line.2"></a>
+<span class="sourceLineNo">003</span> * Copyright (C) 2004-2011 Eliyahu Hershfeld<a name="line.3"></a>
+<span class="sourceLineNo">004</span> *<a name="line.4"></a>
+<span class="sourceLineNo">005</span> * This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General<a name="line.5"></a>
+<span class="sourceLineNo">006</span> * Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option)<a name="line.6"></a>
+<span class="sourceLineNo">007</span> * any later version.<a name="line.7"></a>
+<span class="sourceLineNo">008</span> *<a name="line.8"></a>
+<span class="sourceLineNo">009</span> * This library is distributed in the hope that it will be useful,but WITHOUT ANY WARRANTY; without even the implied<a name="line.9"></a>
+<span class="sourceLineNo">010</span> * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more<a name="line.10"></a>
+<span class="sourceLineNo">011</span> * details.<a name="line.11"></a>
+<span class="sourceLineNo">012</span> * You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to<a name="line.12"></a>
+<span class="sourceLineNo">013</span> * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA,<a name="line.13"></a>
+<span class="sourceLineNo">014</span> * or connect to: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html<a name="line.14"></a>
+<span class="sourceLineNo">015</span> */<a name="line.15"></a>
+<span class="sourceLineNo">016</span>package net.sourceforge.zmanim.util;<a name="line.16"></a>
+<span class="sourceLineNo">017</span><a name="line.17"></a>
+<span class="sourceLineNo">018</span>import java.util.Calendar;<a name="line.18"></a>
+<span class="sourceLineNo">019</span><a name="line.19"></a>
+<span class="sourceLineNo">020</span>/**<a name="line.20"></a>
+<span class="sourceLineNo">021</span> * Implementation of sunrise and sunset methods to calculate astronomical times based on the &lt;a<a name="line.21"></a>
+<span class="sourceLineNo">022</span> * href=""http://noaa.gov"&gt;NOAA&lt;/a&gt; algorithm. This calculator uses the Java algorithm based on the implementation by &lt;a<a name="line.22"></a>
+<span class="sourceLineNo">023</span> * href=""http://noaa.gov"&gt;NOAA - National Oceanic and Atmospheric Administration&lt;/a&gt;'s &lt;a href =<a name="line.23"></a>
+<span class="sourceLineNo">024</span> * "http://www.srrb.noaa.gov/highlights/sunrise/sunrise.html"&gt;Surface Radiation Research Branch&lt;/a&gt;. NOAA's &lt;a<a name="line.24"></a>
+<span class="sourceLineNo">025</span> * href="http://www.srrb.noaa.gov/highlights/sunrise/solareqns.PDF"&gt;implementation&lt;/a&gt; is based on equations from &lt;a<a name="line.25"></a>
+<span class="sourceLineNo">026</span> * href="http://www.willbell.com/math/mc1.htm"&gt;Astronomical Algorithms&lt;/a&gt; by &lt;a<a name="line.26"></a>
+<span class="sourceLineNo">027</span> * href="http://en.wikipedia.org/wiki/Jean_Meeus"&gt;Jean Meeus&lt;/a&gt;. Added to the algorithm is an adjustment of the zenith<a name="line.27"></a>
+<span class="sourceLineNo">028</span> * to account for elevation. The algorithm can be found in the &lt;a<a name="line.28"></a>
+<span class="sourceLineNo">029</span> * href="http://en.wikipedia.org/wiki/Sunrise_equation"&gt;Wikipedia Sunrise Equation&lt;/a&gt; article.<a name="line.29"></a>
+<span class="sourceLineNo">030</span> * <a name="line.30"></a>
+<span class="sourceLineNo">031</span> * @author &amp;copy; Eliyahu Hershfeld 2011<a name="line.31"></a>
+<span class="sourceLineNo">032</span> * @version 0.1<a name="line.32"></a>
+<span class="sourceLineNo">033</span> */<a name="line.33"></a>
+<span class="sourceLineNo">034</span>public class NOAACalculator extends AstronomicalCalculator {<a name="line.34"></a>
+<span class="sourceLineNo">035</span>        /**<a name="line.35"></a>
+<span class="sourceLineNo">036</span>         * The &lt;a href="http://en.wikipedia.org/wiki/Julian_day"&gt;Julian day&lt;/a&gt; of January 1, 2000<a name="line.36"></a>
+<span class="sourceLineNo">037</span>         */<a name="line.37"></a>
+<span class="sourceLineNo">038</span>        private static final double JULIAN_DAY_JAN_1_2000 = 2451545.0;<a name="line.38"></a>
+<span class="sourceLineNo">039</span><a name="line.39"></a>
+<span class="sourceLineNo">040</span>        /**<a name="line.40"></a>
+<span class="sourceLineNo">041</span>         * Julian days per century<a name="line.41"></a>
+<span class="sourceLineNo">042</span>         */<a name="line.42"></a>
+<span class="sourceLineNo">043</span>        private static final double JULIAN_DAYS_PER_CENTURY = 36525.0;<a name="line.43"></a>
+<span class="sourceLineNo">044</span><a name="line.44"></a>
+<span class="sourceLineNo">045</span>        /**<a name="line.45"></a>
+<span class="sourceLineNo">046</span>         * @see net.sourceforge.zmanim.util.AstronomicalCalculator#getCalculatorName()<a name="line.46"></a>
+<span class="sourceLineNo">047</span>         */<a name="line.47"></a>
+<span class="sourceLineNo">048</span>        public String getCalculatorName() {<a name="line.48"></a>
+<span class="sourceLineNo">049</span>                return "US National Oceanic and Atmospheric Administration Algorithm";<a name="line.49"></a>
+<span class="sourceLineNo">050</span>        }<a name="line.50"></a>
+<span class="sourceLineNo">051</span><a name="line.51"></a>
+<span class="sourceLineNo">052</span>        /**<a name="line.52"></a>
+<span class="sourceLineNo">053</span>         * @see net.sourceforge.zmanim.util.AstronomicalCalculator#getUTCSunrise(Calendar, GeoLocation, double, boolean)<a name="line.53"></a>
+<span class="sourceLineNo">054</span>         */<a name="line.54"></a>
+<span class="sourceLineNo">055</span>        public double getUTCSunrise(Calendar calendar, GeoLocation geoLocation, double zenith, boolean adjustForElevation) {<a name="line.55"></a>
+<span class="sourceLineNo">056</span>                double elevation = adjustForElevation ? geoLocation.getElevation() : 0;<a name="line.56"></a>
+<span class="sourceLineNo">057</span>                double adjustedZenith = adjustZenith(zenith, elevation);<a name="line.57"></a>
+<span class="sourceLineNo">058</span><a name="line.58"></a>
+<span class="sourceLineNo">059</span>                double sunrise = getSunriseUTC(getJulianDay(calendar), geoLocation.getLatitude(), -geoLocation.getLongitude(),<a name="line.59"></a>
+<span class="sourceLineNo">060</span>                                adjustedZenith);<a name="line.60"></a>
+<span class="sourceLineNo">061</span>                sunrise = sunrise / 60;<a name="line.61"></a>
+<span class="sourceLineNo">062</span><a name="line.62"></a>
+<span class="sourceLineNo">063</span>                // ensure that the time is &gt;= 0 and &lt; 24<a name="line.63"></a>
+<span class="sourceLineNo">064</span>                while (sunrise &lt; 0.0) {<a name="line.64"></a>
+<span class="sourceLineNo">065</span>                        sunrise += 24.0;<a name="line.65"></a>
+<span class="sourceLineNo">066</span>                }<a name="line.66"></a>
+<span class="sourceLineNo">067</span>                while (sunrise &gt;= 24.0) {<a name="line.67"></a>
+<span class="sourceLineNo">068</span>                        sunrise -= 24.0;<a name="line.68"></a>
+<span class="sourceLineNo">069</span>                }<a name="line.69"></a>
+<span class="sourceLineNo">070</span>                return sunrise;<a name="line.70"></a>
+<span class="sourceLineNo">071</span>        }<a name="line.71"></a>
+<span class="sourceLineNo">072</span><a name="line.72"></a>
+<span class="sourceLineNo">073</span>        /**<a name="line.73"></a>
+<span class="sourceLineNo">074</span>         * @see net.sourceforge.zmanim.util.AstronomicalCalculator#getUTCSunset(Calendar, GeoLocation, double, boolean)<a name="line.74"></a>
+<span class="sourceLineNo">075</span>         */<a name="line.75"></a>
+<span class="sourceLineNo">076</span>        public double getUTCSunset(Calendar calendar, GeoLocation geoLocation, double zenith, boolean adjustForElevation) {<a name="line.76"></a>
+<span class="sourceLineNo">077</span>                double elevation = adjustForElevation ? geoLocation.getElevation() : 0;<a name="line.77"></a>
+<span class="sourceLineNo">078</span>                double adjustedZenith = adjustZenith(zenith, elevation);<a name="line.78"></a>
+<span class="sourceLineNo">079</span><a name="line.79"></a>
+<span class="sourceLineNo">080</span>                double sunset = getSunsetUTC(getJulianDay(calendar), geoLocation.getLatitude(), -geoLocation.getLongitude(),<a name="line.80"></a>
+<span class="sourceLineNo">081</span>                                adjustedZenith);<a name="line.81"></a>
+<span class="sourceLineNo">082</span>                sunset = sunset / 60;<a name="line.82"></a>
+<span class="sourceLineNo">083</span><a name="line.83"></a>
+<span class="sourceLineNo">084</span>                // ensure that the time is &gt;= 0 and &lt; 24<a name="line.84"></a>
+<span class="sourceLineNo">085</span>                while (sunset &lt; 0.0) {<a name="line.85"></a>
+<span class="sourceLineNo">086</span>                        sunset += 24.0;<a name="line.86"></a>
+<span class="sourceLineNo">087</span>                }<a name="line.87"></a>
+<span class="sourceLineNo">088</span>                while (sunset &gt;= 24.0) {<a name="line.88"></a>
+<span class="sourceLineNo">089</span>                        sunset -= 24.0;<a name="line.89"></a>
+<span class="sourceLineNo">090</span>                }<a name="line.90"></a>
+<span class="sourceLineNo">091</span>                return sunset;<a name="line.91"></a>
+<span class="sourceLineNo">092</span>        }<a name="line.92"></a>
+<span class="sourceLineNo">093</span><a name="line.93"></a>
+<span class="sourceLineNo">094</span>        /**<a name="line.94"></a>
+<span class="sourceLineNo">095</span>         * Return the &lt;a href="http://en.wikipedia.org/wiki/Julian_day"&gt;Julian day&lt;/a&gt; from a Java Calendar<a name="line.95"></a>
+<span class="sourceLineNo">096</span>         * <a name="line.96"></a>
+<span class="sourceLineNo">097</span>         * @param calendar<a name="line.97"></a>
+<span class="sourceLineNo">098</span>         *            The Java Calendar<a name="line.98"></a>
+<span class="sourceLineNo">099</span>         * @return the Julian day corresponding to the date Note: Number is returned for start of day. Fractional days<a name="line.99"></a>
+<span class="sourceLineNo">100</span>         *         should be added later.<a name="line.100"></a>
+<span class="sourceLineNo">101</span>         */<a name="line.101"></a>
+<span class="sourceLineNo">102</span>        private static double getJulianDay(Calendar calendar) {<a name="line.102"></a>
+<span class="sourceLineNo">103</span>                int year = calendar.get(Calendar.YEAR);<a name="line.103"></a>
+<span class="sourceLineNo">104</span>                int month = calendar.get(Calendar.MONTH) + 1;<a name="line.104"></a>
+<span class="sourceLineNo">105</span>                int day = calendar.get(Calendar.DAY_OF_MONTH);<a name="line.105"></a>
+<span class="sourceLineNo">106</span>                if (month &lt;= 2) {<a name="line.106"></a>
+<span class="sourceLineNo">107</span>                        year -= 1;<a name="line.107"></a>
+<span class="sourceLineNo">108</span>                        month += 12;<a name="line.108"></a>
+<span class="sourceLineNo">109</span>                }<a name="line.109"></a>
+<span class="sourceLineNo">110</span>                int a = year / 100;<a name="line.110"></a>
+<span class="sourceLineNo">111</span>                int b = 2 - a + a / 4;<a name="line.111"></a>
+<span class="sourceLineNo">112</span><a name="line.112"></a>
+<span class="sourceLineNo">113</span>                return Math.floor(365.25 * (year + 4716)) + Math.floor(30.6001 * (month + 1)) + day + b - 1524.5;<a name="line.113"></a>
+<span class="sourceLineNo">114</span>        }<a name="line.114"></a>
+<span class="sourceLineNo">115</span><a name="line.115"></a>
+<span class="sourceLineNo">116</span>        /**<a name="line.116"></a>
+<span class="sourceLineNo">117</span>         * Convert &lt;a href="http://en.wikipedia.org/wiki/Julian_day"&gt;Julian day&lt;/a&gt; to centuries since J2000.0.<a name="line.117"></a>
+<span class="sourceLineNo">118</span>         * <a name="line.118"></a>
+<span class="sourceLineNo">119</span>         * @param julianDay<a name="line.119"></a>
+<span class="sourceLineNo">120</span>         *            the Julian Day to convert<a name="line.120"></a>
+<span class="sourceLineNo">121</span>         * @return the centuries since 2000 Julian corresponding to the Julian Day<a name="line.121"></a>
+<span class="sourceLineNo">122</span>         */<a name="line.122"></a>
+<span class="sourceLineNo">123</span>        private static double getJulianCenturiesFromJulianDay(double julianDay) {<a name="line.123"></a>
+<span class="sourceLineNo">124</span>                return (julianDay - JULIAN_DAY_JAN_1_2000) / JULIAN_DAYS_PER_CENTURY;<a name="line.124"></a>
+<span class="sourceLineNo">125</span>        }<a name="line.125"></a>
+<span class="sourceLineNo">126</span><a name="line.126"></a>
+<span class="sourceLineNo">127</span>        /**<a name="line.127"></a>
+<span class="sourceLineNo">128</span>         * Convert centuries since J2000.0 to &lt;a href="http://en.wikipedia.org/wiki/Julian_day"&gt;Julian day&lt;/a&gt;.<a name="line.128"></a>
+<span class="sourceLineNo">129</span>         * <a name="line.129"></a>
+<span class="sourceLineNo">130</span>         * @param julianCenturies<a name="line.130"></a>
+<span class="sourceLineNo">131</span>         *            the number of Julian centuries since J2000.0<a name="line.131"></a>
+<span class="sourceLineNo">132</span>         * @return the Julian Day corresponding to the Julian centuries passed in<a name="line.132"></a>
+<span class="sourceLineNo">133</span>         */<a name="line.133"></a>
+<span class="sourceLineNo">134</span>        private static double getJulianDayFromJulianCenturies(double julianCenturies) {<a name="line.134"></a>
+<span class="sourceLineNo">135</span>                return julianCenturies * JULIAN_DAYS_PER_CENTURY + JULIAN_DAY_JAN_1_2000;<a name="line.135"></a>
+<span class="sourceLineNo">136</span>        }<a name="line.136"></a>
+<span class="sourceLineNo">137</span><a name="line.137"></a>
+<span class="sourceLineNo">138</span>        /**<a name="line.138"></a>
+<span class="sourceLineNo">139</span>         * Returns the Geometric &lt;a href="http://en.wikipedia.org/wiki/Mean_longitude"&gt;Mean Longitude&lt;/a&gt; of the Sun.<a name="line.139"></a>
+<span class="sourceLineNo">140</span>         * <a name="line.140"></a>
+<span class="sourceLineNo">141</span>         * @param julianCenturies<a name="line.141"></a>
+<span class="sourceLineNo">142</span>         *            the number of Julian centuries since J2000.0<a name="line.142"></a>
+<span class="sourceLineNo">143</span>         * @return the Geometric Mean Longitude of the Sun in degrees<a name="line.143"></a>
+<span class="sourceLineNo">144</span>         */<a name="line.144"></a>
+<span class="sourceLineNo">145</span>        private static double getSunGeometricMeanLongitude(double julianCenturies) {<a name="line.145"></a>
+<span class="sourceLineNo">146</span>                double longitude = 280.46646 + julianCenturies * (36000.76983 + 0.0003032 * julianCenturies);<a name="line.146"></a>
+<span class="sourceLineNo">147</span>                while (longitude &gt; 360.0) {<a name="line.147"></a>
+<span class="sourceLineNo">148</span>                        longitude -= 360.0;<a name="line.148"></a>
+<span class="sourceLineNo">149</span>                }<a name="line.149"></a>
+<span class="sourceLineNo">150</span>                while (longitude &lt; 0.0) {<a name="line.150"></a>
+<span class="sourceLineNo">151</span>                        longitude += 360.0;<a name="line.151"></a>
+<span class="sourceLineNo">152</span>                }<a name="line.152"></a>
+<span class="sourceLineNo">153</span><a name="line.153"></a>
+<span class="sourceLineNo">154</span>                return longitude; // in degrees<a name="line.154"></a>
+<span class="sourceLineNo">155</span>        }<a name="line.155"></a>
+<span class="sourceLineNo">156</span><a name="line.156"></a>
+<span class="sourceLineNo">157</span>        /**<a name="line.157"></a>
+<span class="sourceLineNo">158</span>         * Returns the Geometric &lt;a href="http://en.wikipedia.org/wiki/Mean_anomaly"&gt;Mean Anomaly&lt;/a&gt; of the Sun.<a name="line.158"></a>
+<span class="sourceLineNo">159</span>         * <a name="line.159"></a>
+<span class="sourceLineNo">160</span>         * @param julianCenturies<a name="line.160"></a>
+<span class="sourceLineNo">161</span>         *            the number of Julian centuries since J2000.0<a name="line.161"></a>
+<span class="sourceLineNo">162</span>         * @return the Geometric Mean Anomaly of the Sun in degrees<a name="line.162"></a>
+<span class="sourceLineNo">163</span>         */<a name="line.163"></a>
+<span class="sourceLineNo">164</span>        private static double getSunGeometricMeanAnomaly(double julianCenturies) {<a name="line.164"></a>
+<span class="sourceLineNo">165</span>                return 357.52911 + julianCenturies * (35999.05029 - 0.0001537 * julianCenturies); // in degrees<a name="line.165"></a>
+<span class="sourceLineNo">166</span>        }<a name="line.166"></a>
+<span class="sourceLineNo">167</span><a name="line.167"></a>
+<span class="sourceLineNo">168</span>        /**<a name="line.168"></a>
+<span class="sourceLineNo">169</span>         * Return the &lt;a href="http://en.wikipedia.org/wiki/Eccentricity_%28orbit%29"&gt;eccentricity of earth's orbit&lt;/a&gt;.<a name="line.169"></a>
+<span class="sourceLineNo">170</span>         * <a name="line.170"></a>
+<span class="sourceLineNo">171</span>         * @param julianCenturies<a name="line.171"></a>
+<span class="sourceLineNo">172</span>         *            the number of Julian centuries since J2000.0<a name="line.172"></a>
+<span class="sourceLineNo">173</span>         * @return the unitless eccentricity<a name="line.173"></a>
+<span class="sourceLineNo">174</span>         */<a name="line.174"></a>
+<span class="sourceLineNo">175</span>        private static double getEarthOrbitEccentricity(double julianCenturies) {<a name="line.175"></a>
+<span class="sourceLineNo">176</span>                return 0.016708634 - julianCenturies * (0.000042037 + 0.0000001267 * julianCenturies); // unitless<a name="line.176"></a>
+<span class="sourceLineNo">177</span>        }<a name="line.177"></a>
+<span class="sourceLineNo">178</span><a name="line.178"></a>
+<span class="sourceLineNo">179</span>        /**<a name="line.179"></a>
+<span class="sourceLineNo">180</span>         * Returns the &lt;a href="http://en.wikipedia.org/wiki/Equation_of_the_center"&gt;equation of center&lt;/a&gt; for the sun.<a name="line.180"></a>
+<span class="sourceLineNo">181</span>         * <a name="line.181"></a>
+<span class="sourceLineNo">182</span>         * @param julianCenturies<a name="line.182"></a>
+<span class="sourceLineNo">183</span>         *            the number of Julian centuries since J2000.0<a name="line.183"></a>
+<span class="sourceLineNo">184</span>         * @return the equation of center for the sun in degrees<a name="line.184"></a>
+<span class="sourceLineNo">185</span>         */<a name="line.185"></a>
+<span class="sourceLineNo">186</span>        private static double getSunEquationOfCenter(double julianCenturies) {<a name="line.186"></a>
+<span class="sourceLineNo">187</span>                double m = getSunGeometricMeanAnomaly(julianCenturies);<a name="line.187"></a>
+<span class="sourceLineNo">188</span><a name="line.188"></a>
+<span class="sourceLineNo">189</span>                double mrad = Math.toRadians(m);<a name="line.189"></a>
+<span class="sourceLineNo">190</span>                double sinm = Math.sin(mrad);<a name="line.190"></a>
+<span class="sourceLineNo">191</span>                double sin2m = Math.sin(mrad + mrad);<a name="line.191"></a>
+<span class="sourceLineNo">192</span>                double sin3m = Math.sin(mrad + mrad + mrad);<a name="line.192"></a>
+<span class="sourceLineNo">193</span><a name="line.193"></a>
+<span class="sourceLineNo">194</span>                return sinm * (1.914602 - julianCenturies * (0.004817 + 0.000014 * julianCenturies)) + sin2m<a name="line.194"></a>
+<span class="sourceLineNo">195</span>                                * (0.019993 - 0.000101 * julianCenturies) + sin3m * 0.000289;// in degrees<a name="line.195"></a>
+<span class="sourceLineNo">196</span>        }<a name="line.196"></a>
+<span class="sourceLineNo">197</span><a name="line.197"></a>
+<span class="sourceLineNo">198</span>        /**<a name="line.198"></a>
+<span class="sourceLineNo">199</span>         * Return the true longitude of the sun<a name="line.199"></a>
+<span class="sourceLineNo">200</span>         * <a name="line.200"></a>
+<span class="sourceLineNo">201</span>         * @param julianCenturies<a name="line.201"></a>
+<span class="sourceLineNo">202</span>         *            the number of Julian centuries since J2000.0<a name="line.202"></a>
+<span class="sourceLineNo">203</span>         * @return the sun's true longitude in degrees<a name="line.203"></a>
+<span class="sourceLineNo">204</span>         */<a name="line.204"></a>
+<span class="sourceLineNo">205</span>        private static double getSunTrueLongitude(double julianCenturies) {<a name="line.205"></a>
+<span class="sourceLineNo">206</span>                double sunLongitude = getSunGeometricMeanLongitude(julianCenturies);<a name="line.206"></a>
+<span class="sourceLineNo">207</span>                double center = getSunEquationOfCenter(julianCenturies);<a name="line.207"></a>
+<span class="sourceLineNo">208</span><a name="line.208"></a>
+<span class="sourceLineNo">209</span>                return sunLongitude + center; // in degrees<a name="line.209"></a>
+<span class="sourceLineNo">210</span>        }<a name="line.210"></a>
+<span class="sourceLineNo">211</span><a name="line.211"></a>
+<span class="sourceLineNo">212</span>        // /**<a name="line.212"></a>
+<span class="sourceLineNo">213</span>        // * Returns the &lt;a href="http://en.wikipedia.org/wiki/True_anomaly"&gt;true anamoly&lt;/a&gt; of the sun.<a name="line.213"></a>
+<span class="sourceLineNo">214</span>        // *<a name="line.214"></a>
+<span class="sourceLineNo">215</span>        // * @param julianCenturies<a name="line.215"></a>
+<span class="sourceLineNo">216</span>        // * the number of Julian centuries since J2000.0<a name="line.216"></a>
+<span class="sourceLineNo">217</span>        // * @return the sun's true anamoly in degrees<a name="line.217"></a>
+<span class="sourceLineNo">218</span>        // */<a name="line.218"></a>
+<span class="sourceLineNo">219</span>        // private static double getSunTrueAnomaly(double julianCenturies) {<a name="line.219"></a>
+<span class="sourceLineNo">220</span>        // double meanAnomaly = getSunGeometricMeanAnomaly(julianCenturies);<a name="line.220"></a>
+<span class="sourceLineNo">221</span>        // double equationOfCenter = getSunEquationOfCenter(julianCenturies);<a name="line.221"></a>
+<span class="sourceLineNo">222</span>        //<a name="line.222"></a>
+<span class="sourceLineNo">223</span>        // return meanAnomaly + equationOfCenter; // in degrees<a name="line.223"></a>
+<span class="sourceLineNo">224</span>        // }<a name="line.224"></a>
+<span class="sourceLineNo">225</span><a name="line.225"></a>
+<span class="sourceLineNo">226</span>        /**<a name="line.226"></a>
+<span class="sourceLineNo">227</span>         * Return the apparent longitude of the sun<a name="line.227"></a>
+<span class="sourceLineNo">228</span>         * <a name="line.228"></a>
+<span class="sourceLineNo">229</span>         * @param julianCenturies<a name="line.229"></a>
+<span class="sourceLineNo">230</span>         *            the number of Julian centuries since J2000.0<a name="line.230"></a>
+<span class="sourceLineNo">231</span>         * @return sun's apparent longitude in degrees<a name="line.231"></a>
+<span class="sourceLineNo">232</span>         */<a name="line.232"></a>
+<span class="sourceLineNo">233</span>        private static double getSunApparentLongitude(double julianCenturies) {<a name="line.233"></a>
+<span class="sourceLineNo">234</span>                double sunTrueLongitude = getSunTrueLongitude(julianCenturies);<a name="line.234"></a>
+<span class="sourceLineNo">235</span><a name="line.235"></a>
+<span class="sourceLineNo">236</span>                double omega = 125.04 - 1934.136 * julianCenturies;<a name="line.236"></a>
+<span class="sourceLineNo">237</span>                double lambda = sunTrueLongitude - 0.00569 - 0.00478 * Math.sin(Math.toRadians(omega));<a name="line.237"></a>
+<span class="sourceLineNo">238</span>                return lambda; // in degrees<a name="line.238"></a>
+<span class="sourceLineNo">239</span>        }<a name="line.239"></a>
+<span class="sourceLineNo">240</span><a name="line.240"></a>
+<span class="sourceLineNo">241</span>        /**<a name="line.241"></a>
+<span class="sourceLineNo">242</span>         * Returns the mean &lt;a href="http://en.wikipedia.org/wiki/Axial_tilt"&gt;obliquity of the ecliptic&lt;/a&gt; (Axial tilt).<a name="line.242"></a>
+<span class="sourceLineNo">243</span>         * <a name="line.243"></a>
+<span class="sourceLineNo">244</span>         * @param julianCenturies<a name="line.244"></a>
+<span class="sourceLineNo">245</span>         *            the number of Julian centuries since J2000.0<a name="line.245"></a>
+<span class="sourceLineNo">246</span>         * @return the mean obliquity in degrees<a name="line.246"></a>
+<span class="sourceLineNo">247</span>         */<a name="line.247"></a>
+<span class="sourceLineNo">248</span>        private static double getMeanObliquityOfEcliptic(double julianCenturies) {<a name="line.248"></a>
+<span class="sourceLineNo">249</span>                double seconds = 21.448 - julianCenturies<a name="line.249"></a>
+<span class="sourceLineNo">250</span>                                * (46.8150 + julianCenturies * (0.00059 - julianCenturies * (0.001813)));<a name="line.250"></a>
+<span class="sourceLineNo">251</span>                return 23.0 + (26.0 + (seconds / 60.0)) / 60.0; // in degrees<a name="line.251"></a>
+<span class="sourceLineNo">252</span>        }<a name="line.252"></a>
+<span class="sourceLineNo">253</span><a name="line.253"></a>
+<span class="sourceLineNo">254</span>        /**<a name="line.254"></a>
+<span class="sourceLineNo">255</span>         * Returns the corrected &lt;a href="http://en.wikipedia.org/wiki/Axial_tilt"&gt;obliquity of the ecliptic&lt;/a&gt; (Axial<a name="line.255"></a>
+<span class="sourceLineNo">256</span>         * tilt).<a name="line.256"></a>
+<span class="sourceLineNo">257</span>         * <a name="line.257"></a>
+<span class="sourceLineNo">258</span>         * @param julianCenturies<a name="line.258"></a>
+<span class="sourceLineNo">259</span>         *            the number of Julian centuries since J2000.0<a name="line.259"></a>
+<span class="sourceLineNo">260</span>         * @return the corrected obliquity in degrees<a name="line.260"></a>
+<span class="sourceLineNo">261</span>         */<a name="line.261"></a>
+<span class="sourceLineNo">262</span>        private static double getObliquityCorrection(double julianCenturies) {<a name="line.262"></a>
+<span class="sourceLineNo">263</span>                double obliquityOfEcliptic = getMeanObliquityOfEcliptic(julianCenturies);<a name="line.263"></a>
+<span class="sourceLineNo">264</span><a name="line.264"></a>
+<span class="sourceLineNo">265</span>                double omega = 125.04 - 1934.136 * julianCenturies;<a name="line.265"></a>
+<span class="sourceLineNo">266</span>                return obliquityOfEcliptic + 0.00256 * Math.cos(Math.toRadians(omega)); // in degrees<a name="line.266"></a>
+<span class="sourceLineNo">267</span>        }<a name="line.267"></a>
+<span class="sourceLineNo">268</span><a name="line.268"></a>
+<span class="sourceLineNo">269</span>        /**<a name="line.269"></a>
+<span class="sourceLineNo">270</span>         * Return the &lt;a href="http://en.wikipedia.org/wiki/Declination"&gt;declination&lt;/a&gt; of the sun.<a name="line.270"></a>
+<span class="sourceLineNo">271</span>         * <a name="line.271"></a>
+<span class="sourceLineNo">272</span>         * @param julianCenturies<a name="line.272"></a>
+<span class="sourceLineNo">273</span>         *            the number of Julian centuries since J2000.0<a name="line.273"></a>
+<span class="sourceLineNo">274</span>         * @param sun<a name="line.274"></a>
+<span class="sourceLineNo">275</span>         *            's declination in degrees<a name="line.275"></a>
+<span class="sourceLineNo">276</span>         */<a name="line.276"></a>
+<span class="sourceLineNo">277</span>        private static double getSunDeclination(double julianCenturies) {<a name="line.277"></a>
+<span class="sourceLineNo">278</span>                double obliquityCorrection = getObliquityCorrection(julianCenturies);<a name="line.278"></a>
+<span class="sourceLineNo">279</span>                double lambda = getSunApparentLongitude(julianCenturies);<a name="line.279"></a>
+<span class="sourceLineNo">280</span><a name="line.280"></a>
+<span class="sourceLineNo">281</span>                double sint = Math.sin(Math.toRadians(obliquityCorrection)) * Math.sin(Math.toRadians(lambda));<a name="line.281"></a>
+<span class="sourceLineNo">282</span>                double theta = Math.toDegrees(Math.asin(sint));<a name="line.282"></a>
+<span class="sourceLineNo">283</span>                return theta; // in degrees<a name="line.283"></a>
+<span class="sourceLineNo">284</span>        }<a name="line.284"></a>
+<span class="sourceLineNo">285</span><a name="line.285"></a>
+<span class="sourceLineNo">286</span>        /**<a name="line.286"></a>
+<span class="sourceLineNo">287</span>         * Return the &lt;a href="http://en.wikipedia.org/wiki/Equation_of_time"&gt;Equation of Time&lt;/a&gt; - the difference between<a name="line.287"></a>
+<span class="sourceLineNo">288</span>         * true solar time and mean solar time<a name="line.288"></a>
+<span class="sourceLineNo">289</span>         * <a name="line.289"></a>
+<span class="sourceLineNo">290</span>         * @param julianCenturies<a name="line.290"></a>
+<span class="sourceLineNo">291</span>         *            the number of Julian centuries since J2000.0<a name="line.291"></a>
+<span class="sourceLineNo">292</span>         * @return equation of time in minutes of time<a name="line.292"></a>
+<span class="sourceLineNo">293</span>         */<a name="line.293"></a>
+<span class="sourceLineNo">294</span>        private static double getEquationOfTime(double julianCenturies) {<a name="line.294"></a>
+<span class="sourceLineNo">295</span>                double epsilon = getObliquityCorrection(julianCenturies);<a name="line.295"></a>
+<span class="sourceLineNo">296</span>                double geomMeanLongSun = getSunGeometricMeanLongitude(julianCenturies);<a name="line.296"></a>
+<span class="sourceLineNo">297</span>                double eccentricityEarthOrbit = getEarthOrbitEccentricity(julianCenturies);<a name="line.297"></a>
+<span class="sourceLineNo">298</span>                double geomMeanAnomalySun = getSunGeometricMeanAnomaly(julianCenturies);<a name="line.298"></a>
+<span class="sourceLineNo">299</span><a name="line.299"></a>
+<span class="sourceLineNo">300</span>                double y = Math.tan(Math.toRadians(epsilon) / 2.0);<a name="line.300"></a>
+<span class="sourceLineNo">301</span>                y *= y;<a name="line.301"></a>
+<span class="sourceLineNo">302</span><a name="line.302"></a>
+<span class="sourceLineNo">303</span>                double sin2l0 = Math.sin(2.0 * Math.toRadians(geomMeanLongSun));<a name="line.303"></a>
+<span class="sourceLineNo">304</span>                double sinm = Math.sin(Math.toRadians(geomMeanAnomalySun));<a name="line.304"></a>
+<span class="sourceLineNo">305</span>                double cos2l0 = Math.cos(2.0 * Math.toRadians(geomMeanLongSun));<a name="line.305"></a>
+<span class="sourceLineNo">306</span>                double sin4l0 = Math.sin(4.0 * Math.toRadians(geomMeanLongSun));<a name="line.306"></a>
+<span class="sourceLineNo">307</span>                double sin2m = Math.sin(2.0 * Math.toRadians(geomMeanAnomalySun));<a name="line.307"></a>
+<span class="sourceLineNo">308</span><a name="line.308"></a>
+<span class="sourceLineNo">309</span>                double equationOfTime = y * sin2l0 - 2.0 * eccentricityEarthOrbit * sinm + 4.0 * eccentricityEarthOrbit * y<a name="line.309"></a>
+<span class="sourceLineNo">310</span>                                * sinm * cos2l0 - 0.5 * y * y * sin4l0 - 1.25 * eccentricityEarthOrbit * eccentricityEarthOrbit * sin2m;<a name="line.310"></a>
+<span class="sourceLineNo">311</span>                return Math.toDegrees(equationOfTime) * 4.0; // in minutes of time<a name="line.311"></a>
+<span class="sourceLineNo">312</span>        }<a name="line.312"></a>
+<span class="sourceLineNo">313</span><a name="line.313"></a>
+<span class="sourceLineNo">314</span>        /**<a name="line.314"></a>
+<span class="sourceLineNo">315</span>         * Return the &lt;a href="http://en.wikipedia.org/wiki/Hour_angle"&gt;hour angle&lt;/a&gt; of the sun at sunrise for the<a name="line.315"></a>
+<span class="sourceLineNo">316</span>         * latitude.<a name="line.316"></a>
+<span class="sourceLineNo">317</span>         * <a name="line.317"></a>
+<span class="sourceLineNo">318</span>         * @param lat<a name="line.318"></a>
+<span class="sourceLineNo">319</span>         *            , the latitude of observer in degrees<a name="line.319"></a>
+<span class="sourceLineNo">320</span>         * @param solarDec<a name="line.320"></a>
+<span class="sourceLineNo">321</span>         *            the declination angle of sun in degrees<a name="line.321"></a>
+<span class="sourceLineNo">322</span>         * @return hour angle of sunrise in radians<a name="line.322"></a>
+<span class="sourceLineNo">323</span>         */<a name="line.323"></a>
+<span class="sourceLineNo">324</span>        private static double getSunHourAngleAtSunrise(double lat, double solarDec, double zenith) {<a name="line.324"></a>
+<span class="sourceLineNo">325</span>                double latRad = Math.toRadians(lat);<a name="line.325"></a>
+<span class="sourceLineNo">326</span>                double sdRad = Math.toRadians(solarDec);<a name="line.326"></a>
+<span class="sourceLineNo">327</span><a name="line.327"></a>
+<span class="sourceLineNo">328</span>                return (Math.acos(Math.cos(Math.toRadians(zenith)) / (Math.cos(latRad) * Math.cos(sdRad)) - Math.tan(latRad)<a name="line.328"></a>
+<span class="sourceLineNo">329</span>                                * Math.tan(sdRad))); // in radians<a name="line.329"></a>
+<span class="sourceLineNo">330</span>        }<a name="line.330"></a>
+<span class="sourceLineNo">331</span><a name="line.331"></a>
+<span class="sourceLineNo">332</span>        /**<a name="line.332"></a>
+<span class="sourceLineNo">333</span>         * Returns the &lt;a href="http://en.wikipedia.org/wiki/Hour_angle"&gt;hour angle&lt;/a&gt; of the sun at sunset for the<a name="line.333"></a>
+<span class="sourceLineNo">334</span>         * latitude. TODO: use - {@link #getSunHourAngleAtSunrise(double, double, double)} implementation to avoid<a name="line.334"></a>
+<span class="sourceLineNo">335</span>         * duplication of code.<a name="line.335"></a>
+<span class="sourceLineNo">336</span>         * <a name="line.336"></a>
+<span class="sourceLineNo">337</span>         * @param lat<a name="line.337"></a>
+<span class="sourceLineNo">338</span>         *            the latitude of observer in degrees<a name="line.338"></a>
+<span class="sourceLineNo">339</span>         * @param solarDec<a name="line.339"></a>
+<span class="sourceLineNo">340</span>         *            the declination angle of sun in degrees<a name="line.340"></a>
+<span class="sourceLineNo">341</span>         * @return the hour angle of sunset in radians<a name="line.341"></a>
+<span class="sourceLineNo">342</span>         */<a name="line.342"></a>
+<span class="sourceLineNo">343</span>        private static double getSunHourAngleAtSunset(double lat, double solarDec, double zenith) {<a name="line.343"></a>
+<span class="sourceLineNo">344</span>                double latRad = Math.toRadians(lat);<a name="line.344"></a>
+<span class="sourceLineNo">345</span>                double sdRad = Math.toRadians(solarDec);<a name="line.345"></a>
+<span class="sourceLineNo">346</span><a name="line.346"></a>
+<span class="sourceLineNo">347</span>                double hourAngle = (Math.acos(Math.cos(Math.toRadians(zenith)) / (Math.cos(latRad) * Math.cos(sdRad))<a name="line.347"></a>
+<span class="sourceLineNo">348</span>                                - Math.tan(latRad) * Math.tan(sdRad)));<a name="line.348"></a>
+<span class="sourceLineNo">349</span>                return -hourAngle; // in radians<a name="line.349"></a>
+<span class="sourceLineNo">350</span>        }<a name="line.350"></a>
+<span class="sourceLineNo">351</span><a name="line.351"></a>
+<span class="sourceLineNo">352</span>        /**<a name="line.352"></a>
+<span class="sourceLineNo">353</span>         * Return the &lt;a href="http://en.wikipedia.org/wiki/Universal_Coordinated_Time"&gt;Universal Coordinated Time&lt;/a&gt; (UTC)<a name="line.353"></a>
+<span class="sourceLineNo">354</span>         * of sunrise for the given day at the given location on earth<a name="line.354"></a>
+<span class="sourceLineNo">355</span>         * <a name="line.355"></a>
+<span class="sourceLineNo">356</span>         * @param julianDay<a name="line.356"></a>
+<span class="sourceLineNo">357</span>         *            the Julian day<a name="line.357"></a>
+<span class="sourceLineNo">358</span>         * @param latitude<a name="line.358"></a>
+<span class="sourceLineNo">359</span>         *            the latitude of observer in degrees<a name="line.359"></a>
+<span class="sourceLineNo">360</span>         * @param longitude<a name="line.360"></a>
+<span class="sourceLineNo">361</span>         *            the longitude of observer in degrees<a name="line.361"></a>
+<span class="sourceLineNo">362</span>         * @return the time in minutes from zero UTC<a name="line.362"></a>
+<span class="sourceLineNo">363</span>         */<a name="line.363"></a>
+<span class="sourceLineNo">364</span>        private static double getSunriseUTC(double julianDay, double latitude, double longitude, double zenith) {<a name="line.364"></a>
+<span class="sourceLineNo">365</span>                double julianCenturies = getJulianCenturiesFromJulianDay(julianDay);<a name="line.365"></a>
+<span class="sourceLineNo">366</span><a name="line.366"></a>
+<span class="sourceLineNo">367</span>                // Find the time of solar noon at the location, and use that declination. This is better than start of the<a name="line.367"></a>
+<span class="sourceLineNo">368</span>                // Julian day<a name="line.368"></a>
+<span class="sourceLineNo">369</span><a name="line.369"></a>
+<span class="sourceLineNo">370</span>                double noonmin = getSolarNoonUTC(julianCenturies, longitude);<a name="line.370"></a>
+<span class="sourceLineNo">371</span>                double tnoon = getJulianCenturiesFromJulianDay(julianDay + noonmin / 1440.0);<a name="line.371"></a>
+<span class="sourceLineNo">372</span><a name="line.372"></a>
+<span class="sourceLineNo">373</span>                // First pass to approximate sunrise (using solar noon)<a name="line.373"></a>
+<span class="sourceLineNo">374</span><a name="line.374"></a>
+<span class="sourceLineNo">375</span>                double eqTime = getEquationOfTime(tnoon);<a name="line.375"></a>
+<span class="sourceLineNo">376</span>                double solarDec = getSunDeclination(tnoon);<a name="line.376"></a>
+<span class="sourceLineNo">377</span>                double hourAngle = getSunHourAngleAtSunrise(latitude, solarDec, zenith);<a name="line.377"></a>
+<span class="sourceLineNo">378</span><a name="line.378"></a>
+<span class="sourceLineNo">379</span>                double delta = longitude - Math.toDegrees(hourAngle);<a name="line.379"></a>
+<span class="sourceLineNo">380</span>                double timeDiff = 4 * delta; // in minutes of time<a name="line.380"></a>
+<span class="sourceLineNo">381</span>                double timeUTC = 720 + timeDiff - eqTime; // in minutes<a name="line.381"></a>
+<span class="sourceLineNo">382</span><a name="line.382"></a>
+<span class="sourceLineNo">383</span>                // Second pass includes fractional Julian Day in gamma calc<a name="line.383"></a>
+<span class="sourceLineNo">384</span><a name="line.384"></a>
+<span class="sourceLineNo">385</span>                double newt = getJulianCenturiesFromJulianDay(getJulianDayFromJulianCenturies(julianCenturies) + timeUTC<a name="line.385"></a>
+<span class="sourceLineNo">386</span>                                / 1440.0);<a name="line.386"></a>
+<span class="sourceLineNo">387</span>                eqTime = getEquationOfTime(newt);<a name="line.387"></a>
+<span class="sourceLineNo">388</span>                solarDec = getSunDeclination(newt);<a name="line.388"></a>
+<span class="sourceLineNo">389</span>                hourAngle = getSunHourAngleAtSunrise(latitude, solarDec, zenith);<a name="line.389"></a>
+<span class="sourceLineNo">390</span>                delta = longitude - Math.toDegrees(hourAngle);<a name="line.390"></a>
+<span class="sourceLineNo">391</span>                timeDiff = 4 * delta;<a name="line.391"></a>
+<span class="sourceLineNo">392</span>                timeUTC = 720 + timeDiff - eqTime; // in minutes<a name="line.392"></a>
+<span class="sourceLineNo">393</span>                return timeUTC;<a name="line.393"></a>
+<span class="sourceLineNo">394</span>        }<a name="line.394"></a>
+<span class="sourceLineNo">395</span><a name="line.395"></a>
+<span class="sourceLineNo">396</span>        /**<a name="line.396"></a>
+<span class="sourceLineNo">397</span>         * Return the &lt;a href="http://en.wikipedia.org/wiki/Universal_Coordinated_Time"&gt;Universal Coordinated Time&lt;/a&gt; (UTC)<a name="line.397"></a>
+<span class="sourceLineNo">398</span>         * of &lt;a href="http://en.wikipedia.org/wiki/Noon#Solar_noon"&gt;solar noon&lt;/a&gt; for the given day at the given location<a name="line.398"></a>
+<span class="sourceLineNo">399</span>         * on earth.<a name="line.399"></a>
+<span class="sourceLineNo">400</span>         * <a name="line.400"></a>
+<span class="sourceLineNo">401</span>         * @param julianCenturies<a name="line.401"></a>
+<span class="sourceLineNo">402</span>         *            the number of Julian centuries since J2000.0<a name="line.402"></a>
+<span class="sourceLineNo">403</span>         * @param longitude<a name="line.403"></a>
+<span class="sourceLineNo">404</span>         *            the longitude of observer in degrees<a name="line.404"></a>
+<span class="sourceLineNo">405</span>         * @return the time in minutes from zero UTC<a name="line.405"></a>
+<span class="sourceLineNo">406</span>         */<a name="line.406"></a>
+<span class="sourceLineNo">407</span>        private static double getSolarNoonUTC(double julianCenturies, double longitude) {<a name="line.407"></a>
+<span class="sourceLineNo">408</span>                // First pass uses approximate solar noon to calculate eqtime<a name="line.408"></a>
+<span class="sourceLineNo">409</span>                double tnoon = getJulianCenturiesFromJulianDay(getJulianDayFromJulianCenturies(julianCenturies) + longitude<a name="line.409"></a>
+<span class="sourceLineNo">410</span>                                / 360.0);<a name="line.410"></a>
+<span class="sourceLineNo">411</span>                double eqTime = getEquationOfTime(tnoon);<a name="line.411"></a>
+<span class="sourceLineNo">412</span>                double solNoonUTC = 720 + (longitude * 4) - eqTime; // min<a name="line.412"></a>
+<span class="sourceLineNo">413</span><a name="line.413"></a>
+<span class="sourceLineNo">414</span>                double newt = getJulianCenturiesFromJulianDay(getJulianDayFromJulianCenturies(julianCenturies) - 0.5<a name="line.414"></a>
+<span class="sourceLineNo">415</span>                                + solNoonUTC / 1440.0);<a name="line.415"></a>
+<span class="sourceLineNo">416</span><a name="line.416"></a>
+<span class="sourceLineNo">417</span>                eqTime = getEquationOfTime(newt);<a name="line.417"></a>
+<span class="sourceLineNo">418</span>                return 720 + (longitude * 4) - eqTime; // min<a name="line.418"></a>
+<span class="sourceLineNo">419</span>        }<a name="line.419"></a>
+<span class="sourceLineNo">420</span><a name="line.420"></a>
+<span class="sourceLineNo">421</span>        /**<a name="line.421"></a>
+<span class="sourceLineNo">422</span>         * Return the &lt;a href="http://en.wikipedia.org/wiki/Universal_Coordinated_Time"&gt;Universal Coordinated Time&lt;/a&gt; (UTC)<a name="line.422"></a>
+<span class="sourceLineNo">423</span>         * of sunset for the given day at the given location on earth<a name="line.423"></a>
+<span class="sourceLineNo">424</span>         * <a name="line.424"></a>
+<span class="sourceLineNo">425</span>         * @param julianDay<a name="line.425"></a>
+<span class="sourceLineNo">426</span>         *            the Julian day<a name="line.426"></a>
+<span class="sourceLineNo">427</span>         * @param latitude<a name="line.427"></a>
+<span class="sourceLineNo">428</span>         *            the latitude of observer in degrees<a name="line.428"></a>
+<span class="sourceLineNo">429</span>         * @param longitude<a name="line.429"></a>
+<span class="sourceLineNo">430</span>         *            : longitude of observer in degrees<a name="line.430"></a>
+<span class="sourceLineNo">431</span>         * @param zenith<a name="line.431"></a>
+<span class="sourceLineNo">432</span>         * @return the time in minutes from zero Universal Coordinated Time (UTC)<a name="line.432"></a>
+<span class="sourceLineNo">433</span>         */<a name="line.433"></a>
+<span class="sourceLineNo">434</span>        private static double getSunsetUTC(double julianDay, double latitude, double longitude, double zenith) {<a name="line.434"></a>
+<span class="sourceLineNo">435</span>                double julianCenturies = getJulianCenturiesFromJulianDay(julianDay);<a name="line.435"></a>
+<span class="sourceLineNo">436</span><a name="line.436"></a>
+<span class="sourceLineNo">437</span>                // Find the time of solar noon at the location, and use that declination. This is better than start of the<a name="line.437"></a>
+<span class="sourceLineNo">438</span>                // Julian day<a name="line.438"></a>
+<span class="sourceLineNo">439</span><a name="line.439"></a>
+<span class="sourceLineNo">440</span>                double noonmin = getSolarNoonUTC(julianCenturies, longitude);<a name="line.440"></a>
+<span class="sourceLineNo">441</span>                double tnoon = getJulianCenturiesFromJulianDay(julianDay + noonmin / 1440.0);<a name="line.441"></a>
+<span class="sourceLineNo">442</span><a name="line.442"></a>
+<span class="sourceLineNo">443</span>                // First calculates sunrise and approx length of day<a name="line.443"></a>
+<span class="sourceLineNo">444</span><a name="line.444"></a>
+<span class="sourceLineNo">445</span>                double eqTime = getEquationOfTime(tnoon);<a name="line.445"></a>
+<span class="sourceLineNo">446</span>                double solarDec = getSunDeclination(tnoon);<a name="line.446"></a>
+<span class="sourceLineNo">447</span>                double hourAngle = getSunHourAngleAtSunset(latitude, solarDec, zenith);<a name="line.447"></a>
+<span class="sourceLineNo">448</span><a name="line.448"></a>
+<span class="sourceLineNo">449</span>                double delta = longitude - Math.toDegrees(hourAngle);<a name="line.449"></a>
+<span class="sourceLineNo">450</span>                double timeDiff = 4 * delta;<a name="line.450"></a>
+<span class="sourceLineNo">451</span>                double timeUTC = 720 + timeDiff - eqTime;<a name="line.451"></a>
+<span class="sourceLineNo">452</span><a name="line.452"></a>
+<span class="sourceLineNo">453</span>                // Second pass includes fractional Julian Day in gamma calc<a name="line.453"></a>
+<span class="sourceLineNo">454</span><a name="line.454"></a>
+<span class="sourceLineNo">455</span>                double newt = getJulianCenturiesFromJulianDay(getJulianDayFromJulianCenturies(julianCenturies) + timeUTC<a name="line.455"></a>
+<span class="sourceLineNo">456</span>                                / 1440.0);<a name="line.456"></a>
+<span class="sourceLineNo">457</span>                eqTime = getEquationOfTime(newt);<a name="line.457"></a>
+<span class="sourceLineNo">458</span>                solarDec = getSunDeclination(newt);<a name="line.458"></a>
+<span class="sourceLineNo">459</span>                hourAngle = getSunHourAngleAtSunset(latitude, solarDec, zenith);<a name="line.459"></a>
+<span class="sourceLineNo">460</span><a name="line.460"></a>
+<span class="sourceLineNo">461</span>                delta = longitude - Math.toDegrees(hourAngle);<a name="line.461"></a>
+<span class="sourceLineNo">462</span>                timeDiff = 4 * delta;<a name="line.462"></a>
+<span class="sourceLineNo">463</span>                timeUTC = 720 + timeDiff - eqTime; // in minutes<a name="line.463"></a>
+<span class="sourceLineNo">464</span>                return timeUTC;<a name="line.464"></a>
+<span class="sourceLineNo">465</span>        }<a name="line.465"></a>
+<span class="sourceLineNo">466</span>}<a name="line.466"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>

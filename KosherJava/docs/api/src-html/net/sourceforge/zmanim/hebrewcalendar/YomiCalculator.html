@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>/*<a name="line.1"></a>
+<span class="sourceLineNo">002</span> * Zmanim Java API<a name="line.2"></a>
+<span class="sourceLineNo">003</span> * Copyright (C) 2011 Eliyahu Hershfeld<a name="line.3"></a>
+<span class="sourceLineNo">004</span> *<a name="line.4"></a>
+<span class="sourceLineNo">005</span> * This program is free software; you can redistribute it and/or modify it under the terms of the<a name="line.5"></a>
+<span class="sourceLineNo">006</span> * GNU General Public License as published by the Free Software Foundation; either version 2 of the<a name="line.6"></a>
+<span class="sourceLineNo">007</span> * License, or (at your option) any later version.<a name="line.7"></a>
+<span class="sourceLineNo">008</span> *<a name="line.8"></a>
+<span class="sourceLineNo">009</span> * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without<a name="line.9"></a>
+<span class="sourceLineNo">010</span> * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU<a name="line.10"></a>
+<span class="sourceLineNo">011</span> * General Public License for more details.<a name="line.11"></a>
+<span class="sourceLineNo">012</span> *<a name="line.12"></a>
+<span class="sourceLineNo">013</span> * You should have received a copy of the GNU General Public License along with this program; if<a name="line.13"></a>
+<span class="sourceLineNo">014</span> * not, write to the Free Software Foundation, Inc. 59 Temple Place - Suite 330, Boston, MA<a name="line.14"></a>
+<span class="sourceLineNo">015</span> * 02111-1307, USA or connect to: http://www.fsf.org/copyleft/gpl.html<a name="line.15"></a>
+<span class="sourceLineNo">016</span> */<a name="line.16"></a>
+<span class="sourceLineNo">017</span>package net.sourceforge.zmanim.hebrewcalendar;<a name="line.17"></a>
+<span class="sourceLineNo">018</span><a name="line.18"></a>
+<span class="sourceLineNo">019</span>import java.util.Calendar;<a name="line.19"></a>
+<span class="sourceLineNo">020</span>import java.util.Date;<a name="line.20"></a>
+<span class="sourceLineNo">021</span>import java.util.GregorianCalendar;<a name="line.21"></a>
+<span class="sourceLineNo">022</span><a name="line.22"></a>
+<span class="sourceLineNo">023</span>/**<a name="line.23"></a>
+<span class="sourceLineNo">024</span> * This class calculates the Daf Yomi page (daf) for a given date. The class currently only supports Daf Yomi Bavli, but<a name="line.24"></a>
+<span class="sourceLineNo">025</span> * may cover Yerushalmi, Mishna Yomis etc in the future.<a name="line.25"></a>
+<span class="sourceLineNo">026</span> * <a name="line.26"></a>
+<span class="sourceLineNo">027</span> * @author &amp;copy; Bob Newell (original C code)<a name="line.27"></a>
+<span class="sourceLineNo">028</span> * @author &amp;copy; Eliyahu Hershfeld 2011<a name="line.28"></a>
+<span class="sourceLineNo">029</span> * @version 0.0.1<a name="line.29"></a>
+<span class="sourceLineNo">030</span> */<a name="line.30"></a>
+<span class="sourceLineNo">031</span>public class YomiCalculator {<a name="line.31"></a>
+<span class="sourceLineNo">032</span><a name="line.32"></a>
+<span class="sourceLineNo">033</span>        private static Date dafYomiStartDate = new GregorianCalendar(1923, Calendar.SEPTEMBER, 11).getTime();<a name="line.33"></a>
+<span class="sourceLineNo">034</span>        private static int dafYomiJulianStartDay = getJulianDay(dafYomiStartDate);<a name="line.34"></a>
+<span class="sourceLineNo">035</span>        private static Date shekalimChangeDate = new GregorianCalendar(1975, Calendar.JUNE, 24).getTime();<a name="line.35"></a>
+<span class="sourceLineNo">036</span>        private static int shekalimJulianChangeDay = getJulianDay(shekalimChangeDate);<a name="line.36"></a>
+<span class="sourceLineNo">037</span><a name="line.37"></a>
+<span class="sourceLineNo">038</span>        /**<a name="line.38"></a>
+<span class="sourceLineNo">039</span>         * Returns the &lt;a href="http://en.wikipedia.org/wiki/Daf_yomi"&gt;Daf Yomi&lt;/a&gt; &lt;a<a name="line.39"></a>
+<span class="sourceLineNo">040</span>         * href="http://en.wikipedia.org/wiki/Talmud"&gt;Bavli&lt;/a&gt; {@link Daf} for a given date. The first Daf Yomi cycle<a name="line.40"></a>
+<span class="sourceLineNo">041</span>         * started on Rosh Hashana 5684 (September 11, 1923) and calculations prior to this date will result in an<a name="line.41"></a>
+<span class="sourceLineNo">042</span>         * IllegalArgumentException thrown. For historical calculations (supported by this method), it is important to note<a name="line.42"></a>
+<span class="sourceLineNo">043</span>         * that a change in length of the cycle was instituted starting in the eighth Daf Yomi cycle beginning on June 24,<a name="line.43"></a>
+<span class="sourceLineNo">044</span>         * 1975. The Daf Yomi Bavli cycle has a single masechta of the Talmud Yerushalmi - Shekalim as part of the cycle.<a name="line.44"></a>
+<span class="sourceLineNo">045</span>         * Unlike the Bavli where the number of daf per masechta was standardized since the original &lt;a<a name="line.45"></a>
+<span class="sourceLineNo">046</span>         * href="http://en.wikipedia.org/wiki/Daniel_Bomberg"&gt;Bomberg Edition&lt;/a&gt; published from 1520 - 1523, there is no<a name="line.46"></a>
+<span class="sourceLineNo">047</span>         * uniform page length in the Yerushalmi. The early cycles had the Yerushalmi Shekalim length of 13 days following<a name="line.47"></a>
+<span class="sourceLineNo">048</span>         * the &lt;a href="http://en.wikipedia.org/wiki/Zhytomyr"&gt;Zhytomyr&lt;/a&gt; Shas used by &lt;a<a name="line.48"></a>
+<span class="sourceLineNo">049</span>         * href="http://en.wikipedia.org/wiki/Meir_Shapiro"&gt;Rabbi Meir Shapiro&lt;/a&gt;. With the start of the eighth Daf Yomi<a name="line.49"></a>
+<span class="sourceLineNo">050</span>         * cycle beginning on June 24, 1975 the length of the Yerushalmi shekalim was changed from 13 to 22 daf to follow<a name="line.50"></a>
+<span class="sourceLineNo">051</span>         * the Vilna Shas that is in common use today.<a name="line.51"></a>
+<span class="sourceLineNo">052</span>         * <a name="line.52"></a>
+<span class="sourceLineNo">053</span>         * @param date<a name="line.53"></a>
+<span class="sourceLineNo">054</span>         *            the calendar date for calculation<a name="line.54"></a>
+<span class="sourceLineNo">055</span>         * @return the {@link Daf}.<a name="line.55"></a>
+<span class="sourceLineNo">056</span>         * <a name="line.56"></a>
+<span class="sourceLineNo">057</span>         * @throws IllegalArgumentException<a name="line.57"></a>
+<span class="sourceLineNo">058</span>         *             if the date is prior to the September 11, 1923 start date of the first Daf Yomi cycle<a name="line.58"></a>
+<span class="sourceLineNo">059</span>         */<a name="line.59"></a>
+<span class="sourceLineNo">060</span>        public static Daf getDafYomiBavli(Date date) {<a name="line.60"></a>
+<span class="sourceLineNo">061</span>                /**<a name="line.61"></a>
+<span class="sourceLineNo">062</span>                 * The number of daf per masechta. Since the number of blatt in Shekalim changed on the 8th Daf Yomi cycle<a name="line.62"></a>
+<span class="sourceLineNo">063</span>                 * beginning on June 24, 1975<a name="line.63"></a>
+<span class="sourceLineNo">064</span>                 */<a name="line.64"></a>
+<span class="sourceLineNo">065</span>                int[] blattPerMasechta = { 64, 157, 105, 121, 22, 88, 56, 40, 35, 31, 32, 29, 27, 122, 112, 91, 66, 49, 90, 82,<a name="line.65"></a>
+<span class="sourceLineNo">066</span>                                119, 119, 176, 113, 24, 49, 76, 14, 120, 110, 142, 61, 34, 34, 28, 22, 4, 10, 4, 73 };<a name="line.66"></a>
+<span class="sourceLineNo">067</span>                Daf dafYomi = null;<a name="line.67"></a>
+<span class="sourceLineNo">068</span>                int julianDay = getJulianDay(date);<a name="line.68"></a>
+<span class="sourceLineNo">069</span>                int cycleNo = 0;<a name="line.69"></a>
+<span class="sourceLineNo">070</span>                int dafNo = 0;<a name="line.70"></a>
+<span class="sourceLineNo">071</span>                if (date.before(dafYomiStartDate)) {<a name="line.71"></a>
+<span class="sourceLineNo">072</span>                        // TODO: should we return a null or throw an IllegalArgumentException?<a name="line.72"></a>
+<span class="sourceLineNo">073</span>                        throw new IllegalArgumentException(date + " is prior to organized Daf Yomi Bavli cycles that started on "<a name="line.73"></a>
+<span class="sourceLineNo">074</span>                                        + dafYomiStartDate);<a name="line.74"></a>
+<span class="sourceLineNo">075</span>                }<a name="line.75"></a>
+<span class="sourceLineNo">076</span>                if (date.equals(shekalimChangeDate) || date.after(shekalimChangeDate)) {<a name="line.76"></a>
+<span class="sourceLineNo">077</span>                        cycleNo = 8 + (int) ((julianDay - shekalimJulianChangeDay) / 2711);<a name="line.77"></a>
+<span class="sourceLineNo">078</span>                        dafNo = ((julianDay - shekalimJulianChangeDay) % 2711);<a name="line.78"></a>
+<span class="sourceLineNo">079</span>                } else {<a name="line.79"></a>
+<span class="sourceLineNo">080</span>                        cycleNo = 1 + (int) ((julianDay - dafYomiJulianStartDay) / 2702);<a name="line.80"></a>
+<span class="sourceLineNo">081</span>                        dafNo = ((julianDay - dafYomiJulianStartDay) % 2702);<a name="line.81"></a>
+<span class="sourceLineNo">082</span>                }<a name="line.82"></a>
+<span class="sourceLineNo">083</span><a name="line.83"></a>
+<span class="sourceLineNo">084</span>                int total = 0;<a name="line.84"></a>
+<span class="sourceLineNo">085</span>                int masechta = -1;<a name="line.85"></a>
+<span class="sourceLineNo">086</span>                int blatt = 0;<a name="line.86"></a>
+<span class="sourceLineNo">087</span><a name="line.87"></a>
+<span class="sourceLineNo">088</span>                /* Fix Shekalim for old cycles. */<a name="line.88"></a>
+<span class="sourceLineNo">089</span>                if (cycleNo &lt;= 7) {<a name="line.89"></a>
+<span class="sourceLineNo">090</span>                        blattPerMasechta[4] = 13;<a name="line.90"></a>
+<span class="sourceLineNo">091</span>                }<a name="line.91"></a>
+<span class="sourceLineNo">092</span>                /* Finally find the daf. */<a name="line.92"></a>
+<span class="sourceLineNo">093</span>                for (int j = 0; j &lt; blattPerMasechta.length; j++) {<a name="line.93"></a>
+<span class="sourceLineNo">094</span>                        masechta++;<a name="line.94"></a>
+<span class="sourceLineNo">095</span>                        total = total + blattPerMasechta[j] - 1;<a name="line.95"></a>
+<span class="sourceLineNo">096</span>                        if (dafNo &lt; total) {<a name="line.96"></a>
+<span class="sourceLineNo">097</span>                                blatt = 1 + blattPerMasechta[j] - (total - dafNo);<a name="line.97"></a>
+<span class="sourceLineNo">098</span>                                /* Fiddle with the weird ones near the end. */<a name="line.98"></a>
+<span class="sourceLineNo">099</span>                                if (masechta == 36) {<a name="line.99"></a>
+<span class="sourceLineNo">100</span>                                        blatt += 21;<a name="line.100"></a>
+<span class="sourceLineNo">101</span>                                } else if (masechta == 37) {<a name="line.101"></a>
+<span class="sourceLineNo">102</span>                                        blatt += 24;<a name="line.102"></a>
+<span class="sourceLineNo">103</span>                                } else if (masechta == 38) {<a name="line.103"></a>
+<span class="sourceLineNo">104</span>                                        blatt += 33;<a name="line.104"></a>
+<span class="sourceLineNo">105</span>                                }<a name="line.105"></a>
+<span class="sourceLineNo">106</span>                                dafYomi = new Daf(masechta, blatt);<a name="line.106"></a>
+<span class="sourceLineNo">107</span>                                break;<a name="line.107"></a>
+<span class="sourceLineNo">108</span>                        }<a name="line.108"></a>
+<span class="sourceLineNo">109</span>                }<a name="line.109"></a>
+<span class="sourceLineNo">110</span><a name="line.110"></a>
+<span class="sourceLineNo">111</span>                return dafYomi;<a name="line.111"></a>
+<span class="sourceLineNo">112</span>        }<a name="line.112"></a>
+<span class="sourceLineNo">113</span><a name="line.113"></a>
+<span class="sourceLineNo">114</span>        /**<a name="line.114"></a>
+<span class="sourceLineNo">115</span>         * Return the &lt;a href="http://en.wikipedia.org/wiki/Julian_day"&gt;Julian day&lt;/a&gt; from a Java Date.<a name="line.115"></a>
+<span class="sourceLineNo">116</span>         * <a name="line.116"></a>
+<span class="sourceLineNo">117</span>         * @param date<a name="line.117"></a>
+<span class="sourceLineNo">118</span>         *            The Java Date<a name="line.118"></a>
+<span class="sourceLineNo">119</span>         * @return the Julian day number corresponding to the date<a name="line.119"></a>
+<span class="sourceLineNo">120</span>         */<a name="line.120"></a>
+<span class="sourceLineNo">121</span>        private static int getJulianDay(Date date) {<a name="line.121"></a>
+<span class="sourceLineNo">122</span>                Calendar calendar = Calendar.getInstance();<a name="line.122"></a>
+<span class="sourceLineNo">123</span>                calendar.setTime(date);<a name="line.123"></a>
+<span class="sourceLineNo">124</span>                int year = calendar.get(Calendar.YEAR);<a name="line.124"></a>
+<span class="sourceLineNo">125</span>                int month = calendar.get(Calendar.MONTH) + 1;<a name="line.125"></a>
+<span class="sourceLineNo">126</span>                int day = calendar.get(Calendar.DAY_OF_MONTH);<a name="line.126"></a>
+<span class="sourceLineNo">127</span>                if (month &lt;= 2) {<a name="line.127"></a>
+<span class="sourceLineNo">128</span>                        year -= 1;<a name="line.128"></a>
+<span class="sourceLineNo">129</span>                        month += 12;<a name="line.129"></a>
+<span class="sourceLineNo">130</span>                }<a name="line.130"></a>
+<span class="sourceLineNo">131</span>                int a = year / 100;<a name="line.131"></a>
+<span class="sourceLineNo">132</span>                int b = 2 - a + a / 4;<a name="line.132"></a>
+<span class="sourceLineNo">133</span>                return (int) (Math.floor(365.25 * (year + 4716)) + Math.floor(30.6001 * (month + 1)) + day + b - 1524.5);<a name="line.133"></a>
+<span class="sourceLineNo">134</span>        }<a name="line.134"></a>
+<span class="sourceLineNo">135</span>}<a name="line.135"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>

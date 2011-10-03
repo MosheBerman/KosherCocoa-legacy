@@ -15,23 +15,13 @@
 		2899E5220DE3E06400AC0155 /* KosherCocoaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* KosherCocoaViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* KosherCocoaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* KosherCocoaViewController.m */; };
-		460CEA991362118400737E03 /* SefiraDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 460CEA8B1362118400737E03 /* SefiraDay.m */; };
-		460CEA9A1362118400737E03 /* WeeklyParsha.m in Sources */ = {isa = PBXBuildFile; fileRef = 460CEA8D1362118400737E03 /* WeeklyParsha.m */; };
-		460CEA9B1362118400737E03 /* MathAdditions.c in Sources */ = {isa = PBXBuildFile; fileRef = 460CEA901362118400737E03 /* MathAdditions.c */; };
-		460CEA9C1362118400737E03 /* EarthViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 460CEA941362118400737E03 /* EarthViewer.m */; };
-		460CEA9D1362118400737E03 /* GeoLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 460CEA961362118400737E03 /* GeoLocation.m */; };
-		460CEA9E1362118400737E03 /* SunriseAndSunset.m in Sources */ = {isa = PBXBuildFile; fileRef = 460CEA981362118400737E03 /* SunriseAndSunset.m */; };
 		460CEAA01362152300737E03 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 460CEA9F1362152300737E03 /* Icon.png */; };
-		463C429713D60F1500FE4885 /* ZmanimCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C429613D60F1500FE4885 /* ZmanimCalendar.m */; };
 		4648650D1343CB67009F34EF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4648650C1343CB67009F34EF /* CoreLocation.framework */; };
 		46652F3D13452F2C00CAF9B0 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46652F3B13452F2C00CAF9B0 /* Icon@2x.png */; };
 		46652F4413453A1A00CAF9B0 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 46652F4313453A1A00CAF9B0 /* iTunesArtwork */; };
 		46652F4713453ED900CAF9B0 /* Target.png in Resources */ = {isa = PBXBuildFile; fileRef = 46652F4513453ED900CAF9B0 /* Target.png */; };
 		46652F4813453ED900CAF9B0 /* Target@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46652F4613453ED900CAF9B0 /* Target@2x.png */; };
 		467FC13813DC627100DFAB4D /* CalculatedZman.m in Sources */ = {isa = PBXBuildFile; fileRef = 467FC13713DC627100DFAB4D /* CalculatedZman.m */; };
-		467FC13B13DC962400DFAB4D /* ComplexZmanimCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 467FC13A13DC962400DFAB4D /* ComplexZmanimCalendar.m */; };
-		46BCFB5313D9FE3B004D46EB /* AstronomicalCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BCFB5213D9FE3B004D46EB /* AstronomicalCalendar.m */; };
-		46BCFB5913DA1BB0004D46EB /* AstronomicalCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BCFB5813DA1BB0004D46EB /* AstronomicalCalculator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,22 +37,7 @@
 		28D7ACF70DDB3853001CB0EB /* KosherCocoaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KosherCocoaViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* KosherCocoa_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KosherCocoa_Prefix.pch; sourceTree = "<group>"; };
-		460CEA8A1362118400737E03 /* SefiraDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SefiraDay.h; sourceTree = "<group>"; };
-		460CEA8B1362118400737E03 /* SefiraDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SefiraDay.m; sourceTree = "<group>"; };
-		460CEA8C1362118400737E03 /* WeeklyParsha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklyParsha.h; sourceTree = "<group>"; };
-		460CEA8D1362118400737E03 /* WeeklyParsha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyParsha.m; sourceTree = "<group>"; };
-		460CEA8F1362118400737E03 /* KosherCocoaConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KosherCocoaConstants.h; sourceTree = "<group>"; };
-		460CEA901362118400737E03 /* MathAdditions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MathAdditions.c; sourceTree = "<group>"; };
-		460CEA911362118400737E03 /* MathAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathAdditions.h; sourceTree = "<group>"; };
-		460CEA931362118400737E03 /* EarthViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EarthViewer.h; sourceTree = "<group>"; };
-		460CEA941362118400737E03 /* EarthViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EarthViewer.m; sourceTree = "<group>"; };
-		460CEA951362118400737E03 /* GeoLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoLocation.h; sourceTree = "<group>"; };
-		460CEA961362118400737E03 /* GeoLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoLocation.m; sourceTree = "<group>"; };
-		460CEA971362118400737E03 /* SunriseAndSunset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunriseAndSunset.h; sourceTree = "<group>"; };
-		460CEA981362118400737E03 /* SunriseAndSunset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunriseAndSunset.m; sourceTree = "<group>"; };
 		460CEA9F1362152300737E03 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Images/Icon.png; sourceTree = "<group>"; };
-		463C429513D60F1500FE4885 /* ZmanimCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZmanimCalendar.h; path = Zmanim/ZmanimCalendar.h; sourceTree = "<group>"; };
-		463C429613D60F1500FE4885 /* ZmanimCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZmanimCalendar.m; path = Zmanim/ZmanimCalendar.m; sourceTree = "<group>"; };
 		4648650C1343CB67009F34EF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		46652F3B13452F2C00CAF9B0 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Images/Icon@2x.png"; sourceTree = "<group>"; };
 		46652F4313453A1A00CAF9B0 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Images/iTunesArtwork; sourceTree = "<group>"; };
@@ -70,12 +45,27 @@
 		46652F4613453ED900CAF9B0 /* Target@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Target@2x.png"; path = "Images/misc/Target@2x.png"; sourceTree = "<group>"; };
 		467FC13613DC627000DFAB4D /* CalculatedZman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatedZman.h; sourceTree = "<group>"; };
 		467FC13713DC627100DFAB4D /* CalculatedZman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatedZman.m; sourceTree = "<group>"; };
-		467FC13913DC962400DFAB4D /* ComplexZmanimCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComplexZmanimCalendar.h; path = Zmanim/ComplexZmanimCalendar.h; sourceTree = "<group>"; };
-		467FC13A13DC962400DFAB4D /* ComplexZmanimCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComplexZmanimCalendar.m; path = Zmanim/ComplexZmanimCalendar.m; sourceTree = "<group>"; };
-		46BCFB5113D9FE3B004D46EB /* AstronomicalCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AstronomicalCalendar.h; sourceTree = "<group>"; };
-		46BCFB5213D9FE3B004D46EB /* AstronomicalCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AstronomicalCalendar.m; sourceTree = "<group>"; };
-		46BCFB5713DA1BB0004D46EB /* AstronomicalCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AstronomicalCalculator.h; sourceTree = "<group>"; };
-		46BCFB5813DA1BB0004D46EB /* AstronomicalCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AstronomicalCalculator.m; sourceTree = "<group>"; };
+		46AF4AB913F581BC00164696 /* AstronomicalCalendar.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = AstronomicalCalendar.java; sourceTree = "<group>"; };
+		46AF4ABA13F581BC00164696 /* ComplexZmanimCalendar.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = ComplexZmanimCalendar.java; sourceTree = "<group>"; };
+		46AF4ABC13F581BC00164696 /* Daf.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = Daf.java; sourceTree = "<group>"; };
+		46AF4ABD13F581BC00164696 /* HebrewDateFormatter.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = HebrewDateFormatter.java; sourceTree = "<group>"; };
+		46AF4ABE13F581BC00164696 /* JewishCalendar.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = JewishCalendar.java; sourceTree = "<group>"; };
+		46AF4ABF13F581BC00164696 /* JewishDate.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = JewishDate.java; sourceTree = "<group>"; };
+		46AF4AC013F581BC00164696 /* package.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = package.html; sourceTree = "<group>"; };
+		46AF4AC113F581BC00164696 /* YomiCalculator.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = YomiCalculator.java; sourceTree = "<group>"; };
+		46AF4AC213F581BC00164696 /* package.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = package.html; sourceTree = "<group>"; };
+		46AF4AC413F581BC00164696 /* AstronomicalCalculator.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = AstronomicalCalculator.java; sourceTree = "<group>"; };
+		46AF4AC513F581BC00164696 /* GeoLocation.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = GeoLocation.java; sourceTree = "<group>"; };
+		46AF4AC613F581BC00164696 /* GeoLocationUtils.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = GeoLocationUtils.java; sourceTree = "<group>"; };
+		46AF4AC713F581BC00164696 /* JSuntimeCalculator.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = JSuntimeCalculator.java; sourceTree = "<group>"; };
+		46AF4AC813F581BC00164696 /* NOAACalculator.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = NOAACalculator.java; sourceTree = "<group>"; };
+		46AF4AC913F581BC00164696 /* package.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = package.html; sourceTree = "<group>"; };
+		46AF4ACA13F581BC00164696 /* SunTimesCalculator.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = SunTimesCalculator.java; sourceTree = "<group>"; };
+		46AF4ACB13F581BC00164696 /* Time.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = Time.java; sourceTree = "<group>"; };
+		46AF4ACC13F581BC00164696 /* Zman.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = Zman.java; sourceTree = "<group>"; };
+		46AF4ACD13F581BC00164696 /* ZmanimCalculator.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = ZmanimCalculator.java; sourceTree = "<group>"; };
+		46AF4ACE13F581BC00164696 /* ZmanimFormatter.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = ZmanimFormatter.java; sourceTree = "<group>"; };
+		46AF4ACF13F581BC00164696 /* ZmanimCalendar.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = ZmanimCalendar.java; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* KosherCocoa-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KosherCocoa-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,7 +113,8 @@
 				46652F3B13452F2C00CAF9B0 /* Icon@2x.png */,
 				46652F4513453ED900CAF9B0 /* Target.png */,
 				46652F4613453ED900CAF9B0 /* Target@2x.png */,
-				460CEA881362118400737E03 /* KosherCocoa */,
+				461DD7D5143905F300EA1E7F /* KosherCocoa */,
+				46AF4AB813F581BC00164696 /* zmanim */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -163,64 +154,80 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		460CEA881362118400737E03 /* KosherCocoa */ = {
+		461DD7D5143905F300EA1E7F /* KosherCocoa */ = {
 			isa = PBXGroup;
 			children = (
-				463C429413D60EA200FE4885 /* Halachic Times */,
-				460CEA891362118400737E03 /* Calendar */,
-				460CEA8E1362118400737E03 /* Required */,
-				460CEA921362118400737E03 /* Times */,
+				461DD7D6143905F300EA1E7F /* Calendar */,
+				461DD7D7143905F300EA1E7F /* Times */,
+				461DD7D8143905F300EA1E7F /* Zmanim */,
 			);
 			path = KosherCocoa;
 			sourceTree = "<group>";
 		};
-		460CEA891362118400737E03 /* Calendar */ = {
+		461DD7D6143905F300EA1E7F /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				460CEA8A1362118400737E03 /* SefiraDay.h */,
-				460CEA8B1362118400737E03 /* SefiraDay.m */,
-				460CEA8C1362118400737E03 /* WeeklyParsha.h */,
-				460CEA8D1362118400737E03 /* WeeklyParsha.m */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		460CEA8E1362118400737E03 /* Required */ = {
+		461DD7D7143905F300EA1E7F /* Times */ = {
 			isa = PBXGroup;
 			children = (
-				460CEA8F1362118400737E03 /* KosherCocoaConstants.h */,
-				460CEA911362118400737E03 /* MathAdditions.h */,
-				460CEA901362118400737E03 /* MathAdditions.c */,
-			);
-			path = Required;
-			sourceTree = "<group>";
-		};
-		460CEA921362118400737E03 /* Times */ = {
-			isa = PBXGroup;
-			children = (
-				460CEA931362118400737E03 /* EarthViewer.h */,
-				460CEA941362118400737E03 /* EarthViewer.m */,
-				460CEA951362118400737E03 /* GeoLocation.h */,
-				460CEA961362118400737E03 /* GeoLocation.m */,
-				460CEA971362118400737E03 /* SunriseAndSunset.h */,
-				460CEA981362118400737E03 /* SunriseAndSunset.m */,
-				46BCFB5113D9FE3B004D46EB /* AstronomicalCalendar.h */,
-				46BCFB5213D9FE3B004D46EB /* AstronomicalCalendar.m */,
-				46BCFB5713DA1BB0004D46EB /* AstronomicalCalculator.h */,
-				46BCFB5813DA1BB0004D46EB /* AstronomicalCalculator.m */,
 			);
 			path = Times;
 			sourceTree = "<group>";
 		};
-		463C429413D60EA200FE4885 /* Halachic Times */ = {
+		461DD7D8143905F300EA1E7F /* Zmanim */ = {
 			isa = PBXGroup;
 			children = (
-				463C429513D60F1500FE4885 /* ZmanimCalendar.h */,
-				463C429613D60F1500FE4885 /* ZmanimCalendar.m */,
-				467FC13913DC962400DFAB4D /* ComplexZmanimCalendar.h */,
-				467FC13A13DC962400DFAB4D /* ComplexZmanimCalendar.m */,
 			);
-			name = "Halachic Times";
+			path = Zmanim;
+			sourceTree = "<group>";
+		};
+		46AF4AB813F581BC00164696 /* zmanim */ = {
+			isa = PBXGroup;
+			children = (
+				46AF4AB913F581BC00164696 /* AstronomicalCalendar.java */,
+				46AF4ABA13F581BC00164696 /* ComplexZmanimCalendar.java */,
+				46AF4ABB13F581BC00164696 /* hebrewcalendar */,
+				46AF4AC213F581BC00164696 /* package.html */,
+				46AF4AC313F581BC00164696 /* util */,
+				46AF4ACF13F581BC00164696 /* ZmanimCalendar.java */,
+			);
+			name = zmanim;
+			path = KosherJava/src/net/sourceforge/zmanim;
+			sourceTree = "<group>";
+		};
+		46AF4ABB13F581BC00164696 /* hebrewcalendar */ = {
+			isa = PBXGroup;
+			children = (
+				46AF4ABC13F581BC00164696 /* Daf.java */,
+				46AF4ABD13F581BC00164696 /* HebrewDateFormatter.java */,
+				46AF4ABE13F581BC00164696 /* JewishCalendar.java */,
+				46AF4ABF13F581BC00164696 /* JewishDate.java */,
+				46AF4AC013F581BC00164696 /* package.html */,
+				46AF4AC113F581BC00164696 /* YomiCalculator.java */,
+			);
+			path = hebrewcalendar;
+			sourceTree = "<group>";
+		};
+		46AF4AC313F581BC00164696 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				46AF4AC413F581BC00164696 /* AstronomicalCalculator.java */,
+				46AF4AC513F581BC00164696 /* GeoLocation.java */,
+				46AF4AC613F581BC00164696 /* GeoLocationUtils.java */,
+				46AF4AC713F581BC00164696 /* JSuntimeCalculator.java */,
+				46AF4AC813F581BC00164696 /* NOAACalculator.java */,
+				46AF4AC913F581BC00164696 /* package.html */,
+				46AF4ACA13F581BC00164696 /* SunTimesCalculator.java */,
+				46AF4ACB13F581BC00164696 /* Time.java */,
+				46AF4ACC13F581BC00164696 /* Zman.java */,
+				46AF4ACD13F581BC00164696 /* ZmanimCalculator.java */,
+				46AF4ACE13F581BC00164696 /* ZmanimFormatter.java */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,17 +302,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* KosherCocoaAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* KosherCocoaViewController.m in Sources */,
-				460CEA991362118400737E03 /* SefiraDay.m in Sources */,
-				460CEA9A1362118400737E03 /* WeeklyParsha.m in Sources */,
-				460CEA9B1362118400737E03 /* MathAdditions.c in Sources */,
-				460CEA9C1362118400737E03 /* EarthViewer.m in Sources */,
-				460CEA9D1362118400737E03 /* GeoLocation.m in Sources */,
-				460CEA9E1362118400737E03 /* SunriseAndSunset.m in Sources */,
-				463C429713D60F1500FE4885 /* ZmanimCalendar.m in Sources */,
-				46BCFB5313D9FE3B004D46EB /* AstronomicalCalendar.m in Sources */,
-				46BCFB5913DA1BB0004D46EB /* AstronomicalCalculator.m in Sources */,
 				467FC13813DC627100DFAB4D /* CalculatedZman.m in Sources */,
-				467FC13B13DC962400DFAB4D /* ComplexZmanimCalendar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
