@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "SunriseAndSunset.h"
+
 #import "CalculatedZman.h"
 #import "ZmanimCalendar.h"
 
