@@ -169,18 +169,12 @@
 	//	
 	
 	
-	//If it's a leap year, push off sefira for a month
-	if ([self isHebrewLeapYear:year]) {
-		[hebrewComponents setMonth:8];
-	}else {
-		[hebrewComponents setMonth:7];
-	}
 
-	
+	[hebrewComponents setMonth:8];
 	[hebrewComponents setDay:16];
 	[hebrewComponents setHour:0];
-    [hebrewComponents setMinute:0];
-    [hebrewComponents setSecond:0];
+	[hebrewComponents setMinute:0];
+	[hebrewComponents setSecond:0];
     
 	NSDate *firstDayOfTheOmer = [hebrew dateFromComponents:hebrewComponents];
 	
