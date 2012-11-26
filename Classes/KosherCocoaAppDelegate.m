@@ -7,7 +7,6 @@
 //
 
 #import "KosherCocoaAppDelegate.h"
-#import "KosherCocoaViewController.h"
 
 @implementation KosherCocoaAppDelegate
 
