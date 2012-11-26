@@ -25,10 +25,4 @@
     return self;
 }
 
-- (void)dealloc{
-    
-    [name release];
-    [time release];
-    [super dealloc];
-}
 @end

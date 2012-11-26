@@ -42,7 +42,6 @@
         CLLocationManager *tempCL = [[CLLocationManager alloc] init];
         [tempCL setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
         self.cl = tempCL;
-        [tempCL release];
         
         self.cl.delegate = self;
         
@@ -51,7 +50,6 @@
     if (self.zmanimArray == nil) {
         NSMutableArray *t = [[NSMutableArray alloc] init];
         [self setZmanimArray:t];
-        [t release];    
     }
     
     //[inDiasporaSelector addTarget:self action:@selector(locationModeChanged:) forControlEvents:UIControlEventValueChanged];    
@@ -60,7 +58,6 @@
 
 - (void)viewDidUnload{
     
-    [zmanimTable release];
     zmanimTable = nil;
     
     [self.cl stopUpdatingLocation];
@@ -83,7 +80,6 @@
                                           cancelButtonTitle:@"OK."
                                           otherButtonTitles:nil];
     [alert show];
-    [alert release];
     
     [self.cl stopUpdatingLocation];
 }
@@ -154,11 +150,9 @@
         
         ZmanimCalendar *zmanimCalendar = [[ZmanimCalendar alloc] initWithLocation:AGeoLocation];
         
-        [AGeoLocation release];
         
         self.calendar = zmanimCalendar;
         
-        [zmanimCalendar release];        
         
     }
     
@@ -196,7 +190,7 @@
 
 - (CalculatedZman *)calculateZman:(NSString *)zman andCallIt:(NSString *)name{
 
-    CalculatedZman *calcZman = [[[CalculatedZman alloc] init] autorelease];
+    CalculatedZman *calcZman = [[CalculatedZman alloc] init];
     calcZman.name = name;
     
     //
@@ -275,7 +269,7 @@
     cell = [tableView dequeueReusableCellWithIdentifier:str];
     
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:str] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:str];
     }
     
     //
@@ -318,7 +312,6 @@
             cell.detailTextLabel.text = [parsha thisWeeksParshaForDate:[datePicker date] inDiaspora:NO];
         }
         
-        [parsha release];        
     }
 
     return cell;
@@ -333,14 +326,5 @@
 	// Release any cached data, images, etc that aren't in use.
 }
 
-- (void)dealloc {
-    [zmanimArray release];
-    [calendar release];
-    [cl release];
-    [datePicker release];
-    [updateLocation release];
-    [zmanimTable release];
-    [super dealloc];
-}
 
 @end

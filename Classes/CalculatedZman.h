@@ -10,7 +10,7 @@
 
 @interface CalculatedZman : NSObject
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *time;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *time;
 
 @end

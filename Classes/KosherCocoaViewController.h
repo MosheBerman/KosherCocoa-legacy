@@ -69,11 +69,11 @@
     
 }
 
-@property (nonatomic, retain) UIDatePicker *datePicker;
-@property (nonatomic, retain) CLLocationManager *cl;
-@property (nonatomic, retain) NSMutableArray *zmanimArray;
-@property (nonatomic, retain) IBOutlet UITableView *zmanimTable;
-@property (nonatomic, retain) ZmanimCalendar *calendar;
+@property (nonatomic, strong) UIDatePicker *datePicker;
+@property (nonatomic, strong) CLLocationManager *cl;
+@property (nonatomic, strong) NSMutableArray *zmanimArray;
+@property (nonatomic, strong) IBOutlet UITableView *zmanimTable;
+@property (nonatomic, strong) ZmanimCalendar *calendar;
 
 - (IBAction)goAheadOneDay:(id)sender;
 - (IBAction)goToToday:(id)sender;
