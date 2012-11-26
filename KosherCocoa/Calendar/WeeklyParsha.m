@@ -60,7 +60,7 @@
     
     //  Create a hebrew calendar object
     
-	NSCalendar *hebrewCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar] autorelease];
+	NSCalendar *hebrewCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar];
 	
     //  Get the year component from the date
     
@@ -77,11 +77,11 @@
     
     //  Create a Hebrew calendar object.
     
-	NSCalendar *hebrewCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar] autorelease];
+	NSCalendar *hebrewCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar];
 	
 	//	Get the first day of the current hebrew year.
 	
-	NSDateComponents *roshHashanaComponents = [[[NSDateComponents alloc] init] autorelease];
+	NSDateComponents *roshHashanaComponents = [[NSDateComponents alloc] init];
 	
     //
     //  Set the components to the 
@@ -106,7 +106,7 @@
 	//	Now, convert that Hebrew date to a Gregorian date.
 	//
     
-	NSCalendar *gregorianCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+	NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 	
     //
     //  Set up the date components to use with the length calculation
@@ -124,7 +124,7 @@
 	//	Then get the first day of the current hebrew year
 	//
 	
-	NSDateComponents *roshHashanaOfNextYearComponents = [[[NSDateComponents alloc] init] autorelease];
+	NSDateComponents *roshHashanaOfNextYearComponents = [[NSDateComponents alloc] init];
 	
     NSInteger tempYear = year+1;
     
@@ -223,13 +223,13 @@
     //
     //
     
-	NSCalendar *hebrewCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar] autorelease];
+	NSCalendar *hebrewCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar];
 	
     //
 	//	Then get the first day of the current hebrew year
 	//
 	
-	NSDateComponents *roshHashanaComponents = [[[NSDateComponents alloc] init ]autorelease];
+	NSDateComponents *roshHashanaComponents = [[NSDateComponents alloc] init ];
 	
 	[roshHashanaComponents setDay:1];
 	[roshHashanaComponents setMonth:1];
@@ -244,14 +244,14 @@
 	//	Then convert that to gregorian
 	//
 	
-	NSCalendar *gregorianCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+	NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 	
 	NSDateComponents *gregorianDayComponentsForRoshHashana = [gregorianCalendar components:NSWeekdayCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit | NSMinuteCalendarUnit | NSHourCalendarUnit | NSSecondCalendarUnit fromDate:roshHashanaDate];
 	
 	//Determine the day of the week of the first day of the current hebrew year
 
 	NSDate *oneTishreiAsGregorian = [gregorianCalendar dateFromComponents:gregorianDayComponentsForRoshHashana];
-	NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 	NSDateComponents *comps = [gregorian components:NSWeekdayCalendarUnit fromDate:oneTishreiAsGregorian];
 	NSInteger weekday = [[NSNumber numberWithUnsignedInteger:[comps weekday]] integerValue];
 	
@@ -393,7 +393,7 @@
 	//	A copy of the parshios array
 	//
 	
-	NSMutableArray *tempArray = [[mutableArray mutableCopy] autorelease];
+	NSMutableArray *tempArray = [mutableArray mutableCopy];
 	
     //Is this a leap year?
 	NSInteger a = [[typeOfYear objectAtIndex:0] integerValue];
@@ -766,7 +766,7 @@
 	//	A copy of the parshios array
 	//
 	
-	NSMutableArray *tempArray = [[mutableArray mutableCopy] autorelease];
+	NSMutableArray *tempArray = [mutableArray mutableCopy];
 	
     //Is this a leap year?
 	NSInteger a = [[typeOfYear objectAtIndex:0] integerValue];
@@ -1135,13 +1135,13 @@
 #pragma mark ranger
 
 - (NSArray *)createArrayWithNumbersInRange:(NSRange)aRange{
-	NSMutableArray *tempArray = [[[NSMutableArray alloc] init] autorelease];
+	NSMutableArray *tempArray = [[NSMutableArray alloc] init];
 	
 	for (NSInteger i=aRange.location; i<aRange.length + aRange.location; i++) {
 		[tempArray addObject:[NSNumber numberWithInteger:i]];
 	}
 	
-	return [[tempArray copy] autorelease];
+	return [tempArray copy];
 }
 
 //
@@ -1159,10 +1159,10 @@
 - (NSString *) thisWeeksParshaForDate:(NSDate *)date inDiaspora:(BOOL)isInDiaspora{
 	
 	//Create a Hebrew Calendar
-	NSCalendar *hebrewCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar] autorelease];
+	NSCalendar *hebrewCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar];
 	
 	//Create a Gregorian Calendar
-	NSCalendar *gregorianCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+	NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 	
 	NSDateComponents *gregorianDateComponents = [gregorianCalendar components:NSWeekdayCalendarUnit fromDate:date];
  	
@@ -1173,7 +1173,7 @@
 	
 	NSDateComponents *shabbosComponents = [hebrewCalendar components:NSWeekdayCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:thisShabbos];
 	
-	NSDateComponents *roshHashanaComponents = [[[NSDateComponents alloc] init ]autorelease];
+	NSDateComponents *roshHashanaComponents = [[NSDateComponents alloc] init ];
 	
 	[roshHashanaComponents setDay:1];
 	[roshHashanaComponents setMonth:1];
@@ -1265,7 +1265,7 @@
 - (NSString *) nextWeeksParshaForDate:(NSDate *)date inDiaspora:(BOOL)isInDiaspora{
     
     //Create a Gregorian Calendar
-	NSCalendar *gregorianCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+	NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
     NSDateComponents *gregorianDateComponents = [gregorianCalendar components:NSWeekdayCalendarUnit fromDate:date];
  	
@@ -1282,10 +1282,10 @@
 - (NSString *)yearTypeStringForDate:(NSDate *)date{
  	
 	//Create a Hebrew Calendar
-	NSCalendar *hebrewCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar] autorelease];
+	NSCalendar *hebrewCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSHebrewCalendar];
     
     //Create a Gregorian Calendar
-	NSCalendar *gregorianCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+	NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 	
 	NSDateComponents *gregorianDateComponents = [gregorianCalendar components:NSWeekdayCalendarUnit fromDate:date];
  	
@@ -1304,10 +1304,6 @@
 #pragma mark -
 
 
-- (void) dealloc {
-	[super dealloc];
-	[parshios release];
-}
 
 
 @end

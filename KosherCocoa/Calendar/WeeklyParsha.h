@@ -12,7 +12,7 @@
 	NSMutableArray *parshios;
 }
 
-@property (nonatomic, retain) NSMutableArray *parshios;
+@property (nonatomic, strong) NSMutableArray *parshios;
 
 //
 //  Get the year type info for a given hebrew year

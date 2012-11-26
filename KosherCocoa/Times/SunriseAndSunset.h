@@ -26,8 +26,8 @@
 //  A string representing the name of the calculator
 //
 
-@property (nonatomic, retain) NSString *calculatorName;
-@property (nonatomic, retain) GeoLocation *geoLocation;
+@property (nonatomic, strong) NSString *calculatorName;
+@property (nonatomic, strong) GeoLocation *geoLocation;
 
 //
 //

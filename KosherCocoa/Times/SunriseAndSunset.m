@@ -36,7 +36,7 @@
             //  Create the GeoLocation
             //
             
-            GeoLocation *tempG = [[[GeoLocation alloc] initWithName:@"Default" andLatitude:0.0 andLongitude:0.0 andTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]]autorelease];
+            GeoLocation *tempG = [[GeoLocation alloc] initWithName:@"Default" andLatitude:0.0 andLongitude:0.0 andTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
             
             //
             //  Assign it to the geoLoc object
@@ -441,7 +441,6 @@
     //  Release the calendar
     //
     
-    [gregorianCalendar release];
     
     //
     //  Return the array
@@ -457,10 +456,5 @@
 //  iOS/Cocoa touch memory management
 //
 
-- (void) dealloc{
-    [geoLocation release];
-    [calculatorName release];
-    [super dealloc];
-}
 
 @end

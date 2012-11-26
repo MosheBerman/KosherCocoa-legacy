@@ -87,7 +87,6 @@
     
     ZmanimCalendar *viewer = [[ZmanimCalendar alloc]initWithLocation:geoLocation];// initWithLatitude:
     
-    [geoLocation release];
     
     //
     //  If sunset has occured, it's already tomorrow
@@ -100,7 +99,6 @@
         
     }
     
-    [viewer release];
     
     //
 	//  Determine the first day of the omer for this year
@@ -184,8 +182,6 @@
 	
 	//NSLog(@"First Day of the Omer: %@, Formatted: %@", [firstDayOfTheOmer description], [formatter stringFromDate:firstDayOfTheOmer]);
 
-	[formatter release];
-	[hebrew release];
 	
 	return firstDayOfTheOmer;
 }
@@ -257,9 +253,6 @@
 	//	Release the calendar related object created earlier
 	//
 	
-	[gregorianComponents release];
-	[gregorian release];
-	[hebrew release];
 	
 	return hebrewYear;
 	
@@ -324,14 +317,10 @@
 	//	Release the calendar object
 	//
 	
-	[gregorian release];
 
 	
 	return hebrewYear;	
 }
 
-- (void)dealloc{
-	[super dealloc];
-}
 
 @end

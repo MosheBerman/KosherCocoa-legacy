@@ -219,7 +219,6 @@
     //  Release the GeoLocation object.
     //
     
-    [tempG release];
     
     //
     //  This next line calculates the sunrise and sunset 
@@ -241,7 +240,6 @@
     //  Release the suntimes object since we don't need it anymore.
     //
     
-    [suntimes release];
 	
     //
     //  Return the sunrise value
@@ -323,7 +321,6 @@
     //  Release the GeoLocation object.
     //
     
-    [tempG release];
     
     //
     //  This next line calculates the sunrise and sunset 
@@ -345,7 +342,6 @@
     //  Release the suntimes object since we don't need it anymore.
     //
     
-    [suntimes release];
     
     //
     //  Return the sunrise value
@@ -401,7 +397,7 @@
     //  the Gregorian calendar.
     //
     
-    NSCalendar *gregorianCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
     //
     //  Convert the current time
@@ -479,7 +475,7 @@
 
 - (NSString *)stringFromDate:(NSDate *)date forTimeZone:(NSTimeZone *)tz{
   
-    NSDateFormatter *form = [[[NSDateFormatter alloc] init] autorelease];
+    NSDateFormatter *form = [[NSDateFormatter alloc] init];
     [form setTimeStyle:NSDateFormatterMediumStyle];
     [form setTimeZone:tz];
     
@@ -532,7 +528,6 @@
     //  Release the calendar
     //
     
-    [calendar release]; 
     
     //
     //  Return

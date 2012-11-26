@@ -394,11 +394,5 @@
 //
 */
 
-- (void)dealloc{
-    
-    [locationName release];
-    [super dealloc];
-    
-}
 
 @end

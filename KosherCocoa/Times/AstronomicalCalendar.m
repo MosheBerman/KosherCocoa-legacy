@@ -26,7 +26,6 @@
         
         self.astronomicalCalculator = tempCalc;
         
-        [tempCalc release];
         
         self.geoLocation = AGeoLocation;
         
@@ -36,12 +35,6 @@
     return self;
 }
 
-- (void)dealloc{
-    [geoLocation release];
-    [astronomicalCalculator release];
-    [workingDate release];
-    [super dealloc];
-}
 //
 //
 //
@@ -232,7 +225,7 @@
     //  the Gregorian calendar.
     //
     
-    NSCalendar *gregorianCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
     //
     //  Convert the current time
@@ -301,7 +294,7 @@
 
 - (NSString *)stringFromDate:(NSDate *)date forTimeZone:(NSTimeZone *)tz withSeconds:(BOOL)shouldShowSeconds{
     
-    NSDateFormatter *form = [[[NSDateFormatter alloc] init] autorelease];
+    NSDateFormatter *form = [[NSDateFormatter alloc] init];
     
     if (shouldShowSeconds) {
         [form setTimeStyle:NSDateFormatterMediumStyle];        

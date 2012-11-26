@@ -14,9 +14,9 @@
 
 @interface AstronomicalCalendar : NSObject
 
-@property (nonatomic, retain) GeoLocation *geoLocation;
-@property (nonatomic, retain) SunriseAndSunset *astronomicalCalculator;
-@property (nonatomic, retain) NSDate *workingDate;
+@property (nonatomic, strong) GeoLocation *geoLocation;
+@property (nonatomic, strong) SunriseAndSunset *astronomicalCalculator;
+@property (nonatomic, strong) NSDate *workingDate;
 
 //
 //  Designated Initializer

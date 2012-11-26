@@ -23,8 +23,8 @@
 @property double latitude;
 @property double longitude;
 @property double altitude;
-@property (nonatomic, retain) NSString *locationName;
-@property (nonatomic, retain) NSTimeZone *timeZone;
+@property (nonatomic, strong) NSString *locationName;
+@property (nonatomic, strong) NSTimeZone *timeZone;
 
 //
 //  Initializers
